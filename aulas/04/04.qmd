@@ -1,0 +1,62 @@
+---
+title: "Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais"
+subtitle: "MBA EM ENGENHARIA DE MANUTENÇÃO 4.0"
+format: 
+  clean-revealjs:
+    fontsize: 0.6em
+    transition: slide
+    background-transition: fade
+    highlight-style: github
+    code-line-numbers: true
+    slide-number: true
+    chalkboard: true
+    controls: true
+    footer: "Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais | Aula 04 | Matheus Pimenta"
+    margin: 0.05
+    min-scale: 0.2
+    max-scale: 2.0
+    menu: true
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: Matheus Pimenta
+    email: omatheuspimenta@outlook.com
+    affiliations: Universidade de São Paulo, Piracicaba (USP-ESALQ)
+date: last-modified
+toc: true
+toc-title: "Table of Contents"
+toc-depth: 1
+---
+
+# Introdução
+
+## Introdução ao Curso
+
+Panorama das atividades:
+
+- **Aula 01:** XXX
+
+Implementação em Python com PyTorch.
+
+## XXX Exemplo Video
+
+<video width="1280" controls>
+  <source src="images/MatrixMultiplicationDetailed.mp4" type="video/mp4">
+</video>
+
+## XXX Exemplo Imagem
+
+<div style="position: relative; width: 100%; height: 500px; margin: auto; text-align:center;">
+
+<figure class="fragment" data-fragment-index="1" 
+        style="position:absolute; top:0; left:0; width:100%; margin:0;">
+    <img src="images/timeline.jpg" 
+         style="width:100%; height:auto;" />
+  </a>
+  <figcaption style="font-size:1em; margin-top:0.5em;">
+    Legenda
+  </figcaption>
+</figure>
+
+</div>
