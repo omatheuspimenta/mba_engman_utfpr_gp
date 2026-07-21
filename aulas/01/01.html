@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <meta name="dcterms.date" content="2026-07-16">
+  <meta name="dcterms.date" content="2026-07-20">
   <title>Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,618 +147,711 @@ Matheus Pimenta
     </div>
 </div>
 
-  <p class="date">July 16, 2026</p>
+  <p class="date">July 20, 2026</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
-<h2 id="toc-title">Table of Contents</h2>
+<h2 id="toc-title">Conteúdo da Aula</h2>
 <ul>
-<li><a href="#/introdução" id="/toc-introdução">Introdução</a></li>
-<li><a href="#/formalizando-o-problema" id="/toc-formalizando-o-problema">Formalizando o Problema</a></li>
-<li><a href="#/perceptron" id="/toc-perceptron">Perceptron</a></li>
-<li><a href="#/redes-neurais" id="/toc-redes-neurais">Redes Neurais</a></li>
-<li><a href="#/estrutura-do-modelo" id="/toc-estrutura-do-modelo">Estrutura do Modelo</a></li>
-<li><a href="#/referências" id="/toc-referências">Referências</a></li>
+<li><a href="#/apresentação-do-professor" id="/toc-apresentação-do-professor">Apresentação do Professor</a></li>
+<li><a href="#/apresentação-da-disciplina" id="/toc-apresentação-da-disciplina">Apresentação da Disciplina</a></li>
+<li><a href="#/cronograma" id="/toc-cronograma">Cronograma</a></li>
+<li><a href="#/como-será-a-disciplina" id="/toc-como-será-a-disciplina">Como será a disciplina</a></li>
+<li><a href="#/avaliação" id="/toc-avaliação">Avaliação</a></li>
+<li><a href="#/fundamentos-da-inteligência-artificial" id="/toc-fundamentos-da-inteligência-artificial">Fundamentos da Inteligência Artificial</a></li>
+<li><a href="#/alguns-estudos-de-caso" id="/toc-alguns-estudos-de-caso">Alguns Estudos de Caso</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="introdução" class="title-slide slide level1 center">
-<h1>Introdução</h1>
+<section id="apresentação-do-professor" class="title-slide slide level1 center">
+<h1>Apresentação do Professor</h1>
 
 </section>
-<section id="introdução-ao-curso" class="slide level2">
-<h2>Introdução ao Curso</h2>
-<p>Panorama das atividades:</p>
+<section id="apresentação-do-professor-1" class="slide level2">
+<h2>Apresentação do Professor</h2>
+
+<img data-src="images/presentation.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="apresentação-do-professor-2" class="slide level2">
+<h2>Apresentação do Professor</h2>
+<p>Breve CV: <strong>Matheus Henrique Pimenta Zanon</strong></p>
 <ul>
-<li><strong>Dia 1:</strong> Fundamentos teóricos de redes neurais: histórico, perceptron e arquitetura de modelos.</li>
-<li><strong>Dia 2:</strong> Aplicação em dados de RNA para classificação de Covid. Pipeline em PyTorch (estrutura, pré-processamento, treinamento e ajuste de hiperparâmetros).</li>
-<li><strong>Dia 3:</strong> Modelos convolucionais (CNN) e aplicação em sequências biológicas (DNA/RNA).</li>
-<li><strong>Dia 4:</strong> Modelos avançados: Transformers e Vision Transformers (ViT).</li>
-<li><strong>Dia 5:</strong> Introdução a Graph Neural Networks (GNNs).</li>
-</ul>
-<p>Implementação em Python com PyTorch.</p>
-</section>
-<section id="álgebra-linear---revisitando-multiplicação-matriz" class="slide level2">
-<h2>Álgebra Linear - Revisitando Multiplicação Matriz</h2>
-<video width="1280" controls="">
-<source src="images/MatrixMultiplicationDetailed.mp4" type="video/mp4">
-</video>
-</section>
-<section id="história-das-redes-neurais" class="slide level2">
-<h2>História das Redes Neurais</h2>
-<p>A ideia de rede neural não é algo novo, foi apresentada em 1943 no trabalho de McCulloch e Pitts (modelo computacional de um neurônio). Mas <strong>por que somente recentemente elas ganharam força?</strong> Além disso, <strong>o que é uma rede neural?</strong><br>
-Diversas definições já foram propostas:</p>
+<li>Graduação em Matemática - UTFPR-CP
 <ul>
-<li>Operacionalmente podemos defini-la como: “Sistema complexo que compreende nós e links representados por neurônios e suas conexões” (WARREN et al., 2013)</li>
-<li>Em uma visão mais geral pode ser definida como: “Sistema de processamento de informações composto por um grande número de elementos simples que são interligados diretamente e que cooperam para realizar processamento distribuído paralelo a fim de resolver uma tarefa computacional desejada” (MACUKOW, 2016).</li>
+<li>Estudo - Análise de Sobrevivência;</li>
+</ul></li>
 </ul>
-</section>
-<section id="história-das-redes-neurais-1" class="slide level2">
-<h2>História das Redes Neurais</h2>
-<div style="position: relative; width: 100%; height: 500px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
-<img src="images/timeline.jpg" style="width:100%; height:auto;"> 
-<figcaption style="font-size:1em; margin-top:0.5em;">
-Linha do Tempo das Redes Neurais
-</figcaption>
-</figure>
+<div class="fragment">
+<ul>
+<li>Mestrado em Matemática Aplicada e Computacional - UEL
+<ul>
+<li>Desenvolvimento de Heurística - Otimização Discreta - Problema da Mochila Compartimentada;</li>
+<li>Aplicação em Problemas de Corte e Estoque;</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Doutorado em Bioinformática - UFPR/UTFPR
+<ul>
+<li>Desenvolvimento de métodos de Machine Learning;</li>
+<li>Aplicação em Estudos biológicos</li>
+</ul></li>
+</ul>
 </div>
 </section>
-<section id="quais-problemas-podem-ser-resolvidos-com-redes-neurais" class="slide level2">
-<h2>Quais problemas podem ser resolvidos com redes neurais ?</h2>
-<p>Quase qualquer problema hoje pode ser resolvido utilizando redes neurais, isso não significa que seja prático ou mesmo a melhor solução. Mas em geral temos problemas envolvendo:</p>
+<section id="apresentação-do-professor-3" class="slide level2">
+<h2>Apresentação do Professor</h2>
+<p>10 anos de trabalho com informática, sysadmin, Linux e analista de sistemas;</p>
+<div class="fragment">
+<p>Consultoria de Machine Learning em empresas como Natura</p>
+</div>
+<div class="fragment">
+<p>Desenvolvimento de softwares de otimização e machine learning (2 Registros INPI)</p>
+</div>
+<div class="fragment">
+<p>Atualmente é pesquisador pela Universidade de São Paulo (USP-ESALQ) e SB100 FAPESP</p>
+</div>
+</section>
+<section id="apresentação-do-professor-4" class="slide level2">
+<h2>Apresentação do Professor</h2>
+<div class="center">
+<p><strong>CONTATOS</strong></p>
+</div>
 <ul>
-<li>Classificação</li>
-<li>Regressão</li>
-<li>Detecção de Padrões</li>
-<li>Redução de Dimensionalidade</li>
-<li>Segmentação de Imagens</li>
-<li>Geração de Dados sintéticos</li>
+<li><code>e-mail</code>: <a href="mailto:omatheuspimenta@outlook.com" class="email">omatheuspimenta@outlook.com</a></li>
+<li><code>LinkedIn</code>: <a href="https://www.linkedin.com/in/omatheuspimenta" class="uri">https://www.linkedin.com/in/omatheuspimenta</a></li>
 </ul>
+<p>Qualquer outra rede social: &lt;<span class="citation" data-cites="omatheuspimenta">@omatheuspimenta</span>&gt;</p>
 </section></section>
 <section>
-<section id="formalizando-o-problema" class="title-slide slide level1 center">
-<h1>Formalizando o Problema</h1>
+<section id="apresentação-da-disciplina" class="title-slide slide level1 center">
+<h1>Apresentação da Disciplina</h1>
 
 </section>
-<section id="aprendizado-supervisionado" class="slide level2">
-<h2>Aprendizado supervisionado</h2>
-<p>No aprendizado supervisionado nos temos os dados definido por:</p>
-<p><span class="math display">\[
-    \mathcal{D} = \{(x_i,y_i)\}^{N}_{i=1}
-\]</span></p>
-<p>O objetivo é aprender uma função <span class="math inline">\(f(x;\theta) \approx y\)</span> na qual <span class="math inline">\(\theta\)</span> são os parâmetros do modelo</p>
+<section id="apresentação-da-disciplina-1" class="slide level2">
+<h2>Apresentação da Disciplina</h2>
+
+<img data-src="images/disciplina.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="apresentação-da-disciplina-2" class="slide level2">
+<h2>Apresentação da Disciplina</h2>
+<div class="center">
+<p><strong>AULAS</strong></p>
+</div>
+<p>Sábado (Síncrono) - Google Meet - 13h às 17h</p>
+<p>Durante a semana (Assíncrono) - e-mail</p>
 </section>
-<section id="problema-de-otimização" class="slide level2">
-<h2>Problema de Otimização</h2>
-<p>Nesse caso quando treinamos o modelo, estamos resolvendo um problema de otimização. A ideia é minimizar o risco que é dado por:</p>
-<p><span class="math display">\[
-    R(\theta) = \mathbb{E}_{(x,y)\sim P}[\mathcal{L}(y, f(x_i;\theta))]
-\]</span></p>
-<p>Contudo não temos acesso a verdadeira distribuição, por causa disso o que realmente fazemos é minimizar o risco empírico (ou seja com os nossos dados)</p>
-<p><span class="math display">\[
-    \hat{R}(\theta) = \frac{1}{N}\sum_{i=1}^n \mathcal{L}(y_i, f(x_i;\theta))
-\]</span></p>
-<ul>
-<li><span class="math inline">\(\mathcal{L} = \text{função de perda}\)</span>, ela é definada para verificar a distância entre <span class="math inline">\(y_i\)</span> e <span class="math inline">\(f(x;\theta)\)</span>.</li>
-</ul>
-</section>
-<section id="como-resolver-esse-problema-de-otimização" class="slide level2">
-<h2>Como resolver esse problema de otimização ?</h2>
-<p>A partir do problema existem diversas abordagens para tentar encontrar a solução. Diversos deles vocês já devem ter vistos como:</p>
-<ul>
-<li>Regressão Linear</li>
-<li>Regressão Logística</li>
-<li>Support Vector Machines</li>
-<li>Redes Neurais</li>
-</ul>
+<section id="apresentação-da-disciplina-3" class="slide level2">
+<h2>Apresentação da Disciplina</h2>
+<div class="center">
+<p><strong>OBJETIVO</strong></p>
+</div>
+<p>Proporcionar aos alunos a análise e solução de problemas reais da indústria sob a perspectiva da Pesquisa Operacional e <strong>Inteligência Artificial</strong>, contemplando as etapas de modelagem e estruturação matemática do problema, implementação computacional e avaliação da solução.</p>
+<div class="fragment">
+<div class="center">
+<p><strong>EMENTA</strong></p>
+</div>
+<p>Machine Learning (ML) e Redes Neurais Artificiais: princípios de funcionamento e treinamento dos principais modelos de aprendizado. Implementação dos modelos matemáticos decisórios em Python. Estudos de caso de problemas na indústria implementando algoritmos para predição de variáveis em problemas de classificação e regressão.</p>
+</div>
 </section></section>
 <section>
-<section id="perceptron" class="title-slide slide level1 center">
-<h1>Perceptron</h1>
+<section id="cronograma" class="title-slide slide level1 center">
+<h1>Cronograma</h1>
 
 </section>
-<section id="perceptron---neurônio" class="slide level2">
-<h2>Perceptron - Neurônio</h2>
-Perceptron foi originalmente proposto como uma abstração matemática de um neurônio biológico.<br>
+<section id="cronograma-1" class="slide level2">
+<h2>Cronograma</h2>
+<ul>
+<li>[AULA 01] - 08/02/2025 Fundamentos da Inteligência Artificial;</li>
+<li>[AULA 02] - 15/02/2025 Reconhecimentos de Padrões;</li>
+<li>[AULA 03] - 22/02/2025 Redes Neurais Artificiais - Perceptron e Multi Layer Perceptron;</li>
+<li>[AULA 04] - 01/03/2025 Redes Neurais Artificiais - Deep Learning - CNN e RNN (Attention Layer/Encoder Layer ???)</li>
+<li>[AULA 05] - 08/03/2025 Análise de Resultados - Feature Importance - SHAP/DALEX</li>
+<li>[AULA 06] - 15/03/2025 Apresentações e Discussão dos Projetos desenvolvidos</li>
+</ul>
+</section>
+<section id="bibliografia-recomendada" class="slide level2">
+<h2>Bibliografia Recomendada</h2>
 
-<div style="position: relative; width: 65%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
-<img src="images/neuronio.png" style="width:100%; height:auto;"> 
-<figcaption style="font-size:1em; margin-top:0.5em;">
-Neurônio Biológico
-</figcaption>
-</figure>
-</div>
+<img data-src="images/norvig.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><p>NORVIG, P.;RUSSEL, S. J. Inteligência Artificial: Uma abordagem moderna. Campus, 2004. 2a Edição</p>
 </section>
-<section id="perceptron---clássico" class="slide level2">
-<h2>Perceptron - Clássico</h2>
-<p>Perceptron foi criado como um classificador binário para resolver o problema do aprendizado supervisionado. Dado um vetor de entrada <span class="math inline">\(x\)</span>, o modelo define uma função discriminante linear:</p>
-<p><span class="math display">\[
-    g(x) = w^Tx + b
-\]</span></p>
-<p>Em que <span class="math inline">\(w\)</span> é o vetor de pesos e <span class="math inline">\(b\)</span> bias. A regra de decisão induz um classificador binário:</p>
-<p><span class="math display">\[
-    \hat{y} = sign(w^Tx + b), \qquad \hat{y} \in \{-1, +1\}
-\]</span></p>
+<section id="bibliografia-recomendada-1" class="slide level2">
+<h2>Bibliografia Recomendada</h2>
+
+<img data-src="images/duda.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><p>DUDA, R. O.; HART, P. E.; STORK, D. G. Pattern Classification. 2nd Edition</p>
 </section>
-<section id="interpretação-geométrica" class="slide level2">
-<h2>Interpretação Geométrica</h2>
-<p>O conjunto de pontos que satisfaz:</p>
-<p><span class="math display">\[
-    w^Tx + b = 0
-\]</span></p>
-<p>define um hiperplano de decisão em <span class="math inline">\(\mathbb{R}^d\)</span>, particiona o espaço em dois semi-espaços:</p>
-<ul>
-<li><span class="math inline">\(g(x) &gt; 0\)</span> então o ponto está de um lado do hiperplano e podemos definilo como a classe (+1)</li>
-<li><span class="math inline">\(g(x) &lt; 0\)</span> está no outro lado e portanto classifcado como outra classe (-1).</li>
-</ul>
-<p>Nesse caso o vetor peso <span class="math inline">\(w\)</span> é normal ao hiperplano e controla a sua orientação, enquanto <span class="math inline">\(b\)</span> desloca a sua posição.</p>
+<section id="bibliografia-recomendada-2" class="slide level2">
+<h2>Bibliografia Recomendada</h2>
+
+<img data-src="images/grokking.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><p>HURBANS, R. GROKKING Artificial Intelligence Algorithms.</p>
 </section>
-<section id="exemplo" class="slide level2">
-<h2>Exemplo</h2>
-<p>Em um problema em que temos duas classes linearmaente separáveis com apenas 2 features, ou seja <span class="math inline">\(x \in \mathbb{R}^2\)</span>, o hiperplano se reduz a uma reta <span class="math inline">\(w_1x_1 + w_2x_2 + b = 0\)</span>.</p>
-<div style="position: relative; width: 75%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:0; left:0; width:65%; margin:0;">
-<img src="images/Perceptron_cant_choose.svg.png" style="width:100%; height:auto;"> 
-<figcaption style="font-size:1em; margin-top:0.5em;">
-Problema classficação Linear
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="formulação-como-problema-de-otimização" class="slide level2">
-<h2>Formulação como Problema de Otimização</h2>
-<p>O Perceptron pode ser visto como um algoritmo que busca <span class="math inline">\((w,b)\)</span> tal que:</p>
-<p><span class="math display">\[
-    y_i(w^Tx_i + b) &gt; 0, \forall i
-\]</span></p>
-<p>Quando isso não ocorre atualiza-se de forma iterativa para encontrar o melhor peso:</p>
-<p><span class="math display">\[
-    w \leftarrow w + \eta y_i x_i
-\]</span></p>
-<p><span class="math display">\[
-    b \leftarrow b + \eta y_i
-\]</span></p>
-</section>
-<section id="visão-moderna" class="slide level2">
-<h2>Visão Moderna</h2>
-<p>O Perceptron pode ser interpretado como uma unidade computacional composta por:</p>
-<ul>
-<li>1° Combinação Linear: <span class="math inline">\(z = w^Tx + b\)</span></li>
-<li>2° Função de ativação: <span class="math inline">\(\hat{y} = \phi(z)\)</span></li>
-</ul>
-<p>No perceptron clássico <span class="math inline">\(\phi(z) = sign(z)\)</span>, é substituido por funções de ativação mais modernas como ReLU, sigmoid, tanh, entre outras que veremos mais a frente.</p>
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<div style="position: relative; width: 100%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
-<img src="images/percep.png" style="width:100%; height:auto;"> 
-<figcaption style="font-size:1em; margin-top:0.5em;">
-Arquitetura Perceptron
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="perceptron---implementação" class="slide level2">
-<h2>Perceptron - Implementação</h2>
-<p>Antes de implementar um perceptron do zero em Python, vamos demonstrar, passo a passo, como ocorre a atualização dos pesos. Para isso, utilizaremos o problema lógico “OR”, considerando o seguinte conjunto de dados:</p>
-<ul>
-<li><span class="math inline">\(\mathcal{D} = {([0,1], 1), ([1,1], 1), ([1,0], 1), ([0,0], -1)}\)</span></li>
-<li>Como o problema possui duas <em>features</em>, o objetivo é encontrar os parâmetros <span class="math inline">\([w_1, w_2, b]\)</span>.</li>
-</ul>
-<p>Inicialmente, adotaremos os valores:</p>
-<ul>
-<li>Pesos e viés iniciais: <span class="math inline">\([w_1, w_2, b] = [0,0,0]\)</span></li>
-<li>Taxa de aprendizado: <span class="math inline">\(\eta = 1\)</span></li>
-</ul>
-</section>
-<section id="processo" class="slide level2">
-<h2>Processo</h2>
-<ul>
-<li><strong>1ª interação:</strong> <span class="math inline">\(\hat{y}_i = sign(w^Tx_i + b) \Rightarrow sign([0,1]^T[0,0] + 0) = 0\)</span>. Como a predição está incorreta, atualizamos: <span class="math inline">\(w \leftarrow [0,0] + (1)[0,1] = [0,1]\)</span> e <span class="math inline">\(b \leftarrow 0 + 1 = 1\)</span>.</li>
-<li><strong>2ª interação:</strong> <span class="math inline">\(sign([1,1]^T[0,1] + 1) = 1\)</span>. Predição correta, não há atualização dos parâmetros.</li>
-<li><strong>3ª interação:</strong> <span class="math inline">\(sign([1,0]^T[0,1] + 1) = 1\)</span>. Predição correta.</li>
-<li><strong>4ª interação:</strong> <span class="math inline">\(sign([0,0]^T[0,1] + 1) = 1\)</span>. Predição incorreta, então: <span class="math inline">\(w \leftarrow [0,1] + (-1)[0,0] = [0,1]\)</span> e <span class="math inline">\(b \leftarrow 1 - 1 = 0\)</span>.</li>
-</ul>
-</section>
-<section id="processo-1" class="slide level2">
-<h2>Processo</h2>
-<ul>
-<li><strong>5ª interação:</strong> As predições permanecem corretas até <span class="math inline">\(sign([1,0]^T[0,1] + 0) = 0\)</span>. Como a predição está incorreta: <span class="math inline">\(w \leftarrow [0,1] + (1)[1,0] = [1,1]\)</span> e <span class="math inline">\(b \leftarrow 0 + 1 = 1\)</span>.</li>
-<li><strong>6ª interação:</strong> As predições seguem corretas até <span class="math inline">\(sign([0,0]^T[1,1] + 1) = 1\)</span>. Como a predição está incorreta: <span class="math inline">\(w \leftarrow [1,1] + (-1)[0,0] = [1,1]\)</span> e <span class="math inline">\(b \leftarrow 1 - 1 = 0\)</span>.</li>
-<li><strong>7ª interação:</strong> Novamente, as predições permanecem corretas até <span class="math inline">\(sign([0,0]^T[1,1] + 0) = 0\)</span>. Como a predição está incorreta: <span class="math inline">\(w \leftarrow [1,1] + (-1)[0,0] = [1,1]\)</span> e <span class="math inline">\(b \leftarrow 0 - 1 = -1\)</span>.</li>
-</ul>
-<p>Com isso, todas as amostras são classificadas corretamente. Portanto, os parâmetros finais do modelo são <span class="math inline">\(w = [1,1]\)</span> e <span class="math inline">\(b = -1\)</span>.</p>
-</section>
-<section id="perceptron---limitações" class="slide level2">
-<h2>Perceptron - Limitações</h2>
-<p>Um único perceptron tem capacidade de resolver apenas problemas linearmente separáveis. Minsky &amp; Papert provaram (Perceptrons, 1969) que existem limitações sobre o que as redes Perceptron são capazes de representar utilizando o problema clássico XOR:</p>
-<div style="position: relative; width: 100%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:80; left:0; width:100%; margin:0;">
-<img src="images/Problemas_Perceptron.png" style="width:100%; height:auto;"> 
-<figcaption style="font-size:1em; margin-top:0.5em;">
-Problema XOR
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="perceptron---solução" class="slide level2">
-<h2>Perceptron - Solução</h2>
-<p>Com a evolução das pesquisas em redes neurais e, principalmente, o avanço da tecnologia, essas limitações foram superadas através dos seguintes fatores:</p>
-<ul>
-<li>Introdução das Redes Neurais Multicamadas (MLP - Multilayer Perceptron) que utilizam múltiplos neurônios organizados em várias camadas.</li>
-<li>Introdução de funções de ativação mais complexas.</li>
-<li>Novo algoritmo (backpropagation) para atualizar os parâmetros, permitindo atualização eficiente dos pesos, e possibilitando o treinamento de redes mais profundas.</li>
-</ul>
+<section id="bibliografia-recomendada-3" class="slide level2">
+<h2>Bibliografia Recomendada</h2>
+
+<img data-src="images/ivan.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><p>SILVA, da I. N.; SPATTI, D. H.; FLAUZINO, R. A. Redes Neurais Artificiais para Engenharia e Ciências Aplicadas: fundamentos teóricos e aspectos práticos</p>
 </section></section>
 <section>
-<section id="redes-neurais" class="title-slide slide level1 center">
-<h1>Redes Neurais</h1>
+<section id="como-será-a-disciplina" class="title-slide slide level1 center">
+<h1>Como será a disciplina</h1>
 
 </section>
-<section id="como-podemos-entender-redes-neurais" class="slide level2">
-<h2>Como podemos entender redes neurais ?</h2>
-<p>As redes neurais podem ser interpretadas como composições de funções capazes de modelar relações não lineares complexas.</p>
-<p><span class="math display">\[
-f(x) = f_L \circ f_{L-1} \circ \dots \circ f_1(x)
-\]</span></p>
-<p>Até o momento, vimos uma possível função para cada camada:</p>
-<p><span class="math display">\[
-f_i(x) = \phi(w^T x + b)
-\]</span></p>
-<p>Como podemos observar, essa mesma estrutura pode ser repetida diversas vezes. Cada uma dessas estruturas é chamada de <strong>camada</strong>; assim, redes neurais são formadas pela composição de múltiplas camadas.</p>
-</section>
-<section id="pipeline-geral-de-treinamento" class="slide level2">
-<h2>Pipeline Geral de Treinamento</h2>
-<p>Nos próximos slides, veremos como funciona a estrutura de uma rede neural a partir do pipeline de treinamento, composto pelas seguintes etapas:</p>
-<ul>
-<li><em>Forward pass</em></li>
-<li>Cálculo da <em>loss</em></li>
-<li><em>Backpropagation</em></li>
-<li>Atualização dos parâmetros</li>
-</ul>
-<p>Esse ciclo define o processo de aprendizado das redes neurais.</p>
-</section>
-<section id="exemplificação" class="slide level2">
-<h2>Exemplificação</h2>
-<p>Esse loop de aprendizado pode ser visto na figura abaixo:</p>
-<div style="position: relative; width: 70%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:80; left:0; width:100%; margin:0;">
-<img src="images/FeedForward.png" style="width:100%; height:auto;"> 
+<section id="como-será-a-disciplina-1" class="slide level2">
+<h2>Como será a disciplina</h2>
+
+<img data-src="images/qa.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="como-será-a-disciplina-2" class="slide level2">
+<h2>Como será a disciplina</h2>
+<div class="center">
+<p><strong>AVALIAÇÃO</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/avaliacao.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
-</section>
-<section id="forward-pass" class="slide level2">
-<h2>Forward Pass</h2>
-<p>O <em>foward pass</em> é o cálculo da saída ou seja <span class="math inline">\(\hat{y} = f(x;\theta)\)</span>.</p>
-</section>
-<section id="função-de-perda" class="slide level2">
-<h2>Função de Perda</h2>
-<p>A função de perda (<em>loss function</em>) é um componente essencial em redes neurais, pois define uma medida da diferença entre a previsão do modelo e o valor esperado. Formalmente:</p>
-<p><span class="math display">\[
-\mathcal{L}(y, \hat{y})
-\]</span></p>
-<p>A escolha da função de perda depende do problema a ser resolvido, em alguns casos, é até necessário definir uma função personalizada. A seguir, veremos as principais funções utilizadas na maioria dos cenários:</p>
-<ul>
-<li>Erro Quadrático Médio (<em>Mean Squared Error — MSE</em>)</li>
-<li><em>Binary Cross-Entropy</em> e sua generalização, <em>Cross-Entropy</em></li>
-</ul>
-<p>Artigo interessante: <a href="https://arxiv.org/pdf/2307.02694">https://arxiv.org/pdf/2307.02694</a></p>
-</section>
-<section id="mse" class="slide level2">
-<h2>MSE</h2>
-<p>O <em>Mean Squared Error</em> (MSE) é utilizado principalmente em problemas de regressão, nos quais desejamos prever valores contínuos.</p>
-<p><span class="math display">\[
-\frac{1}{N} \sum (y - \hat{y})^2
-\]</span></p>
-</section>
-<section id="binary-cross-entropy" class="slide level2">
-<h2>Binary Cross-Entropy</h2>
-<p>Essa função de perda é utilizada em problemas de classificação binária e está relacionada ao conceito de entropia de Shannon.</p>
-<p><span class="math display">\[
-\mathcal{L} = -[y \log(\hat{y}) + (1-y)\log(1-\hat{y})]
-\]</span></p>
-</section>
-<section id="cross-entropy" class="slide level2">
-<h2>Cross-Entropy</h2>
-<p>A <em>Cross-Entropy</em> é uma generalização da <em>Binary Cross-Entropy</em>, utilizada em problemas de classificação multiclasse.</p>
-<p><span class="math display">\[
-\mathcal{L} = -\sum_i y_i \log(\hat{y}_i)
-\]</span></p>
-</section>
-<section id="backpropagation" class="slide level2">
-<h2>Backpropagation</h2>
-<p>Nosso objetivo é minimizar o risco empírico. Para isso, utilizamos o algoritmo de <em>backpropagation</em>, responsável por calcular o gradiente (<span class="math inline">\(\nabla\)</span>) da função de custo. Em essência, o algoritmo calcula a derivada parcial da função de perda em relação a cada parâmetro do modelo, propagando o erro da última camada até a primeira (“de trás para frente”) por meio da regra da cadeia.</p>
-<p><span class="math display">\[
-\mathcal{L}(f(x), y) \rightarrow \frac{\partial \mathcal{L}(f(x), y)}{\partial w_i}
-\]</span></p>
-<p>Pela regra da cadeia:</p>
-<p><span class="math display">\[
-\frac{\partial y}{\partial x} =
-\frac{\partial y}{\partial u}
-\frac{\partial u}{\partial x}
-\]</span></p>
-</section>
-<section id="interpretação-geométrica-da-derivada" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Interpretação Geométrica da Derivada</h2>
-<p>A derivada geometricamente representa a inclinação da reta tangente ao gráfico de uma função. Fermat percebeu que era possível encontrar os máximos e mínimos de uma função a partir de suas derivadas.</p>
-<div style="width: 55%; margin: auto; text-align:center;">
-<figure style="margin:0;">
-<img src="images/back_01.png" style="width:100%; height:auto;">
-</figure>
 </div>
-</section>
-<section id="interpretação-geométrica-da-derivada-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Interpretação Geométrica da Derivada</h2>
-<p>A derivada geometricamente representa a inclinação da reta tangente ao gráfico de uma função. Fermat percebeu que era possível encontrar os máximos e mínimos de uma função a partir de suas derivadas.</p>
-<div style="width: 55%; margin: auto; text-align:center;">
-<figure style="margin:0;">
-<img src="images/back_02.png" style="width:100%; height:auto;">
-</figure>
-</div>
-</section>
-<section id="interpretação-geométrica-da-derivada-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Interpretação Geométrica da Derivada</h2>
-<p>A derivada geometricamente representa a inclinação da reta tangente ao gráfico de uma função. Fermat percebeu que era possível encontrar os máximos e mínimos de uma função a partir de suas derivadas.</p>
-<div style="width: 55%; margin: auto; text-align:center;">
-<figure style="margin:0;">
-<img src="images/back_03.png" style="width:100%; height:auto;">
-</figure>
-</div>
-</section>
-<section id="interpretação-geométrica-da-derivada-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Interpretação Geométrica da Derivada</h2>
-<p>A derivada geometricamente representa a inclinação da reta tangente ao gráfico de uma função. Fermat percebeu que era possível encontrar os máximos e mínimos de uma função a partir de suas derivadas.</p>
-<div style="width: 55%; margin: auto; text-align:center;">
-<figure style="margin:0;">
-<img src="images/back_04.png" style="width:100%; height:auto;">
-</figure>
-</div>
-</section>
-<section id="interpretação-geométrica-da-derivada-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Interpretação Geométrica da Derivada</h2>
-<p>A derivada geometricamente representa a inclinação da reta tangente ao gráfico de uma função. Fermat percebeu que era possível encontrar os máximos e mínimos de uma função a partir de suas derivadas.</p>
-<div style="width: 55%; margin: auto; text-align:center;">
-<figure style="margin:0;">
-<img src="images/back_05.png" style="width:100%; height:auto;"> <!-- <figcaption style="font-size:1em; margin-top:0.5em;">Descida do Gradiente</figcaption> -->
-</figure>
-</div>
-</section>
-<section id="atualização-dos-pesos" class="slide level2">
-<h2>Atualização dos Pesos</h2>
-<p>Esse algoritmo é conhecido como <em>Gradient Descent</em>. Com ele, os parâmetros da rede neural podem ser atualizados da seguinte forma:</p>
-<p><span class="math display">\[
-\theta_{t+1} = \theta_t - \eta \nabla_\theta \mathcal{L}
-\]</span></p>
-<p>Na prática, não é necessário calcular as derivadas manualmente, pois bibliotecas como <a href="https://pytorch.org">PyTorch</a> realizam o cálculo dos gradientes automaticamente. Ainda assim, compreender esse processo é fundamental para entender o treinamento de redes neurais.</p>
-</section>
-<section id="exemplo-1" class="slide level2">
-<h2>Exemplo</h2>
-<p>Vamos aplicar esse processo em um exemplo simples (sem utilizar a regra da cadeia). Considere a função: <span class="math inline">\(f(x,y)=x^2+y^2\)</span> Desejamos encontrar seu ponto de mínimo a partir dos valores iniciais <span class="math inline">\(x=4\)</span> e <span class="math inline">\(y=2\)</span>. O gradiente da função é dado por:</p>
-<p><span class="math display">\[\nabla f(x,y)=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y}\right)=(2x,2y)\]</span></p>
-<ul>
-<li><strong>1ª interação:</strong> <span class="math inline">\(x^{(0)}=4\)</span> e <span class="math inline">\(y^{(0)}=2\)</span>, então <span class="math inline">\(\nabla f(4,2)=(8,4)\)</span>. Utilizando <span class="math inline">\(\eta = 0.1\)</span>: <span class="math inline">\((4,2) - 0.1(8,4) = (3.2,1.6)\)</span></li>
-</ul>
-<p>Observe que o valor da função diminui após a atualização:<span class="math inline">\(f(4,2)=16+4=20 \qquad f(3.2,1.6)=10.24+2.56=12.8\)</span></p>
-</section>
-<section id="exemplo-2" class="slide level2">
-<h2>Exemplo</h2>
-<ul>
-<li><strong>2ª interação:</strong> <span class="math inline">\(x^{(1)}=3.2\)</span> e <span class="math inline">\(y^{(1)}=1.6\)</span>, então <span class="math inline">\(\nabla f(3.2,1.6)=(6.4,3.2)\)</span>. Utilizando novamente <span class="math inline">\(\eta = 0.1\)</span>:</li>
-</ul>
-<p><span class="math display">\[
-(3.2,1.6) - 0.1(6.4,3.2) = (2.56,1.28)
-\]</span></p>
-<p>Observe que os valores continuam se aproximando de <span class="math inline">\((0,0)\)</span>, que corresponde ao ponto de mínimo da função. Repetindo esse processo iterativamente, convergimos para o mínimo.</p>
 </section></section>
 <section>
-<section id="estrutura-do-modelo" class="title-slide slide level1 center">
-<h1>Estrutura do Modelo</h1>
+<section id="avaliação" class="title-slide slide level1 center">
+<h1>Avaliação</h1>
 
 </section>
-<section id="estrutura-do-modelo-1" class="slide level2">
-<h2>Estrutura do Modelo</h2>
-<p>Os principais elementos que definem uma rede neural são:</p>
+<section id="projeto" class="slide level2">
+<h2>PROJETO</h2>
 <ul>
-<li>Camadas</li>
-<li>Funções de Ativação</li>
-<li>Função de Perda</li>
-<li>Otimizador</li>
-</ul>
-<p>Até agora vimos quais são as funções de perda, camada de perceptrons e também vimos algumas funções de ativação (sign e tanh). Nos próximos slides veremos outras camadas, outras funções de ativação e vamos entender um dos otimizadores modernos, o ADAM.</p>
-</section>
-<section id="funções-de-ativação" class="slide level2">
-<h2>Funções de Ativação</h2>
-<p>As funções de ativação possuem um papel central nas redes neurais, pois são responsáveis por introduzir não linearidade ao modelo, elemento essencial para aprender padrões complexos.</p>
-<p>Atualmente, existem diversas funções de ativação, cada uma com características, vantagens e limitações específicas. Entre as principais, destacam-se:</p>
+<li>Relatório Técnico contendo:
 <ul>
-<li>ReLU (<em>Rectified Linear Unit</em>), Leaky ReLU, RReLU e PReLU</li>
-<li>ELU e SELU</li>
-<li>Sigmoid, Tanh e Softmax</li>
-<li>Funções mais modernas: GELU, Swish, Mish e APALU</li>
-<li>Funções oscilatórias mais recentes: GCU, DSU, NCU, SQU e SSU</li>
-</ul>
-<p>A seguir, veremos algumas delas com mais detalhes.</p>
-</section>
-<section id="relu" class="slide level2">
-<h2>ReLU</h2>
-<p>A ReLU é atualmente a função de ativação mais utilizada em redes neurais, principalmente devido à sua simplicidade e eficiência computacional.</p>
-<p><span class="math display">\[ReLU(x)=\max(0,x)\]</span></p>
-<ul>
-<li><p><strong>Vantagens:</strong> reduz o problema do <em>Vanishing Gradient</em> e possui baixo custo computacional.</p></li>
-<li><p><strong>Desvantagens:</strong> produz gradiente apenas para valores positivos. Para entradas negativas, a saída é zero, o que pode levar ao problema conhecido como <em>Dying ReLU</em>.</p>
-<p>Artigos interessantes: <a href="https://arxiv.org/pdf/1903.06733">https://arxiv.org/pdf/1903.06733</a>, <a href="https://arxiv.org/abs/2505.22074">https://arxiv.org/abs/2505.22074</a></p></li>
+<li>Descrição dos dados;</li>
+<li>Pré processamento dos dados;</li>
+<li>Representação gráfica dos dados;</li>
+<li>Representação das medidas de posição e dispersão dos dados;</li>
+<li>Descrição do método utilizado;</li>
+<li>Apresentação dos resultados obtidos - métricas e matrizes de confusão;</li>
+<li>Discussão dos resultados obtidos - Feature Importance - SHAP values (se possível)</li>
+<li>Conclusão</li>
+</ul></li>
+<li>Breve apresentação do Projeto</li>
 </ul>
 </section>
-<section id="leaky-relu" class="slide level2">
-<h2>Leaky ReLU</h2>
-<p>A Leaky ReLU foi proposta para reduzir o problema dos neurônios mortos (<em>Dying ReLU</em>). Para isso, a função adiciona uma pequena inclinação para valores negativos, controlada pelo parâmetro <span class="math inline">\(\alpha\)</span>.</p>
-<p><span class="math display">\[Leaky\ ReLU(x)=\max(\alpha x,x)\]</span></p>
-<ul>
-<li><strong>Vantagem:</strong> mantém gradientes diferentes de zero para entradas negativas.</li>
-<li><strong>Desvantagem:</strong> exige a definição manual do parâmetro <span class="math inline">\(\alpha\)</span>, motivando o surgimento de variantes como RReLU e PReLU.</li>
-</ul>
-</section>
-<section id="sigmoid" class="slide level2">
-<h2>Sigmoid</h2>
-<p>A Sigmoid foi, durante muito tempo, a principal função de ativação utilizada em redes neurais. No entanto, ela apresenta algumas limitações, sendo a principal o <em>Vanishing Gradient Problem</em>, causado pela saturação para valores muito positivos ou negativos.</p>
-<p><span class="math display">\[\sigma(x)=\frac{1}{1+e^{-x}}\]</span></p>
-<p>Atualmente, a Sigmoid raramente é utilizada em camadas intermediárias. Ainda assim, ela continua sendo muito importante em problemas de classificação binária, pois sua saída varia entre <span class="math inline">\(0\)</span> e <span class="math inline">\(1\)</span>, permitindo interpretar a saída da rede como uma probabilidade.</p>
-</section>
-<section id="softmax" class="slide level2">
-<h2>Softmax</h2>
-<p>A Softmax segue a mesma ideia da Sigmoid: transformar a saída da rede em probabilidades. Entretanto, ela é utilizada em problemas de classificação multiclasse.</p>
-<p><span class="math display">\[Softmax(x_i)=\frac{e^{x_i}}{\sum_j e^{x_j}}\]</span></p>
-<p><strong>Exemplo:</strong> suponha que desejamos classificar uma imagem entre cachorro, gato e coelho. Se a saída da rede for: Cachorro: <span class="math inline">\(1.75\)</span>, Gato: <span class="math inline">\(3.90\)</span> e Coelho: <span class="math inline">\(4.35\)</span>, a aplicação da Softmax resultaria em: obtemos as probabilidades: Cachorro: <span class="math inline">\(0.04\)</span>, Gato: <span class="math inline">\(0.37\)</span> e Coelho: <span class="math inline">\(0.59\)</span></p>
-<p>Assim, o modelo classificaria a imagem como <strong>coelho</strong>, por possuir a maior probabilidade.</p>
-</section>
-<section id="gelu" class="slide level2">
-<h2>GELU</h2>
-<p>Funções de ativação mais modernas, como a GELU, possuem maior capacidade de modelar padrões complexos, geralmente ao custo de uma maior complexidade computacional.</p>
-<p>A GELU é uma função suave, isto é, derivável em todos os pontos, e atualmente é amplamente utilizada em modelos baseados em <em>Transformers</em>.</p>
-<p><span class="math display">\[GELU(x)=x\Phi(x)\approx0.5x\left(1+\tanh\left(\sqrt{\frac{2}{\pi}}\left(x+0.044715x^3\right)\right)\right)\]</span></p>
-</section>
-<section id="apalu" class="slide level2">
-<h2>APALU</h2>
-<p>A <em>Adaptive Piecewise Approximated Activation Linear Unit</em> (APALU) é uma função de ativação paramétrica, na qual a própria rede aprende os parâmetros da função durante o treinamento.</p>
-<p>Por ser altamente adaptável e flexível, a APALU pode apresentar bom desempenho em problemas com padrões complexos.</p>
-<p><span class="math display">\[APALU(x)=\begin{cases}a\left(x+x\left(\frac{1}{1+e^{-1.702x}}\right)\right),&amp;x\geq0\\b(e^x-1),&amp;x&lt;0\end{cases}\]</span></p>
-</section>
-<section id="gcu" class="slide level2">
-<h2>GCU</h2>
-<p>A <em>Growing Cosine Unit</em> (GCU) foi uma das primeiras funções de ativação a introduzir comportamentos oscilatórios em redes neurais.</p>
-<p>Sua principal contribuição foi mostrar que é possível resolver o problema XOR utilizando apenas um único neurônio. Apesar disso, suas propriedades e aplicações práticas ainda foram pouco exploradas.</p>
-<p><span class="math display">\[GCU(x)=x\cos(x)\]</span></p>
-</section>
-<section id="camadas" class="slide level2">
-<h2>Camadas</h2>
-<p>Um modelo é basicamente feito por várias camadas, cada uma tendo uma função específica no modelo. As que vamos ver/vimos hoje são:</p>
-<ul>
-<li>Dense: Camada mais comum de redes neurais. Composta por vários perceptrons, na qual cada perceptron está totalmente conectado a camada anterior.</li>
-<li>Dropout: Camada que tem como objetivo evitar overfitting.</li>
-<li>Batch Normalization: Estabiliza o treinamento e melhora a convergência.</li>
-</ul>
-</section>
-<section id="dropout" class="slide level2">
-<h2>Dropout</h2>
-<p>O que ele faz é desativar perceptrons aleatoriamente durante o treinamento, isso ajuda a reduzir o overfitting do modelo.</p>
-<p><em>Obs:</em> No teste essa camada é desativada e todos os perceptrons são utilizados</p>
-<div style="position: relative; width: 85%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:80; left:0; width:80%; margin:0;">
-<img src="images/Dropout.png" style="width:100%; height:auto;"> 
+<section id="projeto-1" class="slide level2">
+<h2>PROJETO</h2>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/keepcalm.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
-</section>
-<section id="batch-normalization" class="slide level2">
-<h2>Batch Normalization</h2>
-<p>Principal objetivo dessa camada é estabilizar o treinamento das redes neurais normalizando os dados para ter media <span class="math inline">\(0\)</span> e variância <span class="math inline">\(1\)</span>.</p>
-<div style="position: relative; width: 85%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:80; left:0; width:100%; margin:0;">
-<img src="images/BatchNorm.png" style="width:100%; height:auto;"> 
-<figcaption style="font-size:1em; margin-top:0.5em;">
-Batch Normalization
-</figcaption>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/dontworry.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
-</section>
-<section id="batch-normalization-1" class="slide level2">
-<h2>Batch Normalization</h2>
-<p>Quando não há normalização, algumas variáveis podem ter escalas muito diferentes, o que leva a gradientes desbalanceados. Com isso, uma variável pode ter uma magnitude muito maior no gradiente, enquanto outra tem magnitude muito pequena. Esse desbalanceamento pode prejudicar o desempenho dos algoritmos de otimização.</p>
-<div style="position: relative; width: 80%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:80; left:0; width:100%; margin:0;">
-<img src="images/SGDBatch.png" style="width:100%; height:auto;"> 
-</figure>
 </div>
 </section>
-<section id="tipos-de-normalização" class="slide level2">
-<h2>Tipos de Normalização</h2>
-<p>Existem diferentes estratégias de normalização utilizadas em redes neurais:</p>
+<section id="projeto-2" class="slide level2">
+<h2>PROJETO</h2>
+<div class="center">
+<p><strong>Datasets Online</strong></p>
+</div>
+<ol type="1">
+<li>Kaggle - <a href="https://www.kaggle.com" class="uri">https://www.kaggle.com</a></li>
+<li>UCI Machine Learning Repository - <a href="https://archive.ics.uci.edu/" class="uri">https://archive.ics.uci.edu/</a></li>
+<li>Data.gov - <a href="https://www.data.gov" class="uri">https://www.data.gov</a></li>
+<li>World Bank Data - <a href="https://data.worldbank.org" class="uri">https://data.worldbank.org</a></li>
+<li>OpenDataSoft - <a href="https://public.opendatasoft.com/explore" class="uri">https://public.opendatasoft.com/explore</a></li>
+<li>Data.gov.uk - <a href="https://data.gov.uk" class="uri">https://data.gov.uk</a></li>
+<li>Eurostat - <a href="https://ec.europa.eu/eurostat/data/database" class="uri">https://ec.europa.eu/eurostat/data/database</a></li>
+<li>Data.world - <a href="https://data.world" class="uri">https://data.world</a></li>
+<li>FiveThirtyEight - <a href="https://data.fivethirtyeight.com/" class="uri">https://data.fivethirtyeight.com/</a></li>
+</ol>
+</section>
+<section id="projeto-3" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="10" type="1">
+<li>GOV.UK - <a href="https://data.gov.uk" class="uri">https://data.gov.uk</a></li>
+<li>United Nations Data - <a href="https://data.un.org" class="uri">https://data.un.org</a></li>
+<li>Amazon Web Services (AWS) Public Datasets - <a href="https://registry.opendata.aws/" class="uri">https://registry.opendata.aws/</a></li>
+<li>Data.gov.au - <a href="https://data.gov.au" class="uri">https://data.gov.au</a></li>
+<li>Quandl - <a href="https://www.quandl.com" class="uri">https://www.quandl.com</a></li>
+<li>KDNuggets - <a href="https://www.kdnuggets.com/datasets" class="uri">https://www.kdnuggets.com/datasets</a></li>
+<li>Harvard Dataverse - <a href="https://dataverse.harvard.edu/" class="uri">https://dataverse.harvard.edu/</a></li>
+<li>Data.gouv.fr - <a href="https://www.data.gouv.fr/fr/" class="uri">https://www.data.gouv.fr/fr/</a></li>
+<li>Google Public Datasets - <a href="https://cloud.google.com/datasets" class="uri">https://cloud.google.com/datasets</a></li>
+</ol>
+</section>
+<section id="projeto-4" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="19" type="1">
+<li>Awesome Public Datasets (GitHub) - <a href="https://github.com/awesomedata/awesome-public-datasets" class="uri">https://github.com/awesomedata/awesome-public-datasets</a></li>
+<li>Base dos Dados - <a href="https://basedosdados.org/" class="uri">https://basedosdados.org/</a></li>
+<li>Gov BR Dados - <a href="https://dados.gov.br/" class="uri">https://dados.gov.br/</a></li>
+</ol>
+</section>
+<section id="projeto-5" class="slide level2">
+<h2>PROJETO</h2>
+<div class="center">
+<p><strong>Algumas bibliotecas Python</strong></p>
+</div>
+<ol type="1">
+<li><strong>Manipulação de Dados</strong>
 <ul>
-<li><strong>Batch Normalization:</strong> normaliza as ativações utilizando estatísticas calculadas ao longo do <em>mini-batch</em>.</li>
-<li><strong>Layer Normalization:</strong> realiza a normalização considerando todas as ativações de uma mesma camada para cada amostra.</li>
-<li><strong>Instance Normalization:</strong> normaliza cada amostra individualmente, sem depender das demais observações do <em>batch</em>.</li>
-<li><strong>Group Normalization:</strong> divide os canais em grupos e realiza a normalização separadamente em cada grupo.</li>
+<li><strong>NumPy</strong>: Uma biblioteca para processamento de dados numéricos.</li>
+<li><strong>Pandas</strong>: Uma biblioteca para gerenciamento e análise de dados.</li>
+<li><strong>Polars</strong>: Uma biblioteca para gerenciar e analisar dados rapidamente.</li>
+<li><strong>Modin</strong>: Uma biblioteca para acelerar o processamento de dados usando Pandas.</li>
+<li><strong>Datatable</strong>: Uma biblioteca para processar grandes volumes de dados.</li>
+<li><strong>Vaex</strong>: Uma biblioteca para processar grandes volumes de dados rapidamente.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-6" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="2" type="1">
+<li><strong>Visualização de Dados</strong>
+<ul>
+<li><strong>Matplotlib</strong>: Biblioteca “padrão” para visualizações gráficas.</li>
+<li><strong>Plotly</strong>: Uma biblioteca para visualizações gráficas interativas.</li>
+<li><strong>Seaborn</strong>: Uma biblioteca para visualizações estatísticas.</li>
+<li><strong>Bokeh</strong>: Uma biblioteca para visualizações gráficas interativas.</li>
+<li><strong>Altair</strong>: Uma biblioteca para visualizações gráficas simples e interativas.</li>
+<li><strong>Pygal</strong>: Uma biblioteca para criar gráficos interativos.</li>
+<li><strong>Folium</strong>: Uma biblioteca para criar mapas interativos.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-7" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="3" type="1">
+<li><strong>Análise Estatística</strong>
+<ul>
+<li><strong>Scipy</strong>: Uma biblioteca para cálculos científicos.</li>
+<li><strong>Statsmodels</strong>: Uma biblioteca para modelos estatísticos.</li>
+<li><strong>Pingouin</strong>: Uma biblioteca para estatísticas simples.</li>
+<li><strong>PyStan</strong>: Uma biblioteca para modelos estatísticos.</li>
+<li><strong>Lifelines</strong>: Uma biblioteca para análise de sobrevivência.</li>
+<li><strong>PyFlux</strong>: Uma biblioteca para análise de séries temporais estatísticas.</li>
+<li><strong>Sktime</strong>: Uma biblioteca para análise de séries temporais.</li>
+<li><strong>Prophet</strong>: Uma biblioteca para previsão de séries temporais.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-8" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="3" type="1">
+<li><strong>Análise Estatística</strong>
+<ul>
+<li><strong>Kats</strong>: Uma biblioteca para análise e previsão de séries temporais.</li>
+<li><strong>AutoTS</strong>: Uma biblioteca para previsão automática de séries temporais.</li>
+<li><strong>TsFresh</strong>: Uma biblioteca para extração de características de séries temporais.</li>
+<li><strong>Darts</strong>: Uma biblioteca para previsão de séries temporais.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-9" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="4" type="1">
+<li><strong>Operações com Banco de Dados</strong>
+<ul>
+<li><strong>PySpark</strong>: Uma biblioteca para processamento de grandes volumes de dados.</li>
+<li><strong>Ray</strong>: Uma biblioteca para computação distribuída.</li>
+<li><strong>Hadoop</strong>: Um framework para processamento de grandes volumes de dados.</li>
+<li><strong>Koalas</strong>: Uma biblioteca que utiliza interfaces Pandas no Spark.</li>
+<li><strong>Kafka</strong>: Uma biblioteca para lidar com Apache Kafka.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-10" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="5" type="1">
+<li><strong>Extração de Dados (Web Scraping)</strong>
+<ul>
+<li><strong>Beautiful Soup</strong>: Uma biblioteca para extrair dados de arquivos HTML e XML.</li>
+<li><strong>Octoparse</strong>: Uma ferramenta para extração de dados sem necessidade de programação.</li>
+<li><strong>Scrapy</strong>: Um framework para extração de dados.</li>
+<li><strong>Mechanical Soup</strong>: Uma biblioteca para navegar na web e extrair dados.</li>
+<li><strong>Selenium</strong>: Um framework para testar interfaces de usuário e extrair dados.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-11" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="6" type="1">
+<li><strong>Processamento de Linguagem Natural</strong>
+<ul>
+<li><strong>NLTK</strong>: Biblioteca de Processamento de Linguagem Natural.</li>
+<li><strong>TextBlob</strong>: Biblioteca para Processamento de Texto.</li>
+<li><strong>Gensim</strong>: Biblioteca para Modelagem de Tópicos e Análise de Texto.</li>
+<li><strong>spaCy</strong>: Biblioteca de Processamento de Linguagem Natural.</li>
+<li><strong>Polyglot</strong>: Biblioteca com Suporte Multilíngue.</li>
+<li><strong>BERT</strong>: Modelo de Aprendizado Profundo para Processamento de Linguagem Natural.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-12" class="slide level2">
+<h2>PROJETO</h2>
+<ol start="7" type="1">
+<li><strong>Aprendizado de Máquina</strong>
+<ul>
+<li><strong>Scikit-Learn</strong>: Biblioteca de Aprendizado de Máquina.</li>
+<li><strong>Keras</strong>: Biblioteca para Construção de Redes Neurais.</li>
+<li><strong>TensorFlow</strong>: Framework de Aprendizado de Máquina.</li>
+<li><strong>XGBoost</strong>: Biblioteca de Aprendizado de Máquina Reforçado.</li>
+<li><strong>PyTorch</strong>: Framework de Aprendizado Profundo.</li>
+<li><strong>PyTorch Lightning</strong>: Um Framework para Facilitar a Construção de Modelos de Aprendizado Profundo.</li>
+<li><strong>TabICLv2</strong>: Uma biblioteca para modelos de aprendizado profundo em dados tabulares.</li>
+</ul></li>
+</ol>
+</section>
+<section id="projeto-13" class="slide level2">
+<h2>PROJETO</h2>
+<div class="center">
+<p><strong>Outras bibliotecas Python</strong></p>
+</div>
+<ul>
+<li><strong>YellowBrick:</strong> Suíte de visualização e ferramentas de diagnósticos para a seleção de modelos rapidamente;</li>
+<li><strong>PyCaret:</strong> Workflows de Machine Learning com codeless;</li>
+<li><strong>imbalanced-learn:</strong> Variedade de métodos para lidar com classes desbalanceadas;</li>
+<li><strong>SHAP:</strong> Explicabilidade de modelos com poucas linhas de código;</li>
+<li><strong>missingno:</strong> Visualização de valores faltantes de maneira fácil;</li>
+<li><strong>prophet:</strong> Biblioteca para análise de dados temporais;</li>
+<li><strong>parallel-pandas:</strong> Paralelizar biblioteca pandas de maneira fácil;</li>
+<li><strong>featuretools:</strong> Engenharia de features automatizadas para modelos de ML;</li>
+<li><strong>lazypredict:</strong> Treine 30 modelos de ML em poucas linhas de código;</li>
+<li><strong>mlxtend:</strong> Coleção de funções utilitárias para processamento, avaliação e visualização de modelos de ML;</li>
 </ul>
 </section>
-<section id="tipos-de-normalização-1" class="slide level2">
-<h2>Tipos de Normalização</h2>
-<div style="position: relative; width: 85%; height: 400px; margin: auto; text-align:center;">
-<figure class="fragment" data-fragment-index="1" style="position:absolute; top:80; left:0; width:100%; margin:0;">
-<img src="images/Tipos_Norm.png" style="width:100%; height:auto;"> 
+<section id="projeto-14" class="slide level2">
+<h2>PROJETO</h2>
+<ul>
+<li><strong>sweetviz:</strong> Visualização de relatórios em poucas linhas de código;</li>
+<li><strong>skorch:</strong> PyTorch + sklearn;</li>
+<li><strong>faiss:</strong> Análise de similaridade em segundos (by Meta);</li>
+<li><strong>category-encoders:</strong> Data encoder para dados categóricos;</li>
+</ul>
+</section>
+<section id="projeto-15" class="slide level2">
+<h2>PROJETO</h2>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/pythonlibs.jpeg" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
 </figure>
 </div>
+</div>
 </section>
-<section id="otimizadores" class="slide level2">
-<h2>Otimizadores</h2>
-<p>Embora o SGD (Stochastic Gradient Descent) apresente bons resultados, atualmente são utilizados, principalmente, otimizadores mais modernos, em sua maioria variantes do Adaptive Moment Estimation - ADAM.</p>
-<p>Para entender essa evolução, é importante observar as principais limitações do SGD:</p>
+<section id="como-será-a-disciplina-3" class="slide level2">
+<h2>Como será a disciplina</h2>
+<div class="center">
+<p><strong>Curso e Materiais</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/moodle.png" class="quarto-figure quarto-figure-center" style="width:20.0%"></p>
+</figure>
+</div>
+<p><a href="http://moodle.utfpr.edu.br" class="uri">http://moodle.utfpr.edu.br</a></p>
+</div>
 <ul>
-<li>Utiliza uma taxa de aprendizado fixa.</li>
-<li>Pode apresentar convergência lenta em funções com muitos parâmetros.</li>
+<li>Materiais didáticos;</li>
+<li>Notas;</li>
+<li>Avisos;</li>
+<li>Aulas gravadas;</li>
 </ul>
 </section>
-<section id="adam" class="slide level2">
-<h2>ADAM</h2>
-<p>O ADAM utiliza o conceito de <em>Momentum</em>, inspirado na física. Em vez de atualizar os parâmetros apenas com base no gradiente atual, o método considera também a direção acumulada dos gradientes anteriores, acelerando a convergência.</p>
-<p>No ADAM, dois hiperparâmetros principais controlam esse processo: <span class="math inline">\(\beta_1\)</span> e <span class="math inline">\(\beta_2\)</span>.</p>
-<ul>
-<li><span class="math inline">\(\beta_1\)</span>: controla a média exponencial dos gradientes passados (<em>momento de primeira ordem</em>).</li>
-<li><span class="math inline">\(\beta_2\)</span>: controla a média exponencial dos quadrados dos gradientes passados (<em>momento de segunda ordem</em>).</li>
-</ul>
-</section>
-<section id="adam-1" class="slide level2">
-<h2>ADAM</h2>
-<p>As atualizações dos parâmetros seguem a fórmula:</p>
-<p><span class="math display">\[
-  m_t = \beta_1 \cdot m_{t-1} + (1 - \beta_1) \cdot g_t
-\]</span></p>
-<p><span class="math display">\[
-  v_t = \beta_2 \cdot v_{t-1} + (1 - \beta_2) \cdot g_t^2
-\]</span></p>
-<p>Onde: <span class="math inline">\(m_t\)</span> é o momento de primeira ordem, <span class="math inline">\(v_t\)</span> é o momento de segunda ordem e <span class="math inline">\(g_t\)</span> é o gradiente no tempo <span class="math inline">\(t\)</span>.</p>
-</section>
-<section id="adam-2" class="slide level2">
-<h2>ADAM</h2>
-<p>Além disso, o ADAM aplica uma correção para compensar as estimativas iniciais de <span class="math inline">\(m_t\)</span> e <span class="math inline">\(v_t\)</span>:</p>
-<p><span class="math display">\[
-  \hat{m}_t = \frac{m_t}{1 - \beta_1^t}, \quad \hat{v}_t = \frac{v_t}{1 - \beta_2^t}
-\]</span></p>
-<p>Os parâmetros são atualizados da seguinte forma:</p>
-<p><span class="math display">\[
-  \theta_t = \theta_{t-1} - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \cdot \hat{m}_t
-\]</span></p>
-</section>
-<section id="adamw" class="slide level2">
-<h2>ADAMW</h2>
-<p>Uma das variantes mais populares do ADAM é o ADAMW, que introduz o conceito de <em>weight decay</em> para regularização dos parâmetros do modelo.</p>
-<p>A atualização dos parâmetros passa a ser definida por:</p>
-<p><span class="math display">\[\theta_t=\theta_{t-1}-\frac{\eta}{\sqrt{\hat{v}_t}+\epsilon}\cdot\hat{m}t+\eta\lambda\theta{t-1}\]</span></p>
-<p>O parâmetro <span class="math inline">\(\lambda\)</span> controla a intensidade do <em>weight decay</em>, ajudando a reduzir <em>overfitting</em> e aumentando a estabilidade do treinamento.</p>
+<section id="como-será-a-disciplina-4" class="slide level2">
+<h2>Como será a disciplina</h2>
+<div class="center">
+<p><strong>Brincar e Aprender</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/oceans.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+<p><a href="https://code.org/oceans" class="uri">https://code.org/oceans</a></p>
+</div>
 </section></section>
 <section>
-<section id="referências" class="title-slide slide level1 center">
-<h1>Referências</h1>
+<section id="fundamentos-da-inteligência-artificial" class="title-slide slide level1 center">
+<h1>Fundamentos da Inteligência Artificial</h1>
 
 </section>
-<section id="referências-1" class="slide level2">
-<h2>Referências</h2>
+<section id="introdução---breve-e-geral" class="slide level2">
+<h2>Introdução - Breve e Geral</h2>
+
+<img data-src="images/ia.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"><div class="fragment">
+<div class="center">
+<p><strong>NÃO É TRIVIAL MODELAR E ANALISAR DADOS!!!!!!</strong></p>
+</div>
+</div>
+</section>
+<section id="inteligência" class="slide level2">
+<h2>Inteligência</h2>
+
+<img data-src="images/inteligencia.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><p>Pode ser definida como a capacidade de:</p>
 <ul>
-<li>Goodfellow, Ian, et al.&nbsp;Deep learning. Vol. 1. No.&nbsp;2. Cambridge: MIT press, 2016.</li>
-<li>Theodoridis, Sergios, and Konstantinos Koutroumbas. Pattern recognition. Elsevier, 2006.</li>
-<li>Dubey, Shiv Ram, Satish Kumar Singh, and Bidyut Baran Chaudhuri. “Activation functions in deep learning: A comprehensive survey and benchmark.” Neurocomputing 503 (2022): 92-108.</li>
-<li>Kingma, Diederik P., and Jimmy Ba. “Adam: A method for stochastic optimization.” arXiv preprint arXiv:1412.6980 (2014).</li>
-<li>Ruder, Sebastian. “An overview of gradient descent optimization algorithms.” arXiv preprint arXiv:1609.04747 (2016).</li>
+<li>planejar;</li>
+<li>raciocinar;</li>
+<li>resolver problemas;</li>
 </ul>
 </section>
-<section id="referências-2" class="slide level2">
-<h2>Referências</h2>
+<section id="inteligência-1" class="slide level2">
+<h2>Inteligência</h2>
+
+<img data-src="images/inteligencia.png" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%"><p>Pode ser definida como a capacidade de:</p>
 <ul>
-<li>Wu, Yuxin, and Kaiming He. “Group normalization.” Proceedings of the European conference on computer vision (ECCV). 2018.</li>
-<li>Loshchilov, Ilya, and Frank Hutter. “Decoupled weight decay regularization.” arXiv preprint arXiv:1711.05101 (2017).</li>
-<li>Rosenblatt, Frank. “The perceptron: a probabilistic model for information storage and organization in the brain.” Psychological review 65.6 (1958): 386.</li>
+<li>planejar;</li>
+<li>raciocinar;</li>
+<li><strong>resolver problemas</strong>;</li>
+<li>compreender ideias e linguagens;</li>
+<li>abstrair ideias;</li>
+<li>aprender</li>
 </ul>
+</section>
+<section id="inteligência-2" class="slide level2">
+<h2>Inteligência</h2>
+<p>A ciência que conhecemos hoje surgiu pós 2ª Guerra Mundial;<br>
+“Inteligência Artificial” obteve esse nome após 1955;<br>
+Possui vários campos e aplicações:</p>
+<ul>
+<li>aprendizado de máquina;</li>
+<li>agentes inteligentes;</li>
+<li>sistemas especialistas;</li>
+<li>processamento de linguagem natural;</li>
+<li><em>deep learning</em>;</li>
+</ul>
+</section>
+<section id="inteligência-3" class="slide level2">
+<h2>Inteligência</h2>
+
+<img data-src="images/ai_time1.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%" id="fig-aitime1"><p class="caption">
+Figure&nbsp;1: <a href="https://qbi.uq.edu.au/brain/intelligent-machines/history-artificial-intelligence" class="uri">https://qbi.uq.edu.au/brain/intelligent-machines/history-artificial-intelligence</a>
+</p></section>
+<section id="inteligência-4" class="slide level2">
+<h2>Inteligência</h2>
+<p>ELIZA today: <a href="https://www.masswerk.at/elizabot/" class="uri">https://www.masswerk.at/elizabot/</a></p>
+<div class="fragment">
+<p>Teste de Turing hoje já foi “vencido” por diversas IA. Alguns pesquisadores dizem que é “antigo” para as IAs de hoje.</p>
+<p>Teste de Turing exige capacidades de:</p>
+<ul>
+<li>Processamento de linguagem natural;</li>
+<li>Representação do conhecimento;</li>
+<li>Raciocínio automatizado;</li>
+<li>Aprendizagem de máquina;</li>
+</ul>
+</div>
+</section>
+<section id="inteligência-5" class="slide level2">
+<h2>Inteligência</h2>
+
+<img data-src="images/ai_time2.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
+<section id="inteligência-6" class="slide level2">
+<h2>Inteligência</h2>
+<p>Origem no Latim:</p>
+<p><em>Inter</em> (entre) e <em>Legere</em> (escolher)</p>
+<div class="fragment">
+<p>Habilidade de realizar, de forma eficiente, uma determinada tarefa;</p>
+</div>
+<div class="fragment">
+<p><em>Artificiale</em></p>
+<p>Algo que não é natural, ou seja, produzido pelo homem.</p>
+</div>
+<div class="fragment">
+<p>É um tipo de inteligência produzida pelo homem para atribuir às máquinas algum tipo de habilidade que simula a inteligência do homem.</p>
+</div>
+<div class="fragment">
+<p>Ou ainda:</p>
+</div>
+</section>
+<section id="inteligência-7" class="slide level2">
+<h2>Inteligência</h2>
+<p>Ramo da ciência da computação que lida com a automação do pensamento e comportamento inteligente</p>
+</section>
+<section id="inteligência-artificial" class="slide level2">
+<h2>Inteligência Artificial</h2>
+<p>“Se a inteligência artificial é a nova eletricidade, <em>big data</em> é o combustível dos geradores”</p>
+<p>Kai-Fu Lee</p>
+</section>
+<section id="inteligência-artificial-1" class="slide level2">
+<h2>Inteligência Artificial</h2>
+<p>Inteligência Artificial encorpora conhecimentos de diversas áreas:</p>
+<ul>
+<li class="fragment">Matemática;</li>
+<li class="fragment">Sociologia;</li>
+<li class="fragment">Psicologia;</li>
+<li class="fragment">Computação;</li>
+<li class="fragment">Engenharias;</li>
+<li class="fragment">Genética;</li>
+<li class="fragment">Neurofisiologia;</li>
+<li class="fragment">Linguística;</li>
+<li class="fragment">Filosofia;</li>
+</ul>
+</section>
+<section id="inteligência-artificial-2" class="slide level2">
+<h2>Inteligência Artificial</h2>
+<ul>
+<li>IA forte: (utópica??) pesquisadores acreditam que ao dispor de um computador com super processamento e fornecendo o suficiente de “inteligência” poderá ser construído “consciência” como um ser humano;</li>
+</ul>
+<div class="fragment">
+<p>Já temos algumas ‘fagulhas’ do que é definido como <em>AGI - Artificial general intelligence</em>, que é uma inteligência artificial que iguala ou supera as capacidades cognitivas humanas em uma ampla gama de tarefas cognitivas.</p>
+<ul>
+<li>IA fraca: (estamos aqui ainda!) problemas que exigem um comportamento inteligente podem ser modelados usando computação e assim obter soluções de problemas complexos!</li>
+</ul>
+</div>
+</section>
+<section id="inteligência-artificial-3" class="slide level2">
+<h2>Inteligência Artificial</h2>
+<p>IA foca em:</p>
+<ul>
+<li>domínio ou tarefa com objetivo específico;
+<ul>
+<li>carro autônomo;</li>
+<li>tradução de textos;</li>
+<li>classificação de e-mail;</li>
+<li>classificação de imagens;</li>
+<li>identificação de imagens;</li>
+<li>entre outros…</li>
+</ul></li>
+</ul>
+</section>
+<section id="desafios-na-ciência-de-dados" class="slide level2">
+<h2>Desafios na Ciência de Dados</h2>
+
+<img data-src="images/dasafio.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="desafios-na-ciência-de-dados-1" class="slide level2">
+<h2>Desafios na Ciência de Dados</h2>
+<ul>
+<li class="fragment">Como obter os dados;</li>
+<li class="fragment">A qualidade dos dados obtidos;</li>
+<li class="fragment">Entender o que os dados podem nos contar;</li>
+</ul>
+</section>
+<section id="desafios-na-ciência-de-dados-2" class="slide level2">
+<h2>Desafios na Ciência de Dados</h2>
+<ul>
+<li class="fragment"><strong>Definição do Problema</strong></li>
+<li class="fragment"><strong>Coleta de Dados</strong> Seu modelo é tão bom quanto seus dados.</li>
+<li class="fragment"><strong>Limpeza dos Dados</strong> Ninguém gosta dessa etapa que representa 80% do trabalho. Dados limpos = resultados confiáveis.</li>
+<li class="fragment"><strong>Engenharia de Features</strong> A arte de transformar dados brutos em ouro. É aqui que a experiência faz toda diferença.</li>
+<li class="fragment"><strong>Seleção de Features</strong> Menos é mais! Escolher as características certas é melhor que usar todas possíveis.</li>
+<li class="fragment"><strong>Preparação dos Dados</strong> Split train/val/test - o tripé sagrado que vai validar seu trabalho.</li>
+</ul>
+</section>
+<section id="desafios-na-ciência-de-dados-3" class="slide level2">
+<h2>Desafios na Ciência de Dados</h2>
+<ul>
+<li class="fragment"><strong>Construção e Avaliação do Modelo</strong> Finalmente chegamos na parte “divertida”! Mas note: é só uma parte do processo.</li>
+<li class="fragment"><strong>Deployment</strong> Hora de colocar seu modelo no mundo real. Aqui descobrimos se ele realmente resolve o problema.</li>
+<li class="fragment"><strong>Monitoramento e Retraining</strong> O trabalho nunca acaba! Modelos precisam de manutenção constante.</li>
+</ul>
+</section>
+<section id="ciência-de-dados" class="slide level2">
+<h2>Ciência de Dados</h2>
+
+<img data-src="images/dataviz.png" class="quarto-figure quarto-figure-center r-stretch" style="width:85.0%"></section>
+<section id="ciência-de-dados-1" class="slide level2">
+<h2>Ciência de Dados</h2>
+<p>Modelagem dos dados, estrutura e armazenamento</p>
+<div class="fragment">
+<p><em>Engenharia de Dados</em></p>
+<p>Análise e visualização dos dados</p>
+</div>
+<div class="fragment">
+<p><em>Data Science e Inteligência Artificial</em></p>
+</div>
+<div class="fragment">
+<div class="center">
+<p>Dados <span class="math inline">\(\rightarrow\)</span> Conhecimento <span class="math inline">\(\rightarrow\)</span> Decision-maker</p>
+</div>
+</div>
+</section>
+<section id="visualização-de-dados" class="slide level2">
+<h2>Visualização de Dados</h2>
+
+<img data-src="images/chats.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section></section>
+<section>
+<section id="alguns-estudos-de-caso" class="title-slide slide level1 center">
+<h1>Alguns Estudos de Caso</h1>
+
+</section>
+<section id="estudos-de-caso" class="slide level2">
+<h2>Estudos de Caso</h2>
+<ul>
+<li class="fragment">Previsão de Risco de Crédito para Bancos;</li>
+<li class="fragment">Predição de refugo das peças em produção;</li>
+<li class="fragment">Monitoramento de mídias sociais;</li>
+<li class="fragment">Análise de mutações em genomas;</li>
+<li class="fragment">Classificação da temperatura nos processos de mistura e aquecimento em uma planta industrial;</li>
+<li class="fragment">Classificação de gêneros musicais;</li>
+<li class="fragment">Predição de valores de alugueis;</li>
+<li class="fragment">E muitos outros …</li>
+</ul>
+</section>
+<section id="conhecendo-o-google-colab" class="slide level2">
+<h2>Conhecendo o Google Colab</h2>
+<ul>
+<li>Google Colab (Colaboratory) é um ambiente de programação online gratuito.</li>
+<li>Baseado no Jupyter Notebook, permite executar código Python diretamente no navegador.</li>
+<li>Não requer instalação ou configuração: tudo funciona na nuvem.</li>
+<li>Ideal para aprendizado de máquina, ciência de dados e prototipação rápida.</li>
+</ul>
+</section>
+<section id="benefícios-do-google-colab" class="slide level2">
+<h2>Benefícios do Google Colab</h2>
+<ul>
+<li><strong>Gratuito:</strong> Disponível para qualquer usuário com uma conta Google.</li>
+<li><strong>Acesso a GPUs e TPUs:</strong> Execute códigos mais rápidos com recursos de hardware avançado.</li>
+<li><strong>Colaboração:</strong> Compartilhe notebooks e trabalhe em equipe em tempo real.</li>
+<li><strong>Armazenamento na Nuvem:</strong> Salve seus notebooks no Google Drive.</li>
+<li><strong>Suporte a Bibliotecas ML/DS:</strong> Pré-configurado com muitas bibliotecas populares como TensorFlow, PyTorch, NumPy, Pandas, entre outras.</li>
+</ul>
+</section>
+<section id="utilidades-do-google-colab" class="slide level2">
+<h2>Utilidades do Google Colab</h2>
+<ul>
+<li><strong>Ensino:</strong> Ferramenta excelente para ensinar ou aprender Python e ciência de dados.</li>
+<li><strong>Prototipagem Rápida:</strong> Experimente novos modelos de aprendizado de máquina.</li>
+<li><strong>Visualização de Dados:</strong> Crie gráficos interativos usando bibliotecas como Matplotlib e Plotly.</li>
+<li><strong>Análise de Dados:</strong> Processamento e análise de grandes conjuntos de dados.</li>
+</ul>
+</section>
+<section id="como-funciona" class="slide level2">
+<h2>Como Funciona?</h2>
+<ol type="1">
+<li><strong>Criação de Notebooks:</strong> Comece criando um novo notebook no Google Drive.</li>
+<li><strong>Execução de Código:</strong> Escreva e execute código Python célula por célula.</li>
+<li><strong>Armazenamento de Arquivos:</strong> Faça upload de arquivos ou conecte-se ao Google Drive.</li>
+<li><strong>Hardware Avançado:</strong> Habilite GPUs/TPUs em “Ambiente de Execução”.</li>
+<li><strong>Compartilhamento:</strong> Compartilhe o notebook com outras pessoas, similar ao Google Docs.</li>
+</ol>
+</section>
+<section id="exemplos-de-aplicações" class="slide level2">
+<h2>Exemplos de Aplicações</h2>
+<ul>
+<li>Treinamento de modelos de aprendizado de máquina.</li>
+<li>Análise e visualização de dados para ciência de dados.</li>
+<li>Construção de pipelines de pré-processamento.</li>
+<li>Experimentação com novas bibliotecas e frameworks.</li>
+<li>Desenvolvimento de projetos colaborativos de pesquisa.</li>
+</ul>
+</section>
+<section id="recursos-e-limitações" class="slide level2">
+<h2>Recursos e Limitações</h2>
+<p><strong>Recursos:</strong></p>
+<ul>
+<li>Acesso a GPUs/TPUs de alta performance.</li>
+<li>Ambiente interativo fácil de usar.</li>
+</ul>
+<p><br></p>
+<p><strong>Limitações:</strong></p>
+<ul>
+<li>Tempo limite de execução para sessões (12 horas no máximo).</li>
+<li>Dependente de conexão à internet.</li>
+<li>Restrições de memória e armazenamento na nuvem.</li>
+</ul>
+</section>
+<section id="dúvidas" class="slide level2" data-background-color="#f1c40f">
+<h2>Dúvidas?</h2>
+<div class="center">
+<p>Matheus Pimenta</p>
+<p><a href="mailto:omatheuspimenta@outlook.com" class="email">omatheuspimenta@outlook.com</a></p>
+</div>
 
 </section></section>
     </div>
