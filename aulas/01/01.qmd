@@ -542,7 +542,7 @@ Modelagem dos dados, estrutura e armazenamento
 
 . . .
 
-*Engenharia de Dados*
+*Engenharia de Dados* 
 
 Análise e visualização dos dados 
 
