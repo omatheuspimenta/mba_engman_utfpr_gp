@@ -34,7 +34,7 @@ toc-depth: 1
 
 ## Apresentação do Professor
 
-![](images/presentation.png){fig-align="center" width="70%"}
+![](images/presentation.png){fig-align="center" width="50%"}
 
 ## Apresentação do Professor
 
@@ -94,7 +94,7 @@ Qualquer outra rede social: <@omatheuspimenta>
 **AULAS**
 :::
 
-Sábado (Síncrono) - Google Meet - 13h às 17h
+Sábado (Síncrono) - Google Meet - 08 às 12h e 13h às 17h (depende do sábado)
 
 Durante a semana (Assíncrono) - e-mail
 
@@ -118,12 +118,12 @@ Machine Learning (ML) e Redes Neurais Artificiais: princípios de funcionamento 
 
 ## Cronograma
 
-- [AULA 01] - 08/02/2025 Fundamentos da Inteligência Artificial;
-- [AULA 02] - 15/02/2025 Reconhecimentos de Padrões;
-- [AULA 03] - 22/02/2025 Redes Neurais Artificiais - Perceptron e Multi Layer Perceptron;
-- [AULA 04] - 01/03/2025 Redes Neurais Artificiais - Deep Learning - CNN e RNN (Attention Layer/Encoder Layer ???)
-- [AULA 05] - 08/03/2025 Análise de Resultados - Feature Importance - SHAP/DALEX
-- [AULA 06] - 15/03/2025 Apresentações e Discussão dos Projetos desenvolvidos
+- [AULA 01] - 01/08/2026 - manhã | Fundamentos da Inteligência Artificial;
+- [AULA 02] - 08/08/2026 - tarde | Reconhecimentos de Padrões;
+- [AULA 03] - 15/08/2026 - tarde | Redes Neurais Artificiais - Perceptron e Multi Layer Perceptron;
+- [AULA 04] - 22/08/2026 - tarde | Redes Neurais Artificiais - Deep Learning - CNN e RNN (Attention Layer/Encoder Layer/YOLO ???)
+- [AULA 05] - 19/09/2026 - manhã | Análise de Resultados - Feature Importance - SHAP/DALEX
+- [AULA 06] - 19/09/2026 - tarde | Apresentações e Discussão dos Projetos desenvolvidos
 
 ## Bibliografia Recomendada
 
@@ -540,13 +540,11 @@ IA foca em:
 
 Modelagem dos dados, estrutura e armazenamento 
 
-. . .
-
 *Engenharia de Dados* 
 
-Análise e visualização dos dados 
-
 . . .
+
+Análise e visualização dos dados 
 
 *Data Science e Inteligência Artificial*
 
