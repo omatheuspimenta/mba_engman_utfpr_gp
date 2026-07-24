@@ -315,7 +315,7 @@ Matheus Pimenta
 <h2>2. Pré-processamento: Normalização</h2>
 <p>Algoritmos baseados em distância são extremamente sensíveis à magnitude. Faz-se necessário aplicar: <!--[cite: 3] --></p>
 <ul>
-<li class="fragment"><strong>Padronização (Z-Score):</strong> Centraliza a média em 0 e estabelece a variância: <!--[cite: 3] --> <span class="math display">\[ x' = \frac{x - \mu}{\sigma^2} \]</span> <!--[cite: 3] --> <em>(Onde <span class="math inline">\(\mu\)</span> é a média e <span class="math inline">\(\sigma^2\)</span> é a variância/desvio)</em> <!--[cite: 3] --></li>
+<li class="fragment"><strong>Padronização (Z-Score):</strong> Centraliza a média em 0 e estabelece a variância unitária: <!--[cite: 3] --> <span class="math display">\[ x' = \frac{x - \mu}{\sigma^2} \]</span> <!--[cite: 3] --> <em>(Onde <span class="math inline">\(\mu\)</span> é a média e <span class="math inline">\(\sigma^2\)</span> é a variância/desvio)</em> <!--[cite: 3] --></li>
 <li class="fragment"><strong>Transformação Logarítmica (<span class="math inline">\(\log_2\)</span> ou <span class="math inline">\(\ln\)</span>):</strong> Útil para reduzir distorções entre grandezas muito variadas. <!--[cite: 3] --></li>
 </ul>
 </section>
@@ -823,7 +823,7 @@ Matheus Pimenta
 <li><strong>LightGBM:</strong> projetado para treinamento rápido e escalabilidade em <em>big data</em>.</li>
 </ul>
 </section>
-<section id="ensembles-adaboost" class="slide level2">
+<section id="ensembles-adaboost" class="slide level2 smaller">
 <h2>Ensembles: AdaBoost</h2>
 <p>Treina uma sequência de modelos fracos, onde cada novo modelo dá <strong>maior atenção às amostras classificadas incorretamente</strong> pelos modelos anteriores.</p>
 <div class="columns">

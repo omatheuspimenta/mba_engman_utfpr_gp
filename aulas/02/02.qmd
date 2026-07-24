@@ -131,7 +131,7 @@ O pré-processamento garante que os dados cheguem com qualidade ao modelo: <!--[
 Algoritmos baseados em distância são extremamente sensíveis à magnitude. Faz-se necessário aplicar: <!--[cite: 3] -->
 
 ::: {.incremental}
-- **Padronização (Z-Score):** Centraliza a média em 0 e estabelece a variância: <!--[cite: 3] -->
+- **Padronização (Z-Score):** Centraliza a média em 0 e estabelece a variância unitária: <!--[cite: 3] -->
   $$ x' = \frac{x - \mu}{\sigma^2} $$ <!--[cite: 3] -->
   *(Onde $\mu$ é a média e $\sigma^2$ é a variância/desvio)* <!--[cite: 3] -->
 - **Transformação Logarítmica ($\log_2$ ou $\ln$):** Útil para reduzir distorções entre grandezas muito variadas. <!--[cite: 3] -->
@@ -605,7 +605,7 @@ O **Boosting** é uma técnica de *ensemble* que combina vários modelos fracos 
 - **CatBoost:** otimizado para trabalhar com atributos categóricos, exigindo pouco pré-processamento.
 - **LightGBM:** projetado para treinamento rápido e escalabilidade em *big data*.
 
-## Ensembles: AdaBoost
+## Ensembles: AdaBoost {.smaller}
 
 Treina uma sequência de modelos fracos, onde cada novo modelo dá **maior atenção às amostras classificadas incorretamente** pelos modelos anteriores.
 
