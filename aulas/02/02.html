@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="02_files/libs/clipboard/clipboard.min.js"></script>
+<script src="02_files/libs/quarto-html/tabby.min.js"></script>
+<script src="02_files/libs/quarto-html/popper.min.js"></script>
+<script src="02_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="02_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="02_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="02_files/libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
+
+  <meta name="author" content="Matheus Pimenta">
+  <meta name="dcterms.date" content="2026-07-24">
+  <title>Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="02_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="02_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="02_files/libs/revealjs/dist/theme/quarto-5ae9c59b2727fcd5357d4f034d95f9e0.css">
+  <link href="02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="02_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="02_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="02_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais</h1>
+  <p class="subtitle">MBA EM ENGENHARIA DE MANUTENÇÃO 4.0</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Matheus Pimenta 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:omatheuspimenta@outlook.com">omatheuspimenta@outlook.com</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Universidade de São Paulo, Piracicaba (USP-ESALQ)
+          </p>
+    </div>
+</div>
+
+  <p class="date">July 24, 2026</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Conteúdo da Aula</h2>
+<ul>
+<li><a href="#/reconhecimento-de-padrões" id="/toc-reconhecimento-de-padrões">Reconhecimento de Padrões</a></li>
+<li><a href="#/etapas-do-reconhecimento-de-padrões" id="/toc-etapas-do-reconhecimento-de-padrões">Etapas do Reconhecimento de Padrões</a></li>
+<li><a href="#/knowledge-discovery-in-databases-kdd" id="/toc-knowledge-discovery-in-databases-kdd">Knowledge Discovery in Databases (KDD)</a></li>
+<li><a href="#/aprendizagem-supervisionada" id="/toc-aprendizagem-supervisionada">Aprendizagem Supervisionada</a></li>
+<li><a href="#/aprendizagem-não-supervisionada" id="/toc-aprendizagem-não-supervisionada">Aprendizagem Não Supervisionada</a></li>
+<li><a href="#/regressão" id="/toc-regressão">Regressão</a></li>
+<li><a href="#/engenharia-e-seleção-de-características-feature-selection" id="/toc-engenharia-e-seleção-de-características-feature-selection">Engenharia e Seleção de Características (<em>Feature Selection</em>)</a></li>
+<li><a href="#/avaliação-e-validação-de-modelos" id="/toc-avaliação-e-validação-de-modelos">Avaliação e Validação de Modelos</a></li>
+<li><a href="#/exemplos" id="/toc-exemplos">Exemplos</a></li>
+<li><a href="#/dúvidas" id="/toc-dúvidas">Dúvidas?</a></li>
+</ul>
+</nav>
+</section>
+<section>
+<section id="reconhecimento-de-padrões" class="title-slide slide level1 center">
+<h1>Reconhecimento de Padrões</h1>
+
+</section>
+<section id="o-que-é-reconhecimento-de-padrões" class="slide level2">
+<h2>O que é Reconhecimento de Padrões?</h2>
+<p><strong>Definições formais:</strong> <!--[cite: 3] --></p>
+<blockquote>
+<p>“É uma área de pesquisa que tem por objetivo a classificação de objetos (padrões) em um número de categorias ou classes” — <em>Theodoridis and Koutroumbas, 2008</em> <!--[cite: 3] --></p>
+</blockquote>
+<div class="fragment">
+<blockquote>
+<p>“O ato de observar os dados brutos e tomar uma ação baseada na categoria de um padrão” — <em>Duda et al., 2001</em> <!--[cite: 3] --></p>
+</blockquote>
+</div>
+<div class="fragment">
+<p><em>Contexto na Manutenção:</em> O “padrão” pode ser a assinatura vibracional de um motor rotativo, e a “ação” é a decisão de intervir antes de uma falha catastrófica. <!--[cite: 3] --></p>
+</div>
+</section>
+<section id="definições-essenciais" class="slide level2">
+<h2>Definições Essenciais</h2>
+<ul>
+<li class="fragment"><strong>Padrão:</strong> É uma entidade, objeto, processo ou evento, vagamente definido, que pode assumir um nome. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Classe:</strong> Conjunto de padrões que possuem características em comum (ex: <em>Operação Normal</em>, <em>Falha Iminente</em>). <!--[cite: 3] --></li>
+<li class="fragment"><strong>Característica ou Atributo:</strong> Dado extraído de uma amostra por meio de medida e/ou processamento. Geralmente organizados em um vetor de características <span class="math inline">\(\mathbf{x}\)</span>. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Classificação:</strong> O ato de atribuir classes às amostras, baseado exclusivamente em suas características. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Ruído:</strong> Distorção, falha ou imprecisão na aquisição dos dados (fenômeno comum em sensores industriais de chão de fábrica). <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="modelos-classificadores" class="slide level2">
+<h2>Modelos Classificadores</h2>
+<p><strong>Classificadores</strong> são algoritmos utilizados para categorizar ou descrever padrões a partir de um conjunto de propriedades matemáticas ou estruturais. <!--[cite: 3] --></p>
+<div class="fragment">
+<p>Eles se dividem primariamente em dois grandes grupos: <!--[cite: 3] --></p>
+<ol type="1">
+<li><strong>Classificação Supervisionada</strong> <!--[cite: 3] --></li>
+<li><strong>Classificação Não Supervisionada</strong> <!--[cite: 3] --></li>
+</ol>
+</div>
+</section>
+<section id="classificação-supervisionada" class="slide level2">
+<h2>Classificação Supervisionada</h2>
+<ul>
+<li class="fragment">Ocorre quando selecionamos <strong>amostras representativas e já rotuladas</strong> para cada uma das classes que desejamos prever. <!--[cite: 3] --></li>
+<li class="fragment">Nós conhecemos os padrões e as classes que estamos procurando (temos o “gabarito” histórico). <!--[cite: 3] --></li>
+<li class="fragment">É o coração do chamado <strong>Aprendizado Supervisionado</strong> (ex: treinar um modelo com um banco de dados de falhas mecânicas já documentadas). <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="classificação-não-supervisionada" class="slide level2">
+<h2>Classificação Não Supervisionada</h2>
+<ul>
+<li class="fragment">Não conhecemos o padrão de antemão, nem o número total de categorias a serem descobertas. <!--[cite: 3] --></li>
+<li class="fragment">É amplamente conhecido como análise de agrupamentos ou <strong>Clusterização (<em>Clustering</em>)</strong>. <!--[cite: 3] --></li>
+<li class="fragment">O algoritmo particiona o conjunto de dados em grupos, baseando-se em afinidades métricas, garantindo que: <!--[cite: 3] -->
+<ul>
+<li class="fragment">Os pontos dentro de um mesmo grupo (<em>cluster</em>) sejam <strong>altamente similares</strong> entre si. <!--[cite: 3] --></li>
+<li class="fragment">Os pontos de grupos diferentes sejam <strong>altamente dissimilares</strong>. <!--[cite: 3] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="exemplos-de-aplicações" class="slide level2">
+<h2>Exemplos de Aplicações</h2>
+<table class="caption-top">
+<caption>Tabela adaptada de cenários práticos de Inteligência Artificial. <!--[cite: 3] --></caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Aplicação (Geral e Industrial)</strong></th>
+<th style="text-align: left;"><strong>Padrão de Entrada</strong></th>
+<th style="text-align: left;"><strong>Classes (Saída)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Manutenção Preditiva</td>
+<td style="text-align: left;">Dados de vibração/temperatura</td>
+<td style="text-align: left;">Operação Normal / Alerta de Falha</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reconhecimento de caracteres</td>
+<td style="text-align: left;">Imagem de um documento</td>
+<td style="text-align: left;">Caracteres ou Palavras</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Seleção de qualidade industrial</td>
+<td style="text-align: left;">Imagem em esteira de produção</td>
+<td style="text-align: left;">Níveis de conformidade da peça</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Diagnóstico auxiliado</td>
+<td style="text-align: left;">Imagem microscópica / Raio-X</td>
+<td style="text-align: left;">Saudável / Anômalo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Detecção de fraudes</td>
+<td style="text-align: left;">Transações financeiras</td>
+<td style="text-align: left;">Fraude / Não fraude</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Filtro de e-mails</td>
+<td style="text-align: left;">Corpo do E-mail</td>
+<td style="text-align: left;">Spam / Inbox</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reconhecimento de fala</td>
+<td style="text-align: left;">Áudio contendo voz humana</td>
+<td style="text-align: left;">Texto correspondente transcrito</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="etapas-do-reconhecimento-de-padrões" class="title-slide slide level1 center">
+<h1>Etapas do Reconhecimento de Padrões</h1>
+
+</section>
+<section id="pipeline-de-reconhecimento-de-padrões" class="slide level2">
+<h2>Pipeline de Reconhecimento de Padrões</h2>
+<p><img data-src="images/etapas_pr.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="obtenção-dos-dados" class="slide level2">
+<h2>1. Obtenção dos Dados</h2>
+<p>A coleta de dados é a base de todo o processo de predição: <!--[cite: 3] --></p>
+<ul>
+<li class="fragment"><strong>Sensores e IoT (Internet of Things):</strong> Essencial na Indústria para monitorar peso, temperatura, umidade, vibração e velocidade em tempo real. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Dispositivos de Imagem e Som:</strong> Câmeras de vigilância, microfones acústicos para escuta de rolamentos, satélites, escâneres e esteiras de produção. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Dados Laboratoriais e Biomédicos:</strong> Sequenciadores genômicos, hemogramas, medições químicas de qualidade da água/óleo. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="pré-processamento-limpeza" class="slide level2">
+<h2>2. Pré-processamento: Limpeza</h2>
+<p>O pré-processamento garante que os dados cheguem com qualidade ao modelo: <!--[cite: 3] --></p>
+<ul>
+<li class="fragment"><strong>Identificação e remoção de problemas:</strong> <!--[cite: 3] -->
+<ul>
+<li class="fragment">Amostras com <strong>pouca variância</strong> (não ajudam o modelo a discernir padrões). <!--[cite: 3] --></li>
+<li class="fragment">Amostras com <strong>alta correlação</strong> (redundância de informações que causa peso excessivo). <!--[cite: 3] --></li>
+<li class="fragment">Tratamento de <strong>ausência de dados</strong> (valores <em>null</em>, <em>NaN</em> ou falhas pontuais do sensor). <!--[cite: 3] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="pré-processamento-normalização" class="slide level2">
+<h2>2. Pré-processamento: Normalização</h2>
+<p>Algoritmos baseados em distância são extremamente sensíveis à magnitude. Faz-se necessário aplicar: <!--[cite: 3] --></p>
+<ul>
+<li class="fragment"><strong>Padronização (Z-Score):</strong> Centraliza a média em 0 e estabelece a variância: <!--[cite: 3] --> <span class="math display">\[ x' = \frac{x - \mu}{\sigma^2} \]</span> <!--[cite: 3] --> <em>(Onde <span class="math inline">\(\mu\)</span> é a média e <span class="math inline">\(\sigma^2\)</span> é a variância/desvio)</em> <!--[cite: 3] --></li>
+<li class="fragment"><strong>Transformação Logarítmica (<span class="math inline">\(\log_2\)</span> ou <span class="math inline">\(\ln\)</span>):</strong> Útil para reduzir distorções entre grandezas muito variadas. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="pré-processamento-normalização-1" class="slide level2">
+<h2>2. Pré-processamento: Normalização</h2>
+<ul>
+<li><strong>Reescala Min-Max (Intervalo <span class="math inline">\([0,1]\)</span>):</strong> <!--[cite: 3] --> <span class="math display">\[ x' = \frac{x - \min(x)}{\max(x) - \min(x)} \]</span> <!--[cite: 3] --></li>
+</ul>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/StandardizeField_Illustration-84469.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="distância-matemáticas---definição" class="slide level2">
+<h2>Distância Matemáticas - Definição</h2>
+<p>Para classificar padrões, precisamos medir a “distância” entre duas amostras no espaço <span class="math inline">\(S\)</span>. Para uma métrica ser matematicamente válida, <span class="math inline">\(d(a, b)\)</span> deve satisfazer: <!--[cite: 3] --></p>
+<ol type="1">
+<li class="fragment"><strong>Não negatividade:</strong> A distância não pode ser negativa. <!--[cite: 3] --> <span class="math display">\[ d(a, b) \geq 0, \quad \forall a, b \in S \]</span> <!--[cite: 3] --></li>
+<li class="fragment"><strong>Comutatividade (Simetria):</strong> A ordem de medição não altera o valor. <!--[cite: 3] --> <span class="math display">\[ d(a, b) = d(b, a) \]</span> <!--[cite: 3] --></li>
+<li class="fragment"><strong>Desigualdade triangular:</strong> O caminho direto é sempre o mais curto. <!--[cite: 3] --> <span class="math display">\[ d(a, b) + d(b, c) \geq d(a, c) \]</span> <!--[cite: 3] --></li>
+</ol>
+<p><img data-src="images/dist.png" class="quarto-figure quarto-figure-center" style="width:20.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="panorama-das-distâncias" class="slide level2">
+<h2>Panorama das Distâncias</h2>
+<p><img data-src="images/dists.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="distância-euclidiana" class="slide level2">
+<h2>Distância Euclidiana</h2>
+<p>Mede a separação geométrica “em linha reta” entre dois vetores <span class="math inline">\(\mathbf{x}\)</span> e <span class="math inline">\(\mathbf{y}\)</span> no espaço <span class="math inline">\(\mathbb{R}^n\)</span>: <!--[cite: 3] --></p>
+<p><span class="math display">\[ d_E(\mathbf{x}, \mathbf{y}) = \sqrt{\sum_{i=1}^n (x_i - y_i)^2} \]</span> <!--[cite: 3] --></p>
+<div class="fragment">
+<p><strong>Características principais:</strong> <!--[cite: 3] --></p>
+<ul>
+<li>Atribui rigorosamente a <strong>mesma importância</strong> a cada dimensão ou <em>feature</em>. <!--[cite: 3] --></li>
+<li>Altamente sensível a diferenças de escala (variáveis de magnitude na ordem dos milhares dominarão o cálculo se não houver normalização prévia). <!--[cite: 3] --></li>
+</ul>
+</div>
+</section>
+<section id="distância-city-block-manhattan" class="slide level2">
+<h2>Distância City-Block (Manhattan)</h2>
+<p>Também conhecida como norma <span class="math inline">\(L_1\)</span> ou <em>Taxicab</em>. Avalia a distância percorrida em “quadras” ortogonais em <span class="math inline">\(\mathbb{R}^n\)</span>: <!--[cite: 3] --></p>
+<p><span class="math display">\[ d_C(\mathbf{x}, \mathbf{y}) = \sum_{i=1}^n |x_i - y_i| \]</span> <!--[cite: 3] --></p>
+<div class="fragment">
+<p><strong>Características principais:</strong> <!--[cite: 3] --></p>
+<ul>
+<li>Calcula a soma das diferenças absolutas entre os componentes. <!--[cite: 3] --></li>
+<li>É matematicamente <strong>menos sensível a <em>outliers</em></strong> severos se comparada à Euclidiana (pois não eleva diferenças ao quadrado). <!--[cite: 3] --></li>
+<li>Excelente para variáveis que descrevem deslocamentos restritos a eixos. <!--[cite: 3] --></li>
+</ul>
+</div>
+</section>
+<section id="distância-de-minkowski" class="slide level2">
+<h2>Distância de Minkowski</h2>
+<p>Uma generalização matemática das métricas de distância através da introdução do fator <span class="math inline">\(p\)</span>: <!--[cite: 3] --></p>
+<p><span class="math display">\[ d_{Mi}(\mathbf{x}, \mathbf{y}) = \left[ \sum_{i=1}^n |x_i - y_i|^p \right]^{\frac{1}{p}} \]</span> <!--[cite: 3] --></p>
+<div class="fragment">
+<p><strong>Configurações Clássicas:</strong> <!--[cite: 3] --></p>
+<ul>
+<li>Se <strong><span class="math inline">\(p = 1\)</span></strong>: Recuperamos a Distância Manhattan. <!--[cite: 3] --></li>
+<li>Se <strong><span class="math inline">\(p = 2\)</span></strong>: Recuperamos a Distância Euclidiana. <!--[cite: 3] --></li>
+<li>Se <strong><span class="math inline">\(p \to \infty\)</span></strong>: Obtemos a Distância de Chebyshev (avalia apenas a dimensão com a diferença máxima). <!--[cite: 3] --></li>
+</ul>
+</div>
+</section>
+<section id="distância-de-minkowski-1" class="slide level2">
+<h2>Distância de Minkowski</h2>
+<p><img data-src="images/image.ANZW02.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="distância-de-mahalanobis" class="slide level2">
+<h2>Distância de Mahalanobis</h2>
+<p>Avança em relação à geometria básica e insere a noção de <strong>covariância e estrutura dos dados</strong> no cálculo: <!--[cite: 3] --></p>
+<p><span class="math display">\[ d_{Ma}(\mathbf{x}, \mathbf{y}) = \sqrt{(\mathbf{x} - \mathbf{y})^T \Sigma^{-1} (\mathbf{x} - \mathbf{y})} \]</span> <!--[cite: 3] --></p>
+<p><em>Onde <span class="math inline">\(\Sigma\)</span> é a matriz de covariância e <span class="math inline">\(\Sigma^{-1}\)</span> sua inversa.</em> <!--[cite: 3] --></p>
+<div class="fragment">
+<p><strong>Características principais:</strong> <!--[cite: 3] --></p>
+<ul>
+<li>Considera tanto a variância individual quanto a <strong>correlação estatística</strong> entre as variáveis. <!--[cite: 3] --></li>
+<li>Atribui pesos dinâmicos para dimensões diferentes, tornando o cálculo <strong>invariante a escalas</strong>. É excepcional para reconhecer anomalias (muito útil em chão de fábrica). <!--[cite: 3] --></li>
+</ul>
+</div>
+</section>
+<section id="exemplos-visuais-de-distância" class="slide level2">
+<h2>Exemplos Visuais de Distância</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img data-src="images/image.C85502.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img data-src="images/image.DLU502.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</div>
+</div>
+</div>
+<p><em>Comparativo visual de fronteiras de decisão usando distâncias. <!--[cite: 3] --></em></p>
+</section></section>
+<section>
+<section id="knowledge-discovery-in-databases-kdd" class="title-slide slide level1 center">
+<h1>Knowledge Discovery in Databases (KDD)</h1>
+
+</section>
+<section id="descoberta-do-conhecimento-em-dados-kdd" class="slide level2">
+<h2>Descoberta do Conhecimento em Dados (KDD)</h2>
+<p>O KDD não é apenas rodar um modelo; é a estruturação científica completa para extrair informações reais a partir de bases de dados brutas na engenharia e nos negócios. <!--[cite: 3] --></p>
+<div class="fragment">
+<p><strong>As 4 Etapas Core do KDD:</strong> <!--[cite: 3] --></p>
+<ol type="1">
+<li><strong>Definição de objetivos:</strong> Compreender o problema (ex: Qual máquina vai falhar e por quê?). <!--[cite: 3] --></li>
+<li><strong>Seleção da Base:</strong> Extração inteligente e integração de dados relevantes dos CLPs, ERPs e sensores. <!--[cite: 3] --></li>
+<li><strong>Limpeza e Preparação:</strong> Remoção de ruídos, tratamento de nulos, descarte de registros duplicados e transformações essenciais. <!--[cite: 3] --></li>
+<li><strong>Análise Preditiva:</strong> Aplicação matemática das heurísticas de Regressão, Classificação ou Agrupamento. <!--[cite: 3] --></li>
+</ol>
+</div>
+</section>
+<section id="a-realidade-dos-dados-brutos" class="slide level2">
+<h2>A Realidade dos Dados Brutos</h2>
+<p>Na indústria, os dados nunca chegam prontos. Eles chegam assim: <!--[cite: 3] --></p>
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><img data-src="images/image.00H202.png" class="quarto-figure quarto-figure-center" style="width:63.0%"> <!--[cite: 3] --></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><img data-src="images/image.5VI502.png" class="quarto-figure quarto-figure-center" style="width:63.0%"> <!--[cite: 3] --></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><img data-src="images/image.NB8302.png" class="quarto-figure quarto-figure-center" style="width:63.0%"> <!--[cite: 3] --></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><img data-src="images/image.1NY202.png" class="quarto-figure quarto-figure-center" style="width:63.0%"> <!--[cite: 3] --></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><img data-src="images/image.GFQ402.png" class="quarto-figure quarto-figure-center" style="width:63.0%"> <!--[cite: 3] --></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<p><img data-src="images/image.W59602.png" class="quarto-figure quarto-figure-center" style="width:63.0%"> <!--[cite: 3] --></p>
+</div>
+</div>
+</div>
+</section>
+<section id="a-realidade-dos-dados-brutos-1" class="slide level2">
+<h2>A Realidade dos Dados Brutos</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img data-src="images/image.LCV202.png" class="quarto-figure quarto-figure-center" style="width:55.0%"> <!--[cite: 3] --></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img data-src="images/image.TCSC12.png" class="quarto-figure quarto-figure-center" style="width:55.0%"> <!--[cite: 3] --></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img data-src="images/image.9D6102.png" class="quarto-figure quarto-figure-center" style="width:55.0%"> <!--[cite: 3] --></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img data-src="images/image.JMG302.png" class="quarto-figure quarto-figure-center" style="width:55.0%"> <!--[cite: 3] --></p>
+</div>
+</div>
+</div>
+</section>
+<section id="por-que-precisamos-de-modelos-inteligentes" class="slide level2">
+<h2>Por Que Precisamos de Modelos Inteligentes?</h2>
+<p>A IA surge da necessidade de processos autônomos em tarefas altamente dimensionais e complexas: <!--[cite: 3] --></p>
+<ul>
+<li class="fragment"><strong>Redução de Intervenção Humana:</strong> Diminuir a dependência de análises exaustivas feitas por especialistas locais. <!--[cite: 3] --></li>
+<li class="fragment"><strong>No Diagnóstico Médico (ou Industrial):</strong> Sintomas (ou vibrações físicas) apresentam alta variabilidade e combinações caóticas. O modelo identifica a doença (ou falha) aprendendo sistematicamente com exemplos passados. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Estratégia e Vendas:</strong> “Quais peças sobressalentes saem em conjunto do almoxarifado?” Padrões ocultos nos dados operacionais guiam a eficiência dos estoques. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="motivação-reconhecimento-facial" class="slide level2">
+<h2>Motivação: Reconhecimento Facial</h2>
+<p><strong>Objetivo:</strong> Desenvolver um programa que reconheça pessoas pelo rosto.</p>
+<div class="fragment">
+<p><strong>Desafios:</strong></p>
+</div>
+<div class="fragment">
+<ul>
+<li>Diferentes expressões faciais.</li>
+<li>Alterações na face (óculos, barba, bigode).</li>
+<li>Variações de cortes de cabelo.</li>
+<li>Combinação de características que geram categorias complexas, como emoções.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Questão fundamental:</strong> Que características considerar?</p>
+</div>
+<div class="fragment">
+<p>Seres humanos utilizam o <strong>reconhecimento de padrões</strong> e aprendem o que observar após vários exemplos.</p>
+</div>
+</section>
+<section id="motivação-diagnóstico-médico" class="slide level2">
+<h2>Motivação: Diagnóstico Médico</h2>
+<p><strong>Objetivo:</strong> Desenvolver um programa que diagnostique pacientes com base em sintomas e exames.</p>
+<div class="fragment">
+<p><strong>Desafios:</strong></p>
+</div>
+<div class="fragment">
+<ul>
+<li>Complexidade e variabilidade dos sintomas.</li>
+<li>Requer conhecimento médico especializado e experiência.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Paralelo com médicos:</strong> Os médicos tomam decisões baseadas em <strong>aprendizado contínuo</strong> com a prática e novos casos.</p>
+</div>
+</section>
+<section id="aprendizado-de-máquina-machine-learning" class="slide level2">
+<h2>Aprendizado de Máquina (<em>Machine Learning</em>)</h2>
+<ul>
+<li>Trata-se do conjunto de técnicas matemáticas voltadas para <strong>criar uma função (hipótese)</strong> derivada diretamente de experiências e dados passados. <!--[cite: 3] --></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Esse mapeamento permite ao sistema generalizar resoluções sem depender de código e instruções preestabelecidas rigorosamente (IF-THEN limitados). <!--[cite: 3] --></li>
+</ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Exemplo Clássico Induzido (Regra Lógica):</strong> <!--[cite: 3] --> <em>Se a Temperatura do Mancal &gt; 90°C E Vibração de Alta Frequência estiver presente <span class="math inline">\(\Rightarrow\)</span> Estado: Risco de Falha.</em> <!--[cite: 3] --> O aprendizado de máquina “descobre” esses limites e regras observando terabytes de telemetria histórica. <!--[cite: 3] --></p>
+</blockquote>
+</div>
+</section>
+<section id="objetivo-da-classificação-visual" class="slide level2">
+<h2>Objetivo da Classificação Visual</h2>
+<p>Encontrar os hiperplanos, regras matemáticas ou funções discriminantes capazes de separar e isolar os objetos no espaço n-dimensional. <!--[cite: 3] --></p>
+<p><img data-src="images/image.ZERW02.png" class="quarto-figure quarto-figure-center" style="width:50.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="objetivo-da-classificação-visual-1" class="slide level2">
+<h2>Objetivo da Classificação Visual</h2>
+<p>Encontrar os hiperplanos, regras matemáticas ou funções discriminantes capazes de separar e isolar os objetos no espaço n-dimensional. <!--[cite: 3] --></p>
+<p><img data-src="images/image.11X402.png" class="quarto-figure quarto-figure-center" style="width:50.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="objetivo-da-classificação-visual-2" class="slide level2">
+<h2>Objetivo da Classificação Visual</h2>
+<p>Encontrar os hiperplanos, regras matemáticas ou funções discriminantes capazes de separar e isolar os objetos no espaço n-dimensional. <!--[cite: 3] --></p>
+<p><img data-src="images/image.ER3602.png" class="quarto-figure quarto-figure-center" style="width:50.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="objetivo-da-classificação-visual-3" class="slide level2">
+<h2>Objetivo da Classificação Visual</h2>
+<p>Encontrar os hiperplanos, regras matemáticas ou funções discriminantes capazes de separar e isolar os objetos no espaço n-dimensional. <!--[cite: 3] --></p>
+<p><img data-src="images/image.IUQQ02.png" class="quarto-figure quarto-figure-center" style="width:50.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="objetivo-da-classificação-visual-4" class="slide level2">
+<h2>Objetivo da Classificação Visual</h2>
+<p>Encontrar os hiperplanos, regras matemáticas ou funções discriminantes capazes de separar e isolar os objetos no espaço n-dimensional. <!--[cite: 3] --></p>
+<p><img data-src="images/image.4Q9X02.png" class="quarto-figure quarto-figure-center" style="width:50.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="atributos-e-discriminabilidade" class="slide level2">
+<h2>Atributos e Discriminabilidade</h2>
+<p>A separabilidade das classes depende fortemente de quais características usamos (Feature Engineering). <!--[cite: 3] --></p>
+<p><img data-src="images/image.LVXA12.png" class="quarto-figure quarto-figure-center" style="width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="atributos-e-discriminabilidade-1" class="slide level2">
+<h2>Atributos e Discriminabilidade</h2>
+<p>Um mapeamento inadequado torna a classificação matematicamente intratável sem modelos não-lineares severos. <!--[cite: 3] --></p>
+<p><img data-src="images/image.U35S02.png" class="quarto-figure quarto-figure-center" style="width:80.0%"> <!--[cite: 3] --></p>
+</section></section>
+<section>
+<section id="aprendizagem-supervisionada" class="title-slide slide level1 center">
+<h1>Aprendizagem Supervisionada</h1>
+
+</section>
+<section id="classificação" class="slide level2">
+<h2>Classificação</h2>
+<p><strong>Definição:</strong> Associar objetos a uma categoria ou classe com base em suas características.</p>
+<div class="fragment">
+<p><strong>Exemplos:</strong></p>
+<ul>
+<li>Diagnóstico de pacientes com base em sintomas e exames.</li>
+<li>Classificação de clientes por risco de inadimplência.</li>
+<li>Organização automática de documentos por categorias.</li>
+<li>Identificação de spam em e-mails.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Os algoritmos de classificação aprendem a classificar melhor com o tempo à medida que novos exemplos/objetos são observados.</p>
+</div>
+</section>
+<section id="o-fluxo-supervisionado" class="slide level2">
+<h2>O Fluxo Supervisionado</h2>
+<ul>
+<li class="fragment">O algoritmo é alimentado com entradas <span class="math inline">\(\mathbf{x}\)</span> e seus rótulos corretos <span class="math inline">\(y\)</span> conhecidos (<em>Ground Truth</em>). <!--[cite: 3] --></li>
+<li class="fragment">O modelo procura uma função heurística onde <span class="math inline">\(h(\mathbf{x}) \approx f(\mathbf{x})\)</span>. <!--[cite: 3] --></li>
+<li class="fragment">O objetivo primário é a <strong>generalização</strong>: o modelo deve conseguir prever as classes para dados completamente novos e nunca vistos. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Aplicações:</strong> Classificação do grau de risco financeiro, categorização automática de PDFs técnicos, ou detecção acústica de falhas. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="componentes-analíticos" class="slide level2">
+<h2>Componentes Analíticos</h2>
+<ul>
+<li><strong>Instância / Objeto:</strong> É a tupla completa contendo o perfil de atributos mais a sua respectiva classe. <!--[cite: 3] --></li>
+<li><strong>Descritores (Features):</strong> As variáveis independentes alimentadas no modelo. <!--[cite: 3] --></li>
+<li><strong>Classe / Alvo (Target):</strong> A variável dependente (resultado a ser previsto). <!--[cite: 3] --></li>
+</ul>
+<div class="fragment">
+<p><strong>Classificação e Natureza dos Atributos:</strong> <!--[cite: 3] --></p>
+<ul>
+<li><strong>Numéricos vs.&nbsp;Categóricos:</strong> Peso (kg) vs.&nbsp;Gravidade da Falha. <!--[cite: 3] --></li>
+<li><strong>Contínuos vs.&nbsp;Discretos:</strong> Corrente do Motor (Amperes) vs.&nbsp;Quantidade de Defeitos. <!--[cite: 3] --></li>
+<li><strong>Ordinais vs.&nbsp;Nominais:</strong> Estatura (P, M, G) vs.&nbsp;Fabricante (Siemens, WEG). <!--[cite: 3] --></li>
+</ul>
+</div>
+</section>
+<section id="desafios-comuns-em-dados-de-treinamento" class="slide level2">
+<h2>Desafios Comuns em Dados de Treinamento</h2>
+<ul>
+<li class="fragment"><strong>Desbalanceamento Estrutural:</strong> Uma classe sobrepõe amplamente a outra. Na indústria, temos meses de “operação normal” contra 3 horas de “falha”. O modelo tenderá a favorecer a maioria estatística se não corrigido. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Qualidade das Features:</strong> O impacto de features irrelevantes (aumentam a confusão) ou features redundantes (multiplicam o peso de um mesmo fenômeno indevidamente, gerando colinearidade). <!--[cite: 3] --></li>
+<li class="fragment"><strong>Ruído Aleatório Intrinseco:</strong> Flutuações térmicas, erros de transcrição humana ou limitações físicas no <em>hardware</em> do sensor. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="principais-indutores-k-nearest-neighbors-knn" class="slide level2">
+<h2>Principais Indutores: K-Nearest Neighbors (KNN)</h2>
+<p>Um algoritmo preguiçoso (<em>lazy learning</em>) baseado puramente em métricas espaciais (distância). <!--[cite: 3] --></p>
+<p><strong>Vantagens:</strong> <!--[cite: 3] --></p>
+<ul>
+<li>Facílimo de compreender, auditar e codificar matematicamente. <!--[cite: 3] --></li>
+<li>Não compila um modelo explícito genérico; as instâncias históricas <em>são</em> o próprio modelo de consulta. <!--[cite: 3] --></li>
+</ul>
+<p><strong>Desvantagens:</strong> <!--[cite: 3] --></p>
+<ul>
+<li>Complexidade de inferência e custo computacional altíssimos para bases contendo milhões de linhas (Big Data). <!--[cite: 3] --></li>
+<li>Demanda <strong>obrigatoriamente</strong> que todas as características sejam normalizadas ou reescaladas antes do uso. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="knn-o-impacto-da-escala" class="slide level2">
+<h2>KNN: O Impacto da Escala</h2>
+<p>Se o <em>Atributo 1</em> está na casa das centenas, a distância Euclidiana será dominada por ele.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Base Bruta Original (Sem Normalização)</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Atributo 1</th>
+<th style="text-align: center;">Atributo 2</th>
+<th style="text-align: center;">Classe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">150</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">A</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><strong>Base Processada (Após Normalização Numérica)</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Atributo 1</th>
+<th style="text-align: center;">Atributo 2</th>
+<th style="text-align: center;">Classe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">0.7</td>
+<td style="text-align: center;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.6</td>
+<td style="text-align: center;">A</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="principais-indutores-árvores-de-decisão" class="slide level2">
+<h2>Principais Indutores: Árvores de Decisão</h2>
+<p>Segmentam iterativamente o espaço baseado no ganho de informação (Entropia ou Gini).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vantagens</strong></p>
+<ul>
+<li>Mapeamento transparente e altamente interpretável visualmente (regras explícitas IF-THEN).</li>
+<li>Lida naturalmente com atributos categóricos e numéricos contínuos simultaneamente.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li>Tendência ao <strong>Overfitting</strong>, especialmente em árvores profundas.</li>
+<li>Alta sensibilidade aos dados: pequenas alterações na base de treinamento podem resultar em árvores significativamente diferentes.</li>
+</ul>
+</div></div>
+</section>
+<section id="exemplo-de-construção-de-árvore" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/1.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-1" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/2.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-2" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/3.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-3" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/4.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-4" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/5.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-5" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/6.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-6" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/7.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-7" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/8.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-8" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/9.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-9" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/10.png" class="quarto-figure quarto-figure-center" style="width:90.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-10" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/11.png" class="quarto-figure quarto-figure-center" style="width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-11" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/12.png" class="quarto-figure quarto-figure-center" style="width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-12" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/13.png" class="quarto-figure quarto-figure-center" style="width:70.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="exemplo-de-construção-de-árvore-13" class="slide level2">
+<h2>Exemplo de Construção de Árvore</h2>
+<p><img data-src="images/ad/14.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Fonte Adaptada: www.exa.unicen.edu.ar/catedras/mlearnin"> <!--[cite: 3] --></p>
+</section>
+<section id="ensembles-random-forest" class="slide level2">
+<h2>Ensembles: Random Forest</h2>
+<p>Método baseado no treinamento paralelo de dezenas ou centenas de Árvores de Decisão (<em>bagging</em>).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vantagens</strong></p>
+<ul>
+<li>Reduz significativamente o <strong>overfitting</strong> das árvores individuais por meio da diversidade das amostras.</li>
+<li>Alta robustez e excelente desempenho preditivo, especialmente em dados tabulares.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li>Maior custo computacional de treinamento em comparação com uma única árvore.</li>
+<li>O desempenho pode ser afetado por atributos altamente correlacionados sem tratamento adequado.</li>
+</ul>
+</div></div>
+</section>
+<section id="métodos-de-boosting" class="slide level2">
+<h2>Métodos de Boosting</h2>
+<p>O <strong>Boosting</strong> é uma técnica de <em>ensemble</em> que combina vários modelos fracos para formar um modelo mais preciso. Cada novo modelo é treinado para corrigir os erros cometidos pelos modelos anteriores, melhorando o desempenho de forma incremental.<br>
+<strong>Principais algoritmos</strong></p>
+<ul>
+<li><strong>AdaBoost:</strong> aumenta o peso das amostras classificadas incorretamente.</li>
+<li><strong>Gradient Boosting:</strong> otimiza o modelo reduzindo iterativamente o erro.</li>
+<li><strong>XGBoost:</strong> versão otimizada do Gradient Boosting, com alta eficiência e desempenho.</li>
+<li><strong>CatBoost:</strong> otimizado para trabalhar com atributos categóricos, exigindo pouco pré-processamento.</li>
+<li><strong>LightGBM:</strong> projetado para treinamento rápido e escalabilidade em <em>big data</em>.</li>
+</ul>
+</section>
+<section id="ensembles-adaboost" class="slide level2">
+<h2>Ensembles: AdaBoost</h2>
+<p>Treina uma sequência de modelos fracos, onde cada novo modelo dá <strong>maior atenção às amostras classificadas incorretamente</strong> pelos modelos anteriores.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vantagens</strong></p>
+<ul>
+<li>Simples de implementar e compreender.</li>
+<li>Reduz o erro ao focar progressivamente nos exemplos mais difíceis.</li>
+<li>Pode alcançar alta precisão quando os dados possuem pouco ruído.</li>
+<li>Funciona bem com modelos fracos, como árvores de decisão rasas (<em>stumps</em>).</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li>Sensível a <strong>ruídos</strong> e <strong>outliers</strong>, pois tende a aumentar o peso dessas amostras.</li>
+<li>O treinamento é sequencial, dificultando a paralelização.</li>
+<li>Pode apresentar queda de desempenho em bases muito complexas ou desbalanceadas.</li>
+<li>Requer ajuste adequado do número de modelos e da taxa de aprendizado.</li>
+</ul>
+</div></div>
+</section>
+<section id="ensembles-adaboost-1" class="slide level2">
+<h2>Ensembles: AdaBoost</h2>
+<p><img data-src="images/adaboost.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="ensembles-gradient-boosting" class="slide level2 smaller">
+<h2>Ensembles: Gradient Boosting</h2>
+<p>Constrói uma sequência de modelos fracos, onde cada novo modelo é treinado para corrigir os erros residuais do conjunto de modelos já criado.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vantagens</strong></p>
+<ul>
+<li>Geralmente apresenta alta precisão em tarefas de classificação e regressão.</li>
+<li>Modela relações complexas entre os atributos.</li>
+<li>Flexível, permitindo diferentes funções de perda conforme o problema.</li>
+<li>Base para algoritmos modernos, como <strong>XGBoost</strong>, <strong>LightGBM</strong> e <strong>CatBoost</strong>.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li>Treinamento mais lento devido à construção sequencial dos modelos.</li>
+<li>Requer ajuste cuidadoso de hiperparâmetros (número de árvores, profundidade e taxa de aprendizado).</li>
+<li>Pode sofrer <strong>overfitting</strong> se os parâmetros não forem bem configurados.</li>
+<li>Consome mais recursos computacionais do que métodos mais simples.</li>
+</ul>
+</div></div>
+</section>
+<section id="ensembles-gradient-boosting-1" class="slide level2">
+<h2>Ensembles: Gradient Boosting</h2>
+<p><img data-src="images/gradboost.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="support-vector-machines-svm" class="slide level2 smaller">
+<h2>Support Vector Machines (SVM)</h2>
+<p>Encontra um hiperplano que separa as classes com a maior margem possível, utilizando os vetores de suporte (amostras mais próximas da fronteira).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vantagens</strong></p>
+<ul>
+<li>Excelente desempenho em problemas de alta dimensionalidade.</li>
+<li>Eficaz quando há poucas amostras e muitos atributos.</li>
+<li>O <strong>Kernel Trick</strong> permite resolver problemas com separação não linear convertendo as características num domínio hiperdimensional alternativo.</li>
+<li>Boa capacidade de generalização quando bem configurado.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Desvantagens</strong></p>
+<ul>
+<li>Escolher o <strong>kernel</strong> e seus parâmetros pode ser desafiador.</li>
+<li>Treinamento lento em bases de dados muito grandes.</li>
+<li>Menor interpretabilidade em comparação com árvores de decisão.</li>
+<li>Sensível à escolha dos hiperparâmetros.</li>
+</ul>
+</div></div>
+</section>
+<section id="representação-gráfica-do-svm" class="slide level2">
+<h2>Representação Gráfica do SVM</h2>
+<p>Separação de classes maximizando a margem (largura entre os vetores de suporte). <!--[cite: 3] --></p>
+<p><img data-src="images/svm_example.png" class="quarto-figure quarto-figure-center" style="width:50.0%"> <!--[cite: 3] --></p>
+</section></section>
+<section>
+<section id="aprendizagem-não-supervisionada" class="title-slide slide level1 center">
+<h1>Aprendizagem Não Supervisionada</h1>
+
+</section>
+<section id="clustering-em-ação" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/1.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-1" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/2.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-2" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/3.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-3" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/4.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-4" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/5.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-5" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/6.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-6" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/7.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-7" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/8.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-8" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/9.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-9" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/10.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-10" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/11.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-11" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/12.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-12" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/13.png" style="display:block; margin:auto;;width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="clustering-em-ação-13" class="slide level2">
+<h2>Clustering em Ação</h2>
+<p><img data-src="images/clust/14.png" style="display:block; margin:auto;;width:80.0%" alt="Fonte: www.ele.ita.br/~takashi/EE214_Clustering.ppt"> <!--[cite: 3] --></p>
+<div class="footer">
+<p>Fonte: www.ele.ita.br/~takashi/EE214_Clustering.ppt</p>
+</div>
+</section>
+<section id="classificação-vs.-clusterização" class="slide level2">
+<h2>Classificação vs.&nbsp;Clusterização</h2>
+<p><strong>Na Classificação (Supervisionada):</strong> <!--[cite: 3] --></p>
+<ul>
+<li>A resposta empírica e as fronteiras de categorias são preestabelecidas. <!--[cite: 3] --></li>
+<li>Exemplo: O engenheiro ensina ao modelo os sintomas prévios que resultaram na parada mecânica histórica. <!--[cite: 3] --></li>
+</ul>
+<div class="fragment">
+<p><strong>Na Clusterização (Não Supervisionada):</strong> <!--[cite: 3] --></p>
+<ul>
+<li>As fronteiras não são impostas ou predefinidas pela interferência humana no banco de dados base. <!--[cite: 3] --></li>
+<li>Grupos são formados espontaneamente iterando sobre matrizes baseadas em limiares topológicos e critérios métricos estritos de afinidade (similaridade). <!--[cite: 3] --></li>
+</ul>
+</div>
+</section>
+<section id="topologia-dos-agrupamentos" class="slide level2">
+<h2>Topologia dos Agrupamentos</h2>
+<p>Os algoritmos particionam instâncias isoladas otimizando dois critérios simultâneos e fundamentais: <!--[cite: 3] --></p>
+<ol type="1">
+<li><strong>Alta Similaridade Intra-cluster:</strong> Os vetores contidos num mesmo núcleo agrupado precisam estar geometricamente próximos e ser intrinsecamente homogêneos. <!--[cite: 3] --></li>
+<li><strong>Baixa Similaridade Inter-cluster:</strong> Os núcleos estabelecidos independentemente devem preservar fronteiras claras (caráter heterogêneo) distanciando os grupos divergentes. <!--[cite: 3] --></li>
+</ol>
+<div class="fragment">
+<p><strong>Objetivo:</strong></p>
+<ul>
+<li>Maximizar a similaridade dentro de cada cluster</li>
+<li>Minimizar a similaridade entre clusters diferentes</li>
+</ul>
+</div>
+</section>
+<section id="principais-etapas-da-clusterização" class="slide level2">
+<h2>Principais Etapas da Clusterização</h2>
+<ol type="1">
+<li><p><strong>Aquisição dos dados</strong></p>
+<ul>
+<li>Seleção de amostras e características</li>
+</ul></li>
+<li><p><strong>Pré-processamento dos dados</strong></p>
+<ul>
+<li>Normalização e mudança de escala</li>
+<li>Extração de características</li>
+</ul></li>
+<li><p><strong>Construção da Matriz de Dados</strong></p></li>
+<li><p><strong>Cálculo da Similaridade</strong></p>
+<ul>
+<li>Escolha de uma medida de similaridade</li>
+<li>Construção da Matriz de Similaridades</li>
+</ul></li>
+<li><p><strong>Seleção de Algoritmo de Cluster</strong></p></li>
+<li><p><strong>Análise e Interpretação dos Resultados</strong></p></li>
+</ol>
+</section>
+<section id="abordagens-analíticas-de-agrupamento" class="slide level2">
+<h2>Abordagens Analíticas de Agrupamento</h2>
+<ul>
+<li class="fragment"><strong>Estruturação Algorítmica (Particionais vs.&nbsp;Hierárquicos):</strong> <!--[cite: 3] -->
+<ul>
+<li class="fragment">Particionais processam os dados isolando fronteiras em aglomerados desvinculados estruturalmente na matriz dimensional e disjuntos por definição (ex: <em>K-Means</em> clássico). <!--[cite: 3] --></li>
+<li class="fragment">Hierárquicos derivam um ecossistema complexo (dendrograma) conectando subclusters progressivamente estruturados de forma aninhada. <!--[cite: 3] --></li>
+</ul></li>
+<li class="fragment"><strong>Matriz de Pertinência:</strong> <!--[cite: 3] -->
+<ul>
+<li class="fragment">Exclusivos: Determinam vetorialmente o pertencimento único e fechado a um agrupamento. <!--[cite: 3] --></li>
+<li class="fragment">Não exclusivos (<em>Fuzzy</em> ou probabilísticos): Um equipamento pode pertencer a classes diferentes com flutuações de probabilidade (<span class="math inline">\(0.7\)</span> no Cluster A, <span class="math inline">\(0.3\)</span> no Cluster B). <!--[cite: 3] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="medidas-de-similaridade-e-correlação" class="slide level2">
+<h2>Medidas de Similaridade e Correlação</h2>
+<p>Para o sistema agrupar as amostras corretamente, precisamos instruir como ele calcula a afinidade analítica entre elas: <!--[cite: 3] --></p>
+<ul>
+<li class="fragment"><strong>Medidas de Distância Pura (Geometria Direta):</strong> Euclidiana e Manhattan, cujo princípio incide no fator numérico (proximidade métrica estrita do valor numérico nos eixos ortogonais do sistema hiperespacial contínuo). <!--[cite: 3] --></li>
+<li class="fragment"><strong>Medidas Correlacionais Analíticas:</strong> Coeficiente linear empírico de Pearson; ignora magnitudes e capta especificamente dinâmicas e tendências acopladas nos perfis dimensionais. <!--[cite: 3] --></li>
+<li class="fragment"><strong>Medidas de Associação de Presença/Intersecção (Conjuntos):</strong> Índice Jaccard. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="medidas-de-similaridade-e-correlação-1" class="slide level2">
+<h2>Medidas de Similaridade e Correlação</h2>
+<p><strong>Comparação:</strong></p>
+<ul>
+<li>Medidas correlacionais não consideram a magnitude, apenas padrões</li>
+<li>Medidas de distância se concentram na proximidade de valores</li>
+</ul>
+</section>
+<section id="o-que-é-uma-boa-clusterização" class="slide level2">
+<h2>O que é uma boa clusterização?</h2>
+<ul>
+<li>Um bom agrupamento fornece grupos de alta qualidade quando:
+<ul>
+<li>A similaridade <strong>intra-cluster</strong> é alta</li>
+<li>A similaridade <strong>inter-cluster</strong> é baixa</li>
+</ul></li>
+<li>A qualidade depende de:
+<ul>
+<li>Medida de similaridade adotada</li>
+<li>Algoritmo de cluster utilizado</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="regressão" class="title-slide slide level1 center">
+<h1>Regressão</h1>
+
+</section>
+<section id="o-paradigma-da-regressão" class="slide level2">
+<h2>O Paradigma da Regressão</h2>
+<p>Na classificação nós inferimos uma <em>categoria</em> discreta. A regressão projeta um <em>valor contínuo</em> em uma variável contínua estendida. <!--[cite: 3] --></p>
+<p>O objetivo é modelar a relação entre uma variável dependente <span class="math inline">\((y)\)</span> e uma ou mais variáveis independentes <span class="math inline">\((x_1 , x_2 , . . . , x_n )\)</span>.</p>
+<p>A forma mais simples é a <em>regressão linear</em>: <!--[cite: 3] --> <span class="math display">\[ y = \beta_0 + \beta_1 x_1 + \epsilon \]</span> <!--[cite: 3] --></p>
+<p><em>O modelo foca em otimizar <span class="math inline">\((\beta_0, \beta_1)\)</span> visando reduzir a margem residual (<span class="math inline">\(\epsilon\)</span>), isto é, a diferença entre os valores previstos e reais.</em> <!--[cite: 3] --></p>
+</section>
+<section id="tipos-de-regressão" class="slide level2">
+<h2>Tipos de Regressão</h2>
+<ul>
+<li><strong>Regressão Linear</strong>
+<ul>
+<li>Modela uma relação aproximadamente linear entre as variáveis de entrada e a variável resposta.</li>
+</ul></li>
+<li><strong>Regressão Polinomial</strong>
+<ul>
+<li>Permite modelar relações não lineares por meio de termos polinomiais, mantendo a estrutura de uma regressão linear.</li>
+</ul></li>
+<li><strong>Regressão Logística</strong>
+<ul>
+<li>Utilizada para problemas de classificação, estimando a probabilidade de uma observação pertencer a uma classe.</li>
+</ul></li>
+<li><strong>Regressão Ridge e Lasso</strong>
+<ul>
+<li>Introduzem regularização para reduzir o sobreajuste (<em>overfitting</em>) e melhorar a capacidade de generalização do modelo.</li>
+</ul></li>
+</ul>
+</section>
+<section id="aspectos-positivos-da-regressão" class="slide level2">
+<h2>Aspectos Positivos da Regressão</h2>
+<ul>
+<li class="fragment"><strong>Simplicidade e Interpretabilidade</strong>
+<ul>
+<li class="fragment">Fácil de compreender, implementar e interpretar, especialmente na regressão linear. Os coeficientes do modelo mostram como cada variável influencia a variável resposta.</li>
+</ul></li>
+<li class="fragment"><strong>Eficiência computacional</strong>
+<ul>
+<li class="fragment">Treinamento rápido e baixo custo computacional, mesmo em conjuntos de dados grandes.</li>
+</ul></li>
+<li class="fragment"><strong>Predição de valores contínuos</strong>
+<ul>
+<li class="fragment">Adequada para estimar variáveis numéricas contínuas.</li>
+</ul></li>
+<li class="fragment"><strong>Flexibilidade</strong>
+<ul>
+<li class="fragment">Pode incorporar transformações, interações entre variáveis e técnicas de regularização (Ridge e Lasso).</li>
+</ul></li>
+</ul>
+</section>
+<section id="limitações-da-regressão" class="slide level2">
+<h2>Limitações da Regressão</h2>
+<ul>
+<li class="fragment"><strong>Sensibilidade a outliers e Dependência da Qualidade dos Dados</strong>
+<ul>
+<li class="fragment">Valores extremos podem influenciar significativamente os coeficientes do modelo. Ruído e erros de medição podem comprometer o desempenho e a confiabilidade do modelo.</li>
+</ul></li>
+<li class="fragment"><strong>Hipótese de linearidade</strong>
+<ul>
+<li class="fragment">A regressão linear pressupõe uma relação aproximadamente linear entre as variáveis, o que nem sempre ocorre na prática.</li>
+</ul></li>
+<li class="fragment"><strong>Risco de overfitting</strong>
+<ul>
+<li class="fragment">Modelos muito complexos, como regressões polinomiais de alto grau, podem se ajustar excessivamente aos dados de treinamento.</li>
+</ul></li>
+<li class="fragment"><strong>Multicolinearidade</strong>
+<ul>
+<li class="fragment">Alta correlação entre variáveis explicativas dificulta a estimação dos coeficientes e reduz sua interpretabilidade.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="engenharia-e-seleção-de-características-feature-selection" class="title-slide slide level1 center">
+<h1>Engenharia e Seleção de Características (<em>Feature Selection</em>)</h1>
+
+</section>
+<section id="seleção-de-características" class="slide level2">
+<h2>Seleção de Características</h2>
+<p>Muitos algoritmos de classificação são projetados para selecionar as características mais relevantes para a tomada de decisão.</p>
+<ul>
+<li>Algoritmos de indução de árvores de decisão, por exemplo, são projetados para escolher o atributo mais promissor para particionar o conjunto de dados.</li>
+<li>O objetivo é nunca selecionar atributos irrelevantes.</li>
+</ul>
+<blockquote>
+<p>A questão é: <strong>Mais atributos implicam em maior poder discriminatório?</strong></p>
+</blockquote>
+</section>
+<section id="impacto-de-características-irrelevantes" class="slide level2">
+<h2>Impacto de Características Irrelevantes</h2>
+<p>A inclusão de características pouco significativas em relação à classe alvo geralmente “confunde” o algoritmo de classificação/aprendizado.</p>
+<ul>
+<li>A presença de atributos irrelevantes pode diminuir a precisão do modelo, pois esses atributos podem criar “ruído” no processo de decisão.</li>
+<li>Muitos atributos podem resultar em overfitting, onde o modelo se ajusta demais aos dados de treinamento, perdendo capacidade de generalização.</li>
+</ul>
+</section>
+<section id="algoritmos-mais-afetados" class="slide level2">
+<h2>Algoritmos Mais Afetados</h2>
+<p>A seleção inadequada de características pode afetar mais alguns tipos de algoritmos:</p>
+<ul>
+<li><strong>Indutores de Árvores de Decisão:</strong> A quantidade de dados é reduzida continuamente a cada escolha/divisão, o que pode gerar complexidade excessiva.</li>
+<li><strong>Indutores baseados em instâncias (e.g., k-NN):</strong> Esses algoritmos sempre trabalham com vizinhanças locais e levam em consideração apenas algumas poucas instâncias (<span class="math inline">\(k\)</span>).</li>
+</ul>
+<p>É conhecido que, para se alcançar um bom nível de desempenho, a quantidade de amostras necessárias cresce exponencialmente.</p>
+</section>
+<section id="benefícios-da-seleção-de-características" class="slide level2">
+<h2>Benefícios da Seleção de Características</h2>
+<ul>
+<li><strong>Melhora o desempenho preditivo:</strong> A remoção de atributos irrelevantes pode melhorar a capacidade do modelo de fazer previsões precisas.</li>
+<li><strong>Acelera o processo de aprendizado:</strong> Com menos dados, o algoritmo pode aprender mais rapidamente.</li>
+<li><strong>Representação mais compacta:</strong> A seleção foca nas características realmente importantes para a definição do conceito/classe a ser aprendido.</li>
+</ul>
+<p>No entanto, o processo de seleção de características pode ser custoso em termos computacionais e, às vezes, seu custo pode superar o ganho em desempenho.</p>
+</section>
+<section id="redução-de-dimensionalidade" class="slide level2">
+<h2>Redução de Dimensionalidade</h2>
+<ul>
+<li>O objetivo é criar uma representação reduzida das características, preservando ao máximo a informação presente nos dados.</li>
+<li>Em geral, a redução de dimensionalidade melhora o desempenho dos classificadores.</li>
+<li>O objetivo é eliminar atributos redundantes ou irrelevantes, simplificando a fase de aprendizado e classificação.</li>
+</ul>
+</section>
+<section id="métodos-de-seleção-de-características" class="slide level2">
+<h2>Métodos de Seleção de Características</h2>
+<p>Existem diferentes abordagens para a seleção de características, que podem ser divididas em dois principais tipos:</p>
+<ul>
+<li><strong>Manual:</strong> Melhor quando há um entendimento profundo tanto sobre o problema de aprendizado quanto sobre o significado das características.</li>
+<li><strong>Automático:</strong>
+<ul>
+<li><em>Filtros:</em> Método usado antes do processo de aprendizado para selecionar um subconjunto de características com base em critérios estatísticos ou heurísticos.</li>
+<li><em>Wrappers:</em> A escolha do subconjunto de características está integrada com o algoritmo de aprendizado/classificador, avaliando a qualidade do conjunto de características durante o treinamento.</li>
+</ul></li>
+</ul>
+</section>
+<section id="métodos-automáticos" class="slide level2">
+<h2>Métodos Automáticos</h2>
+<p>Remover redundância melhora a representação matemática reduzida, refinando as aproximações de aprendizado. As principais principais em Inteligência Artificial incluem duas visões matemáticas em métodos estatísticos: <!--[cite: 3] --></p>
+<ul>
+<li><strong>Abordagem <em>Filtros</em>:</strong> Opera pré-processando e selecionando características estatísticas avaliando individualmente as forças e variáveis (ex. critério Qui-quadrado e correlações estritas tipo Pearson) desvinculadas das especificidades do algoritmo. <!--[cite: 3] --></li>
+<li><strong>Abordagem <em>Wrappers</em>:</strong> Avalia os resultados integrados recursivamente de subconjuntos completos empiricamente combinados submetidos na arquitetura contínua de validação da indução, verificando de fato no modelo iterativamente. <!--[cite: 3] --></li>
+</ul>
+</section>
+<section id="algoritmos-wrappers---busca-para-frente-sfs" class="slide level2 smaller">
+<h2>Algoritmos Wrappers - Busca para Frente (SFS)</h2>
+<p>A <strong>Busca Sequencial para Frente (SFS)</strong> é um algoritmo de seleção de características que segue os seguintes passos:</p>
+<ul>
+<li>Inicia com o subconjunto de características vazio.</li>
+<li>A melhor característica individual é selecionada de acordo com uma função critério.</li>
+<li>A segunda característica que, em conjunto com a primeira, formar a melhor dupla, é selecionada.</li>
+<li>Este processo continua de forma “gulosa”, com a adição de características até que:
+<ul>
+<li>O tamanho máximo do subconjunto seja atingido, ou</li>
+<li>A função critério pare de “melhorar” com a adição de novas características.</li>
+</ul></li>
+</ul>
+<p><strong>Efeito “nesting”:</strong> A seleção de características pode ser influenciada por características já adicionadas.</p>
+</section>
+<section id="algoritmos-wrappers---busca-sequencial-para-trás-sbs" class="slide level2 smaller">
+<h2>Algoritmos Wrappers - Busca Sequencial para Trás (SBS)</h2>
+<p>A <strong>Busca Sequencial para Trás (SBS)</strong> segue uma abordagem semelhante à Busca para Frente, mas com algumas diferenças:</p>
+<ul>
+<li>Inicia com o subconjunto contendo todas as características disponíveis.</li>
+<li>A cada passo, uma característica é removida com base na função critério adotada.</li>
+<li>É comum restringir a busca a subconjuntos menores de características, evitando a remoção de muitas características de uma vez.</li>
+<li>Pode-se adotar uma medida de melhoria a cada iteração para evitar que pequenas variações causem a remoção excessiva de características.</li>
+</ul>
+</section>
+<section id="busca-flutuante-para-frente-sffs" class="slide level2">
+<h2>Busca Flutuante para Frente (SFFS)</h2>
+<p>A <strong>Busca Flutuante para Frente (SFFS)</strong> combina as ideias da busca para frente com uma técnica de “flutuação” das características:</p>
+<ul>
+<li>A busca é iniciada com o subconjunto vazio, selecionando a melhor característica individualmente de acordo com uma função critério.</li>
+<li>Em seguida, a segunda característica que, em conjunto com a primeira, formar a melhor dupla, é escolhida.</li>
+<li>A partir da terceira característica, o algoritmo tenta fazer uma exclusão condicional para remover características que não contribuem significativamente para o desempenho.</li>
+</ul>
+<p><strong>Evita o efeito “nesting”:</strong> Ao permitir a remoção de características durante o processo, evita-se a seleção de um conjunto subótimo.</p>
+</section>
+<section id="sbfs-seleção-sequencial-flutuante-para-trás" class="slide level2">
+<h2>SBFS (Seleção Sequencial Flutuante para Trás)</h2>
+<p>A <strong>Seleção Sequencial Flutuante para Trás (SBFS)</strong> segue a lógica do SFFS, mas invertendo o processo:</p>
+<ul>
+<li>Inicia com todas as características e tenta remover as menos importantes de acordo com a função critério.</li>
+<li>Durante a busca, o algoritmo permite a reinclusão de características que possam melhorar o desempenho, garantindo que o processo não se prenda a um conjunto de características subótimo.</li>
+</ul>
+</section>
+<section id="filtros-vs-wrappers" class="slide level2 smaller">
+<h2>Filtros vs Wrappers</h2>
+<p><strong>Filtros:</strong></p>
+<ul>
+<li>O processo de escolha do subconjunto de características ocorre antes do aprendizado.</li>
+<li>Não dependem diretamente do modelo de classificação utilizado.</li>
+<li>Exemplos: Testes estatísticos, correlação de Pearson, teste qui-quadrado.</li>
+</ul>
+<p><strong>Wrappers:</strong></p>
+<ul>
+<li>A escolha do subconjunto de características está “empacotada” com o algoritmo de aprendizado.</li>
+<li>Dependem diretamente do modelo de classificação utilizado.</li>
+<li>Exemplos: Algoritmos como SFS, SBS, e métodos baseados em redes neurais.</li>
+</ul>
+<p><strong>Diferença principal:</strong> Filtros selecionam características antes do aprendizado, enquanto Wrappers envolvem o aprendizado no processo de seleção.</p>
+</section></section>
+<section>
+<section id="avaliação-e-validação-de-modelos" class="title-slide slide level1 center">
+<h1>Avaliação e Validação de Modelos</h1>
+
+</section>
+<section id="matriz-de-confusão" class="slide level2">
+<h2>Matriz de Confusão</h2>
+<p>A <strong>Matriz de Confusão</strong> tem como objetivo medir a similaridade entre as respostas do classificador e as classes conhecidas para as amostras. Cada elemento desta matriz indica o quão “confuso” foi o classificador ao tentar classificar corretamente cada amostra.</p>
+<ul>
+<li>Utilizada para estimar o erro de classificação ao sumarizar os resultados do classificador.</li>
+<li>O número de acertos é identificado na diagonal principal <span class="math inline">\(M(C_i, C_i)\)</span>.</li>
+<li>Os elementos fora da diagonal <span class="math inline">\(M(C_i, C_j)\)</span>, para <span class="math inline">\(i \neq j\)</span>, representam os erros de classificação.</li>
+<li>Em um classificador ótimo, a diagonal principal possui valores positivos e todas as demais posições têm valores iguais a zero.</li>
+</ul>
+</section>
+<section id="estrutura-da-matriz" class="slide level2">
+<h2>Estrutura da Matriz</h2>
+<p><img data-src="images/confusion.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="métodos-de-validação" class="slide level2 smaller">
+<h2>Métodos de Validação</h2>
+<p><strong>Holdout:</strong></p>
+<ul>
+<li>O conjunto de dados é dividido em dois subconjuntos: (2/3) para treinamento e (1/3) para teste.</li>
+</ul>
+<p><strong>Validação Cruzada (k-fold):</strong></p>
+<ul>
+<li>O conjunto de dados é dividido em (k) subconjuntos exclusivos e exaustivos.</li>
+<li>O algoritmo é executado (k) vezes, utilizando um subconjunto diferente para teste em cada execução.</li>
+</ul>
+<p><strong>Bootstrap:</strong></p>
+<ul>
+<li>A amostragem é feita com reposição, permitindo que o mesmo exemplo apareça múltiplas vezes no conjunto de treinamento.</li>
+</ul>
+</section>
+<section id="desbalanceamento-entre-classes" class="slide level2 smaller">
+<h2>Desbalanceamento entre Classes</h2>
+<p>Suponha um conjunto de amostras com a seguinte distribuição de classes:</p>
+<ul>
+<li>distribuição((C1, C2, C3) = (99,00%, 0,25%, 0,75%)).</li>
+</ul>
+<p>Um classificador simples que classifique sempre novos exemplos como pertencentes à classe majoritária (C1) teria uma acurácia de (99,00%).</p>
+<ul>
+<li>Isto pode ser indesejável quando as classes minoritárias, como (C2) e (C3), contêm informações importantes.</li>
+</ul>
+<div class="fragment">
+<p><strong>Exemplo:</strong></p>
+<ul>
+<li><p>(C1): transação normal (500 transações)</p></li>
+<li><p>(C2): transação fraude (4 operações)</p></li>
+<li><p>Acurácia (amostras) = 90%</p></li>
+<li><p>Classificou corretamente 454 transações que não são fraude.</p></li>
+<li><p>Não acertou nenhuma das transações de fraude.</p></li>
+</ul>
+<p><strong>Pode ser considerado um “bom classificador”?</strong></p>
+</div>
+</section>
+<section id="o-perigo-do-desbalanceamento-ilusão-da-acurácia" class="slide level2">
+<h2>O Perigo do Desbalanceamento (Ilusão da Acurácia)</h2>
+<ul>
+<li>Histórico de Vibração (<span class="math inline">\(C1\)</span> - Operação Normal): 500 aferições (transações). <!--[cite: 3] --></li>
+<li>Histórico de Choque Anômalo (<span class="math inline">\(C2\)</span> - Falha / Fraude): 4 aferições (transações atípicas operacionais avaliáveis perigosas com alto risco na ponta). <!--[cite: 3] --></li>
+</ul>
+<p>Um classificador que prevê sempre a classe majoritária pode apresentar alta acurácia, mas falha completamente em identificar os casos críticos da classe minoritária. Em aplicações de manutenção preditiva, isso significa ignorar falhas importantes, tornando o modelo inadequado apesar da elevada acurácia. <!--[cite: 3] --></p>
+</section>
+<section id="medidas-de-desempenho" class="slide level2 smaller">
+<h2>Medidas de Desempenho</h2>
+<p>A combinação de várias métricas é essencial para avaliar corretamente o desempenho de um classificador, especialmente em cenários com classes desbalanceadas. Algumas das principais métricas incluem:</p>
+<ul>
+<li><strong>Acurácia:</strong> Percentual de classificações corretas.</li>
+<li><strong>Precisão:</strong> Percentual de exemplos classificados como positivos que são realmente positivos.</li>
+<li><strong>Recall:</strong> Percentual de exemplos positivos corretamente identificados.</li>
+<li><strong>MCC (Coeficiente de Correlação de Matthews):</strong> Uma métrica que considera todas as quatro combinações possíveis de classes.</li>
+<li><strong>Sensibilidade:</strong> Medida da capacidade do classificador de identificar casos positivos.</li>
+<li><strong>F1-Score:</strong> A média harmônica entre precisão e recall.</li>
+</ul>
+<div class="fragment">
+<p>Cada uma dessas métricas tem seu uso dependendo do cenário, sendo que, em conjuntos desbalanceados, algumas delas podem ser mais informativas que outras.</p>
+</div>
+</section>
+<section id="resumo-das-métricas" class="slide level2">
+<h2>Resumo das Métricas</h2>
+<p><img data-src="images/image.FTNY02.png" class="quarto-figure quarto-figure-center" style="width:80.0%"> <!--[cite: 3] --></p>
+</section>
+<section id="curva-roc" class="slide level2">
+<h2>Curva ROC</h2>
+<p>A <strong>Curva ROC (Receiver Operating Characteristic)</strong> é uma ferramenta gráfica utilizada para avaliar o desempenho de classificadores binários. Ela exibe a <strong>taxa de falsos positivos (FPR)</strong> no eixo X e a <strong>taxa de verdadeiros positivos (TPR)</strong> no eixo Y.</p>
+<ul>
+<li>A curva ROC permite visualizar a capacidade de discriminação do modelo em diferentes limiares de decisão.</li>
+<li>Quanto mais próxima da parte superior esquerda da área do gráfico, melhor o desempenho do modelo.</li>
+</ul>
+<p>A <strong>área sob a curva (AUC)</strong> é frequentemente usada como uma métrica adicional para quantificar o desempenho do modelo.</p>
+</section>
+<section id="auc-área-sob-a-curva" class="slide level2">
+<h2>AUC (Área Sob a Curva)</h2>
+<p>A <strong>AUC (Área Sob a Curva)</strong> é uma métrica derivada da curva ROC. Ela quantifica a área total sob a curva ROC e varia de 0 a 1.</p>
+<ul>
+<li><strong>AUC = 1:</strong> Classificador perfeito.</li>
+<li><strong>AUC = 0.5:</strong> Classificador aleatório (sem poder discriminativo).</li>
+<li><strong>AUC &lt; 0.5:</strong> Classificador pior que o aleatório.</li>
+</ul>
+<p><strong>A AUC é útil porque:</strong></p>
+<ul>
+<li>Avalia o modelo independentemente do limiar de decisão.</li>
+<li>Fornece uma medida da capacidade do modelo em distinguir entre as classes.</li>
+</ul>
+</section>
+<section id="curva-roc-e-auc-na-prática" class="slide level2">
+<h2>Curva ROC e AUC na Prática</h2>
+<p><img data-src="images/roc.png" class="quarto-figure quarto-figure-center" style="width:55.0%"> <!--[cite: 3] --></p>
+</section></section>
+<section id="exemplos" class="title-slide slide level1 center">
+<h1>Exemplos</h1>
+
+</section>
+
+<section id="dúvidas" class="title-slide slide level1 center" data-background-color="#f1c40f">
+<h1>Dúvidas?</h1>
+<div class="center">
+<p>Matheus Pimenta</p>
+<p><a href="mailto:omatheuspimenta@outlook.com" class="email">omatheuspimenta@outlook.com</a></p>
+</div>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais | Aula 02 | Matheus Pimenta</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="02_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="02_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="02_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="02_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="02_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="02_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="02_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="02_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="02_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
