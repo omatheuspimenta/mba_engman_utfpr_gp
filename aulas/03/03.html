@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="03_files/libs/clipboard/clipboard.min.js"></script>
+<script src="03_files/libs/quarto-html/tabby.min.js"></script>
+<script src="03_files/libs/quarto-html/popper.min.js"></script>
+<script src="03_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="03_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="03_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="03_files/libs/quarto-html/quarto-syntax-highlighting-a6e161b2431e1f94a14e0f5d32135a3c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
+
+  <meta name="author" content="Matheus Pimenta">
+  <meta name="dcterms.date" content="2026-07-27">
+  <title>Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="03_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="03_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="03_files/libs/revealjs/dist/theme/quarto-6884aa0c4f45db8070d5b4a1eaf02518.css">
+  <link href="03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="03_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="03_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="03_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="03_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais</h1>
+  <p class="subtitle">MBA EM ENGENHARIA DE MANUTENÇÃO 4.0</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Matheus Pimenta 
+</div>
+<div class="quarto-title-author-email">
+<a href="mailto:omatheuspimenta@outlook.com">omatheuspimenta@outlook.com</a>
+</div>
+        <p class="quarto-title-affiliation">
+            Universidade de São Paulo, Piracicaba (USP-ESALQ)
+          </p>
+    </div>
+</div>
+
+  <p class="date">July 27, 2026</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Conteúdo da Aula</h2>
+<ul>
+<li><a href="#/redes-neurais" id="/toc-redes-neurais">Redes Neurais</a></li>
+<li><a href="#/implementando-um-perceptron" id="/toc-implementando-um-perceptron">Implementando um Perceptron</a></li>
+<li><a href="#/multilayer-perceptron-mlp" id="/toc-multilayer-perceptron-mlp">Multilayer Perceptron (MLP)</a></li>
+<li><a href="#/funções-de-ativação-principais" id="/toc-funções-de-ativação-principais">Funções de Ativação Principais</a></li>
+<li><a href="#/arquiteturas-largas-vs-profundas" id="/toc-arquiteturas-largas-vs-profundas">Arquiteturas Largas vs Profundas</a></li>
+<li><a href="#/implementando-um-perceptron-multi-camadas" id="/toc-implementando-um-perceptron-multi-camadas">Implementando um Perceptron Multi Camadas</a></li>
+<li><a href="#/exemplos" id="/toc-exemplos">Exemplos</a></li>
+<li><a href="#/dúvidas" id="/toc-dúvidas">Dúvidas?</a></li>
+</ul>
+</nav>
+</section>
+<section>
+<section id="redes-neurais" class="title-slide slide level1 center">
+<h1>Redes Neurais</h1>
+
+</section>
+<section id="o-que-são-redes-neurais" class="slide level2">
+<h2>O que são Redes Neurais?</h2>
+<p>Redes Neurais são modelos inspirados no funcionamento do cérebro humano e do sistema nervoso. Algumas características incluem: <!--[cite: 4] --></p>
+<ul>
+<li>Alto grau de paralelização no processamento da informação. <!--[cite: 4] --></li>
+<li>Aprendizagem por meio de ajustes simples que resultam em comportamentos complexos. <!--[cite: 4] --></li>
+<li>Aplicações como solucionadores de problemas e modelos biológicos. <!--[cite: 4] --></li>
+<li>Processo de aquisição de conhecimento através de dados e algoritmos de aprendizado. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="analogias-com-o-cérebro-humano" class="slide level2">
+<h2>Analogias com o Cérebro Humano</h2>
+<p><strong>O cérebro:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Estrutura altamente complexa, não linear e paralela. <!--[cite: 4] --></li>
+<li>Capacidade de organizar seus neurônios para realizar tarefas complexas. <!--[cite: 4] --></li>
+<li>Um neurônio é cerca de 5 a 6 vezes mais lento do que uma porta lógica. <!--[cite: 4] --></li>
+<li>Supera essa lentidão com uma estrutura massivamente paralela. <!--[cite: 4] --></li>
+<li>O córtex humano contém aproximadamente: <!--[cite: 4] -->
+<ul>
+<li>10 bilhões de neurônios. <!--[cite: 4] --></li>
+<li>60 trilhões de sinapses. <!--[cite: 4] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="redes-neurais-artificiais" class="slide level2">
+<h2>Redes Neurais Artificiais</h2>
+<p>Redes Neurais Artificiais são modelos de aprendizado de máquina que buscam uma analogia com o funcionamento do cérebro humano: <!--[cite: 4] --></p>
+<ul>
+<li>Processadores paralelos compostos por unidades simples (neurônios artificiais). <!--[cite: 4] --></li>
+<li>O conhecimento é armazenado nas conexões entre os neurônios. <!--[cite: 4] --></li>
+<li>O aprendizado é adquirido a partir do ambiente (dados) através de um processo de ajuste dos pesos das conexões. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="neurônios-biológicos" class="slide level2">
+<h2>Neurônios Biológicos</h2>
+<p>O principal componente do sistema nervoso dos animais é uma célula denominada <strong>neurônio</strong>, que atua como um elemento de processamento. <!--[cite: 4] --></p>
+<ul>
+<li>Cada neurônio recebe sinais de entrada através de sinapses. <!--[cite: 4] --></li>
+<li>O processamento interno determina a transmissão de sinais para outros neurônios. <!--[cite: 4] --></li>
+<li>Um neurônio biológico é capaz de interagir com milhares de outros neurônios. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="neurônios-biológicos-1" class="slide level2">
+<h2>Neurônios Biológicos</h2>
+<p><img data-src="images/neuronio.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 4] --></p>
+</section>
+<section id="neurônios-artificiais" class="slide level2">
+<h2>Neurônios Artificiais</h2>
+<p><strong>O neurônio artificial</strong> pode ser visto como uma unidade de processamento com: <!--[cite: 4] --></p>
+<ul>
+<li><strong>Função de entrada:</strong> Recebe um conjunto de dados ou conexões. <!--[cite: 4] --></li>
+<li><strong>Pesos:</strong> Cada conexão possui um peso associado que determina sua importância. <!--[cite: 4] --></li>
+<li><strong>Função de ativação:</strong> Filtra o sinal recebido antes de transmiti-lo para a saída. <!--[cite: 4] --></li>
+<li>Cada elemento de processamento tem uma única saída. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="analogias-com-o-cérebro-humano-1" class="slide level2">
+<h2>Analogias com o Cérebro Humano</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Biológico</strong></th>
+<th><strong>Artificial (Perceptron)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dendritos</td>
+<td>Vetor de entrada <span class="math inline">\(\mathbf{x}\)</span></td>
+</tr>
+<tr class="even">
+<td>Núcleo celular</td>
+<td>Operação de soma +</td>
+</tr>
+<tr class="odd">
+<td>Terminais axônicos</td>
+<td>Saída <span class="math inline">\(f(\mathbf{x})\)</span></td>
+</tr>
+<tr class="even">
+<td>Força sináptica</td>
+<td>Parâmetros de peso <span class="math inline">\(\mathbf{w}\)</span></td>
+</tr>
+</tbody>
+</table>
+<!--[cite: 4] -->
+<div style="width:100%; text-align:center; margin-top:20px;">
+<figure style="margin:0 auto;">
+<img src="images/neuronio.jpg" style="width:75%; height:auto; display:block; margin:auto;">
+</figure>
+</div>
+</section>
+<section id="modelo-de-processamento-de-neurônio-artificial" class="slide level2">
+<h2>Modelo de Processamento de Neurônio Artificial</h2>
+<ul>
+<li>As conexões entre neurônios são ponderadas com pesos <span class="math inline">\(w_i\)</span>. <!--[cite: 4] --></li>
+<li>Cada conexão de entrada contribui para a função de ativação. <!--[cite: 4] --></li>
+<li>Para um neurônio com <span class="math inline">\(n\)</span> conexões de entrada, o valor de entrada na sinapse de ordem <span class="math inline">\(i\)</span> é <span class="math inline">\(x_i\)</span>. <!--[cite: 4] --></li>
+</ul>
+<p><strong>Função somadora:</strong> <!--[cite: 4] --> <span class="math display">\[y(x) = \sum_{i=1}^{n} w_i \cdot x_i\]</span> <!--[cite: 4] --></p>
+<p>O valor somado é posteriormente filtrado pela função de ativação para determinar a saída do neurônio. <!--[cite: 4] --></p>
+</section>
+<section id="neurônios-biológicos-2" class="slide level2">
+<h2>Neurônios Biológicos</h2>
+<p><img data-src="images/rede-neural1.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="www.ic.uff.br/~ferraz/IA/NN/RN20112.ppt"> <!--[cite: 4] --></p>
+</section>
+<section id="conexões-entre-neurônios" class="slide level2">
+<h2>Conexões entre Neurônios</h2>
+<ul>
+<li>As conexões entre neurônios são ponderadas por <strong>pesos</strong> (<span class="math inline">\(w_i\)</span>), que determinam a importância de cada entrada para o neurônio. <!--[cite: 4] --></li>
+<li>Existe uma <strong>conexão virtual especial</strong> chamada <em>bias</em> (polarização), usada para ajustar o limiar de ativação do neurônio: <!--[cite: 4] -->
+<ul>
+<li>A entrada de polarização tem valor constante <span class="math inline">\(x_0 = 1\)</span>. <!--[cite: 4] --></li>
+<li>Seu peso associado é <span class="math inline">\(w_0\)</span>, ajustado durante o processo de aprendizado. <!--[cite: 4] --></li>
+</ul></li>
+<li>Em um neurônio com <span class="math inline">\(n\)</span> conexões de entrada, o valor da entrada na sinapse de ordem <span class="math inline">\(i\)</span> é <span class="math inline">\(x_i\)</span>. <!--[cite: 4] --></li>
+</ul>
+<div style="margin-top:-2em;">
+<p><strong>Função somadora:</strong></p>
+<p><span class="math display">\[
+y(x) = \sum_{i=0}^{n} w_i \cdot x_i
+\]</span></p>
+</div>
+</section>
+<section id="função-de-ativação" class="slide level2">
+<h2>Função de Ativação</h2>
+<p>A função de ativação é um componente fundamental dos neurônios artificiais: <!--[cite: 4] --></p>
+<ul>
+<li>Transforma o valor calculado pela função somadora em uma saída. <!--[cite: 4] --></li>
+<li>Mapeia números reais para intervalos definidos, como <span class="math inline">\([0, 1]\)</span> ou <span class="math inline">\([-1, +1]\)</span>. <!--[cite: 4] --></li>
+<li>Introduz <strong>não-linearidade</strong>, permitindo que a rede neural aprenda relações complexas. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="tipos-de-funções-de-ativação" class="slide level2">
+<h2>Tipos de Funções de Ativação</h2>
+<ul>
+<li><strong>Função Linear:</strong> A saída é proporcional à entrada. <!--[cite: 4] --> <span class="math display">\[f(x) = x\]</span> <!--[cite: 4] --></li>
+<li><strong>Função Rampa (ReLU):</strong> Combina uma região linear com uma região saturada. <!--[cite: 4] --> <span class="math display">\[f(x) = \begin{cases} 0 &amp; \text{se } x \leq 0 \\ x &amp; \text{se } 0 &lt; x &lt; 1 \\ 1 &amp; \text{se } x \geq 1 \end{cases}\]</span> <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="tipos-de-funções-de-ativação-1" class="slide level2">
+<h2>Tipos de Funções de Ativação</h2>
+<ul>
+<li><strong>Função Degrau:</strong> Retorna <span class="math inline">\(1\)</span> se a entrada for maior que um limiar, caso contrário retorna <span class="math inline">\(0\)</span>. <!--[cite: 4] --> <span class="math display">\[f(x) = \begin{cases} 1 &amp; \text{se } x \geq \text{threshold} \\ 0 &amp; \text{caso contrário} \end{cases}\]</span> <!--[cite: 4] --></li>
+<li><strong>Sigmóide Logística:</strong> Suaviza a saída entre <span class="math inline">\([0, 1]\)</span>. <!--[cite: 4] --> <span class="math display">\[f(x) = \frac{1}{1 + e^{-x}}\]</span> <!--[cite: 4] --></li>
+<li><strong>Tangente Hiperbólica:</strong> Similar à sigmóide, mas com intervalo <span class="math inline">\([-1, +1]\)</span>. <!--[cite: 4] --> <span class="math display">\[f(x) = \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\]</span> <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="tipos-de-funções-de-ativação-2" class="slide level2">
+<h2>Tipos de Funções de Ativação</h2>
+<p><img data-src="images/activations.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 4] --></p>
+</section>
+<section id="o-perceptron-fundamentos-e-história" class="slide level2">
+<h2>O Perceptron: Fundamentos e História</h2>
+<ul>
+<li class="fragment">Proposto por Frank Rosenblatt em 1957 <!--[cite: 4] --></li>
+<li class="fragment">Inicialmente desenvolvido para reconhecimento de padrões visuais <!--[cite: 4] --></li>
+<li class="fragment">Primeira implementação em hardware: Mark I Perceptron (1960) <!--[cite: 4] --></li>
+<li class="fragment">Inspirado no funcionamento dos neurônios biológicos <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="características-do-perceptron" class="slide level2">
+<h2>Características do Perceptron</h2>
+<ul>
+<li>Rede neural direta com unidades binárias <!--[cite: 4] --></li>
+<li>Realiza classificação através de aprendizado supervisionado <!--[cite: 4] --></li>
+<li>Introduz formalmente uma lei de treinamento <!--[cite: 4] --></li>
+<li>Modelo matemático: <!--[cite: 4] --> <span class="math display">\[f(\mathbf{x}) = \begin{cases} 1 &amp; \text{se } \mathbf{w}^T\mathbf{x} + b &gt; 0 \\ 0 &amp; \text{caso contrário} \end{cases}\]</span> <!--[cite: 4] --> onde <span class="math inline">\(\mathbf{w}\)</span> é o vetor de pesos, <span class="math inline">\(\mathbf{x}\)</span> é o vetor de entradas e <span class="math inline">\(b\)</span> é o viés <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="teoremas-de-rosenblatt-e-limitações" class="slide level2">
+<h2>Teoremas de Rosenblatt e Limitações</h2>
+<ul>
+<li class="fragment">Rosenblatt (1962) provou: <!--[cite: 4] -->
+<ul>
+<li class="fragment">Um perceptron pode aprender tudo que puder representar <!--[cite: 4] --></li>
+<li class="fragment">Convergência do algoritmo de aprendizagem <!--[cite: 4] --></li>
+</ul></li>
+<li class="fragment">Minsky &amp; Papert (1969) demonstraram limitações: <!--[cite: 4] -->
+<ul>
+<li class="fragment">Perceptrons de camada única não podem representar funções não linearmente separáveis <!--[cite: 4] --></li>
+<li class="fragment">Exemplo clássico: função XOR <!--[cite: 4] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="xor" class="slide level2">
+<h2>XOR</h2>
+<p><img data-src="images/xor.png" class="quarto-figure quarto-figure-center" style="width:85.0%"> <!--[cite: 4] --></p>
+</section>
+<section id="xor-1" class="slide level2">
+<h2>XOR</h2>
+<div style="width:100%; text-align:center; margin-top:20px;">
+<figure style="margin:0 auto;">
+<img src="images/xor2.png" style="width:75%; height:auto; display:block; margin:auto;">
+</figure>
+</div>
+</section>
+<section id="tipos-de-perceptrons-e-capacidades" class="slide level2">
+<h2>Tipos de Perceptrons e Capacidades</h2>
+<ul>
+<li>Perceptron de Camada Única: <!--[cite: 4] -->
+<ul>
+<li>Aprende apenas padrões linearmente separáveis <!--[cite: 4] --></li>
+</ul></li>
+<li>Perceptron Multicamadas: <!--[cite: 4] -->
+<ul>
+<li>Maior poder de processamento <!--[cite: 4] --></li>
+<li>Capaz de aprender funções não lineares <!--[cite: 4] --></li>
+</ul></li>
+<li>O algoritmo do Perceptron aprende os pesos para traçar uma fronteira de decisão linear <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="regra-de-aprendizagem-do-perceptron" class="slide level2">
+<h2>Regra de Aprendizagem do Perceptron</h2>
+<ul>
+<li>O algoritmo ajusta automaticamente os coeficientes de peso <!--[cite: 4] --></li>
+<li>Atualização de pesos: <!--[cite: 4] --> <span class="math display">\[w_i \leftarrow w_i + \eta(y - \hat{y})x_i\]</span> <!--[cite: 4] --> onde: <!--[cite: 4] -->
+<ul>
+<li><span class="math inline">\(w_i\)</span> é o peso da i-ésima entrada <!--[cite: 4] --></li>
+<li><span class="math inline">\(\eta\)</span> é a taxa de aprendizagem <!--[cite: 4] --></li>
+<li><span class="math inline">\(y\)</span> é a saída desejada <!--[cite: 4] --></li>
+<li><span class="math inline">\(\hat{y}\)</span> é a saída prevista <!--[cite: 4] --></li>
+<li><span class="math inline">\(x_i\)</span> é a i-ésima entrada <!--[cite: 4] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="modelo-perceptron" class="slide level2">
+<h2>Modelo Perceptron</h2>
+<div style="width:100%; text-align:center; margin-top:20px;">
+<figure style="margin:0 auto;">
+<img src="images/perceptron.png" style="width:80%; height:auto; display:block; margin:auto;">
+</figure>
+<div style="font-size:0.5em; margin-top:0.5em;">
+<p><a href="https://sebastianraschka.com/pdf/lecture-notes/stat453ss21" target="_blank"> Fonte: Sebastian Raschka – STAT 453 Lecture Notes </a></p>
+</div>
+</div>
+</section>
+<section id="perceptron-function" class="slide level2">
+<h2>Perceptron Function</h2>
+<ul>
+<li>O Perceptron é uma função que mapeia suas entradas <span class="math inline">\(x_i\)</span>, as quais são multiplicadas por pesos ajustados durante o treinamento. <!--[cite: 4] --></li>
+<li>A função de saída <span class="math inline">\(f(x)\)</span> é gerada pela soma ponderada das entradas: <!--[cite: 4] --> <span class="math display">\[f(x) = \sum_{i=1}^{m} w_i \cdot x_i + b\]</span> <!--[cite: 4] --></li>
+<li>Onde: <!--[cite: 4] -->
+<ul>
+<li><span class="math inline">\(w_i\)</span> é o vetor de pesos reais; <!--[cite: 4] --></li>
+<li><span class="math inline">\(b\)</span> é o <strong>bias</strong>, que ajusta o limite da função de decisão; <!--[cite: 4] --></li>
+<li><span class="math inline">\(x_i\)</span> são os valores de entrada; <!--[cite: 4] --></li>
+<li><span class="math inline">\(m\)</span> é o número de entradas. <!--[cite: 4] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="comportamento-do-perceptron" class="slide level2">
+<h2>Comportamento do Perceptron</h2>
+<ul>
+<li>A saída do Perceptron é discreta e pode ser representada por <span class="math inline">\(1\)</span> ou <span class="math inline">\(-1\)</span>, dependendo da função de ativação utilizada. <!--[cite: 4] --></li>
+<li>O Perceptron aceita entradas, pondera-as com pesos, aplica uma função de ativação e gera um resultado. <!--[cite: 4] --></li>
+<li>Exemplo de entradas de um Perceptron: <!--[cite: 4] -->
+<ul>
+<li>Variáveis binárias, como <em>salário fixo</em>, <em>idade</em>, <em>histórico de crédito</em>. <!--[cite: 4] --></li>
+<li>O resultado pode ser Sim/Não ou Verdadeiro/Falso. <!--[cite: 4] --></li>
+</ul></li>
+</ul>
+</section>
+<section id="função-somadora" class="slide level2">
+<h2>Função Somadora</h2>
+<ul>
+<li>A função somadora multiplica cada entrada <span class="math inline">\(x_i\)</span> pelos pesos <span class="math inline">\(w_i\)</span> e acumula esses valores: <!--[cite: 4] --> <span class="math display">\[y(x) = \sum_{i=1}^{m} w_i \cdot x_i + b\]</span> <!--[cite: 4] --></li>
+<li>Esta soma ponderada determina a ativação do neurônio. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="função-de-ativação-1" class="slide level2">
+<h2>Função de Ativação</h2>
+<ul>
+<li>A função de ativação aplica uma regra para definir se o neurônio é ativado. <!--[cite: 4] --></li>
+<li>Exemplo: Função de Sinal (<em>Sign function</em>): <!--[cite: 4] --> <span class="math display">\[f(y) = \begin{cases} +1 &amp; \text{se } y &gt; 0 \\ -1 &amp; \text{se } y \leq 0 \end{cases}\]</span> <!--[cite: 4] --></li>
+<li>A saída <span class="math inline">\(+1\)</span> indica que o neurônio foi ativado, enquanto <span class="math inline">\(-1\)</span> indica que não foi ativado. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="perceptron-em-operação" class="slide level2">
+<h2>Perceptron em Operação</h2>
+<ul>
+<li><strong>Entradas</strong>: <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> <!--[cite: 4] --></li>
+<li><strong>Pesos</strong>: <span class="math inline">\(w_1, w_2, \dots, w_n\)</span> <!--[cite: 4] --></li>
+<li><strong>Saída Boolean</strong>: <span class="math inline">\(+1\)</span> ou <span class="math inline">\(-1\)</span> de acordo com o limiar <!--[cite: 4] --></li>
+<li>O Perceptron é ativado se a soma ponderada das entradas exceder um certo limiar: <!--[cite: 4] --> <span class="math display">\[\sum_{i=1}^{n} w_i \cdot x_i + b &gt; 0 \implies +1, \text{ caso contrário } -1\]</span> <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="algoritmo" class="slide level2">
+<h2>Algoritmo</h2>
+<p>Considere o conjunto de dados <!--[cite: 4] --> <span class="math display">\[\mathcal{D} = \left\{ \left( \mathbf{x}^{[1]}, y^{[1]} \right), \left( \mathbf{x}^{[2]}, y^{[2]} \right), \dots, \left( \mathbf{x}^{[n]}, y^{[n]} \right) \right\} \in \left( \mathbb{R}^m \times \{0,1\} \right)^n\]</span> <!--[cite: 4] --></p>
+<ol type="1">
+<li>Inicializar <span class="math inline">\(\mathbf{w} := \mathbf{0}^m\)</span> (assumir notação onde o peso inclui o termo de bias). <!--[cite: 4] --></li>
+<li>Para cada época de treinamento: <!--[cite: 4] -->
+<ul>
+<li>Para cada exemplo <span class="math inline">\(\left( \mathbf{x}^{[i]}, y^{[i]} \right) \in \mathcal{D}\)</span>: <!--[cite: 4] -->
+<ul>
+<li><span class="math inline">\(\hat{y}^{[i]} := \sigma \left( (\mathbf{x}^{[i]})^T \mathbf{w} \right)\)</span> <!--[cite: 4] --></li>
+<li><span class="math inline">\(\text{err} := \left( y^{[i]} - \hat{y}^{[i]} \right)\)</span> <!--[cite: 4] --></li>
+<li><span class="math inline">\(\mathbf{w} := \mathbf{w} + \text{err} \times \mathbf{x}^{[i]}\)</span> <!--[cite: 4] --></li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="características-do-perceptron-1" class="slide level2">
+<h2>Características do Perceptron</h2>
+<ul>
+<li>Algoritmo supervisionado para classificação binária em uma camada. <!--[cite: 4] --></li>
+<li>Os pesos são ajustados automaticamente durante o aprendizado. <!--[cite: 4] --></li>
+<li>A saída depende de uma função de ativação que verifica se a soma ponderada das entradas excede o limiar. <!--[cite: 4] --></li>
+<li>Traça uma fronteira linear de decisão para distinguir classes lineares separáveis (<span class="math inline">\(+1\)</span> e <span class="math inline">\(-1\)</span>). <!--[cite: 4] --></li>
+<li>Se a soma dos sinais de entrada excede o limiar, emite uma saída; caso contrário, não há saída. <!--[cite: 4] --></li>
+</ul>
+</section></section>
+<section id="implementando-um-perceptron" class="title-slide slide level1 center">
+<h1>Implementando um Perceptron</h1>
+
+</section>
+
+<section>
+<section id="multilayer-perceptron-mlp" class="title-slide slide level1 center">
+<h1>Multilayer Perceptron (MLP)</h1>
+
+</section>
+<section id="perceptron-de-multi-camadas" class="slide level2">
+<h2>Perceptron de Multi Camadas</h2>
+<p>Fully-connected feedforward neural networks with one or more hidden layers; <!--[cite: 4] --></p>
+<p>Redes neurais feedforward totalmente conectadas com uma ou mais camadas ocultas; <!--[cite: 4] --></p>
+</section>
+<section id="perceptron-multi-camadas" class="slide level2">
+<h2>Perceptron Multi Camadas</h2>
+<p>Treinamento! Regra da Cadeia <!--[cite: 4] --></p>
+<div style="width:100%; text-align:center; margin-top:20px;">
+<figure style="margin:0 auto;">
+<img src="images/mlp1.png" style="width:80%; height:auto; display:block; margin:auto;">
+</figure>
+</div>
+</section>
+<section id="perceptron-multi-camadas-1" class="slide level2">
+<h2>Perceptron Multi Camadas</h2>
+<div style="width:100%; text-align:center; margin-top:20px;">
+<figure style="margin:0 auto;">
+<img src="images/mlp2.png" style="width:90%; height:auto; display:block; margin:auto;">
+</figure>
+</div>
+</section>
+<section id="sobre-a-etapa-de-treinamento-e-funções-de-ativação." class="slide level2">
+<h2>Sobre a etapa de treinamento e funções de ativação.</h2>
+<p>A utilização da função de custo MSE em tarefas de classificação com ativação sigmoid pode causar problemas com gradientes muito pequenos. <!--[cite: 4] --> O gradiente completo é: <!--[cite: 4] --></p>
+<p><span class="math display">\[\frac{\partial L}{\partial w_j} = (y - \hat{y}) \hat{y} (1 - \hat{y}) x_j\]</span> <!--[cite: 4] --></p>
+<p>Se <span class="math inline">\(\hat{y}\)</span> estiver próximo de 0 (por exemplo, <span class="math inline">\(10^{-5}\)</span>), o termo <span class="math inline">\(\hat{y} (1 - \hat{y})\)</span> se torna muito pequeno, levando a gradientes pequenos e a uma aprendizagem mais lenta. <!--[cite: 4] --></p>
+</section></section>
+<section>
+<section id="funções-de-ativação-principais" class="title-slide slide level1 center">
+<h1>Funções de Ativação Principais</h1>
+
+</section>
+<section id="sigmoid" class="slide level2 smaller">
+<h2>1. Sigmoid</h2>
+<p><strong>Equação:</strong> <!--[cite: 4] --> <span class="math display">\[\sigma(x) = \frac{1}{1 + e^{-x}}\]</span> <!--[cite: 4] --></p>
+<div class="fragment">
+<p><strong>Vantagens:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Gradiente suave, adequado para aprendizado gradual <!--[cite: 4] --></li>
+<li>Saídas limitadas (0,1) para interpretação probabilística <!--[cite: 4] --></li>
+<li>Historicamente popular em classificação binária <!--[cite: 4] --></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Limitações:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Gradientes desaparecem para entradas extremas (<span class="math inline">\(\pm 3+\)</span>) <!--[cite: 4] --></li>
+<li>Saídas não centralizadas complicam atualizações de pesos <!--[cite: 4] --></li>
+<li>Saturação prejudica o gradiente na retropropagação <!--[cite: 4] --></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Melhor Uso:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Camadas de saída em classificação binária <!--[cite: 4] --></li>
+<li>Redes rasas <!--[cite: 4] --></li>
+</ul>
+</div>
+</section>
+<section id="tangente-hiperbólica-tanh" class="slide level2 smaller">
+<h2>2. Tangente Hiperbólica (Tanh)</h2>
+<p><strong>Equação:</strong> <!--[cite: 4] --> <span class="math display">\[\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\]</span> <!--[cite: 4] --></p>
+<div class="fragment">
+<p><strong>Vantagens:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Saídas centralizadas (-1,1) melhoram a convergência <!--[cite: 4] --></li>
+<li>Gradientes mais fortes que sigmoid (4× perto de zero) <!--[cite: 4] --></li>
+<li>Adequado para dados normalizados <!--[cite: 4] --></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Limitações:</strong> <!--[cite: 4] --> - Ainda sofre com gradientes desaparecendo <!--[cite: 4] --> - Computacionalmente mais pesado que ReLU <!--[cite: 4] --></p>
+</div>
+<div class="fragment">
+<p><strong>Melhor Uso:</strong> <!--[cite: 4] --> - Camadas ocultas com entradas normalizadas <!--[cite: 4] --> - Redes recorrentes <!--[cite: 4] --></p>
+</div>
+</section>
+<section id="relu-rectified-linear-unit" class="slide level2 smaller">
+<h2>3. ReLU (Rectified Linear Unit)</h2>
+<p><strong>Equação:</strong> <!--[cite: 4] --> <span class="math display">\[\text{ReLU}(x) = \max(0, x)\]</span> <!--[cite: 4] --></p>
+<div class="fragment">
+<p><strong>Vantagens:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Evita gradiente desaparecido para entradas positivas <!--[cite: 4] --></li>
+<li>Computacionalmente eficiente (limiar simples) <!--[cite: 4] --></li>
+<li>Permite ativações esparsas <!--[cite: 4] --></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Limitações:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Neurônios mortos (saídas permanentes em zero) <!--[cite: 4] --></li>
+<li>Não diferenciável em zero <!--[cite: 4] --></li>
+<li>Saídas positivas não limitadas <!--[cite: 4] --></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Melhor Uso:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Camadas ocultas em redes profundas <!--[cite: 4] --></li>
+<li>Aplicações em visão computacional <!--[cite: 4] --></li>
+</ul>
+</div>
+</section>
+<section id="softmax" class="slide level2 smaller">
+<h2>4. Softmax</h2>
+<p><strong>Equação:</strong> <!--[cite: 4] --> <span class="math display">\[\text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}\]</span> <!--[cite: 4] --></p>
+<div class="fragment">
+<p><strong>Vantagens:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Saídas válidas como distribuições de probabilidade <!--[cite: 4] --></li>
+<li>Estável numericamente com logits <!--[cite: 4] --></li>
+<li>Essencial para classificação multiclasse <!--[cite: 4] --></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Limitações:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Exclusiva para camadas de saída <!--[cite: 4] --></li>
+<li>Computacionalmente intensiva para grande <span class="math inline">\(K\)</span> <!--[cite: 4] --></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Melhor Uso:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Camada final em classificação multiclasse <!--[cite: 4] --></li>
+<li>Mecanismos de atenção <!--[cite: 4] --></li>
+</ul>
+</div>
+</section>
+<section id="recomendações-práticas" class="slide level2">
+<h2>Recomendações Práticas</h2>
+<ul>
+<li><strong>Camadas Ocultas:</strong> Prefira variantes do ReLU (Leaky ReLU, Swish) para equilibrar eficiência computacional e fluxo de gradiente <!--[cite: 4] --></li>
+<li><strong>Camadas de Saída:</strong> <!--[cite: 4] -->
+<ul>
+<li><strong>Binária:</strong> Sigmoid <!--[cite: 4] --></li>
+<li><strong>Multiclasse:</strong> Softmax <!--[cite: 4] --></li>
+<li><strong>Regressão:</strong> Ativação linear <!--[cite: 4] --></li>
+</ul></li>
+<li><strong>Evitar:</strong> Sigmoid/Tanh em camadas ocultas profundas devido a problemas de gradiente <!--[cite: 4] --></li>
+</ul>
+</section></section>
+<section>
+<section id="arquiteturas-largas-vs-profundas" class="title-slide slide level1 center">
+<h1>Arquiteturas Largas vs Profundas</h1>
+
+</section>
+<section id="largura-vs-profundidade" class="slide level2">
+<h2>Largura vs Profundidade</h2>
+<p><strong>Largura:</strong> <!--[cite: 4] --> Aumentar o número de neurônios em uma camada. <!--[cite: 4] --></p>
+<p><strong>Profundidade:</strong> <!--[cite: 4] --> Adicionar mais camadas à rede. <!--[cite: 4] --></p>
+</section>
+<section id="principais-comparações" class="slide level2">
+<h2>Principais Comparações</h2>
+<p><strong>Expressividade:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>É possível atingir a mesma expressividade com mais camadas e menos parâmetros. <!--[cite: 4] --></li>
+<li>Menos parâmetros <span class="math inline">\(\Rightarrow\)</span> menor risco de overfitting. <!--[cite: 4] --></li>
+</ul>
+<p><strong>Regularização Implícita:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Mais camadas introduzem uma forma de regularização. <!--[cite: 4] --></li>
+<li>As camadas posteriores são limitadas pelo comportamento das camadas anteriores. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="desafios-de-redes-profundas" class="slide level2">
+<h2>Desafios de Redes Profundas</h2>
+<p><strong>Problemas com Muitas Camadas:</strong> <!--[cite: 4] --></p>
+<ul>
+<li><strong>Gradiente Desvanecente:</strong> O gradiente se aproxima de zero nas camadas iniciais. <!--[cite: 4] --></li>
+<li><strong>Gradiente Explosivo:</strong> O gradiente cresce exponencialmente, causando instabilidade. <!--[cite: 4] --></li>
+</ul>
+</section>
+<section id="abstração-de-recursos-em-redes-profundas" class="slide level2">
+<h2>Abstração de Recursos em Redes Profundas</h2>
+<p><strong>Níveis de Abstração:</strong> <!--[cite: 4] --></p>
+<ul>
+<li>Camadas iniciais aprendem características simples (bordas, texturas). <!--[cite: 4] --></li>
+<li>Camadas intermediárias capturam padrões mais complexos (formas, regiões). <!--[cite: 4] --></li>
+<li>Camadas finais abstraem características de alto nível (objetos completos). <!--[cite: 4] --></li>
+</ul>
+<p><strong>Aprendizado de Recursos:</strong> <!--[cite: 4] --></p>
+<p>Deep Learning não se resume a empilhar camadas, mas sim a aprender representações de alto nível a partir dos dados. <!--[cite: 4] --></p>
+</section></section>
+<section id="implementando-um-perceptron-multi-camadas" class="title-slide slide level1 center">
+<h1>Implementando um Perceptron Multi Camadas</h1>
+
+</section>
+
+<section id="exemplos" class="title-slide slide level1 center">
+<h1>Exemplos</h1>
+
+</section>
+
+<section id="dúvidas" class="title-slide slide level1 center" data-background-color="#f1c40f">
+<h1>Dúvidas?</h1>
+<div class="center">
+<p>Matheus Pimenta</p>
+<p><a href="mailto:omatheuspimenta@outlook.com" class="email">omatheuspimenta@outlook.com</a></p>
+</div>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais | Aula 03 | Matheus Pimenta</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="03_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="03_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="03_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="03_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="03_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="03_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="03_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="03_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="03_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 2,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

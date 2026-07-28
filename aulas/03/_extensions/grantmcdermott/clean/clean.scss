@@ -349,3 +349,35 @@ $selection-bg: #26351c !default;
 .reveal .columns6040 div.column:not(:first-child) {
   width: 40%;
 }      
+
+/* Slides com a classe .smaller */
+.reveal section.smaller {
+  font-size: 0.82em;
+}
+
+/* Reduz o espaço entre parágrafos */
+.reveal section.smaller p {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+/* Reduz o espaço antes/depois das listas */
+.reveal section.smaller ul {
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+}
+
+.reveal section.smaller li {
+  margin-bottom: 0.15em;
+}
+
+/* Reduz o espaço das equações */
+.reveal section.smaller .math.display {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+/* Reduz o espaço entre um título em negrito e a lista seguinte */
+.reveal section.smaller p + ul {
+  margin-top: 0;
+}
