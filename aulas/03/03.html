@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Matheus Pimenta">
-  <meta name="dcterms.date" content="2026-07-27">
+  <meta name="dcterms.date" content="2026-07-29">
   <title>Ferramentas de Inteligência Artificial Aplicadas na Tomada de Decisão de Problemas Industriais</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -147,7 +147,7 @@ Matheus Pimenta
     </div>
 </div>
 
-  <p class="date">July 27, 2026</p>
+  <p class="date">July 29, 2026</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Conteúdo da Aula</h2>
@@ -319,6 +319,17 @@ y(x) = \sum_{i=0}^{n} w_i \cdot x_i
 <section id="tipos-de-funções-de-ativação-2" class="slide level2">
 <h2>Tipos de Funções de Ativação</h2>
 <p><img data-src="images/activations.png" class="quarto-figure quarto-figure-center" style="width:100.0%"> <!--[cite: 4] --></p>
+</section>
+<section id="história-das-redes-neurais" class="slide level2">
+<h2>História das Redes Neurais</h2>
+<div style="position: relative; width: 100%; height: 500px; margin: auto; text-align:center;">
+<figure class="fragment" data-fragment-index="1" style="position:absolute; top:0; left:0; width:100%; margin:0;">
+<img src="images/timeline.jpg" style="width:100%; height:auto;"> 
+<figcaption style="font-size:1em; margin-top:0.5em;">
+Linha do Tempo das Redes Neurais
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="o-perceptron-fundamentos-e-história" class="slide level2">
 <h2>O Perceptron: Fundamentos e História</h2>
@@ -496,6 +507,73 @@ y(x) = \sum_{i=0}^{n} w_i \cdot x_i
 <p>Fully-connected feedforward neural networks with one or more hidden layers; <!--[cite: 4] --></p>
 <p>Redes neurais feedforward totalmente conectadas com uma ou mais camadas ocultas; <!--[cite: 4] --></p>
 </section>
+<section id="como-entender-redes-neurais" class="slide level2">
+<h2>Como entender redes neurais?</h2>
+<p>Uma forma de interpretar redes neurais é enxergá-las como a <strong>composição de funções</strong>, permitindo modelar relações <strong>não lineares</strong> complexas entre entradas e saídas.</p>
+<p><span class="math display">\[
+f(x) = f_L \circ f_{L-1} \circ \dots \circ f_1(x)
+\]</span></p>
+<p>Até aqui, consideramos que cada camada é representada pela função:</p>
+<p><span class="math display">\[
+f_i(x) = \phi(w^T x + b)
+\]</span></p>
+<p>Essa mesma estrutura pode ser repetida sucessivamente. Cada repetição corresponde a uma <strong>camada</strong>, e a composição de várias camadas forma uma <strong>rede neural</strong>.</p>
+</section>
+<section id="pipeline-geral-de-treinamento" class="slide level2">
+<h2>Pipeline Geral de Treinamento</h2>
+<p>O treinamento de uma rede neural pode ser descrito por um ciclo composto por quatro etapas:</p>
+<ul>
+<li><em>Forward pass</em></li>
+<li>Cálculo da <em>loss</em></li>
+<li><em>Backpropagation</em></li>
+<li>Atualização dos parâmetros</li>
+</ul>
+<p>Esse ciclo é repetido até que a rede aprenda a resolver a tarefa desejada.</p>
+</section>
+<section id="forward-pass" class="slide level2">
+<h2>Forward Pass</h2>
+<p>O <em>forward pass</em> consiste em calcular a saída da rede para uma entrada, isto é,</p>
+<p><span class="math display">\[
+\hat{y} = f(x; \theta)
+\]</span></p>
+</section>
+<section id="função-de-perda-loss-function" class="slide level2">
+<h2>Função de Perda (<em>Loss Function</em>)</h2>
+<p>A função de perda quantifica o erro entre a previsão do modelo e o valor esperado.</p>
+<p><span class="math display">\[
+\mathcal{L}(y, \hat{y})
+\]</span></p>
+<p>Sua escolha depende do problema. Nesta disciplina, veremos as funções de perda mais utilizadas:</p>
+<ul>
+<li><em>Mean Squared Error (MSE)</em></li>
+<li><em>Binary Cross-Entropy (BCE)</em></li>
+<li><em>Cross-Entropy (CE)</em></li>
+</ul>
+<blockquote>
+<p>Leitura complementar: <a href="https://arxiv.org/pdf/2307.02694">https://arxiv.org/pdf/2307.02694</a></p>
+</blockquote>
+</section>
+<section id="mean-squared-error-mse" class="slide level2">
+<h2>Mean Squared Error (MSE)</h2>
+<p>Utilizada principalmente em <strong>problemas de regressão</strong>, nos quais a saída é um valor contínuo.</p>
+<p><span class="math display">\[
+\text{MSE} = \frac{1}{N}\sum (y-\hat{y})^2
+\]</span></p>
+</section>
+<section id="binary-cross-entropy-bce" class="slide level2">
+<h2>Binary Cross-Entropy (BCE)</h2>
+<p>Utilizada em <strong>classificação binária</strong>, comparando a probabilidade prevista com a classe verdadeira.</p>
+<p><span class="math display">\[
+\mathcal{L} = -\left[y\log(\hat{y}) + (1-y)\log(1-\hat{y})\right]
+\]</span></p>
+</section>
+<section id="cross-entropy-ce" class="slide level2">
+<h2>Cross-Entropy (CE)</h2>
+<p>Generalização da <em>Binary Cross-Entropy</em> para <strong>classificação multiclasse</strong>.</p>
+<p><span class="math display">\[
+\mathcal{L} = -\sum_i y_i \log(\hat{y}_i)
+\]</span></p>
+</section>
 <section id="perceptron-multi-camadas" class="slide level2">
 <h2>Perceptron Multi Camadas</h2>
 <p>Treinamento! Regra da Cadeia <!--[cite: 4] --></p>
@@ -513,11 +591,79 @@ y(x) = \sum_{i=0}^{n} w_i \cdot x_i
 </figure>
 </div>
 </section>
+<section id="atualização-dos-pesos" class="slide level2">
+<h2>Atualização dos Pesos</h2>
+<p>A atualização dos parâmetros é realizada pelo algoritmo conhecido como <em>Gradient Descent</em>:</p>
+<p><span class="math display">\[
+\theta_{t+1} = \theta_t - \eta \nabla_\theta \mathcal{L}
+\]</span></p>
+<p>Na prática, bibliotecas como o <strong>PyTorch</strong> calculam os gradientes automaticamente (<em>autograd</em>). Mesmo assim, entender esse mecanismo é fundamental para compreender o treinamento de redes neurais.</p>
+</section>
+<section id="exemplo" class="slide level2">
+<h2>Exemplo</h2>
+<p>Considere a função</p>
+<p><span class="math display">\[
+f(x) = (x-3)^2
+\]</span></p>
+<p>Desejamos encontrar seu ponto de mínimo a partir de <span class="math inline">\(x^{(0)} = 0\)</span>.<br>
+O gradiente da função é</p>
+<p><span class="math display">\[
+f'(x) = 2(x-3)
+\]</span></p>
+</section>
+<section id="ª-iteração" class="slide level2">
+<h2>1ª iteração</h2>
+<ul>
+<li><span class="math inline">\(x^{(0)} = 0\)</span></li>
+<li><span class="math inline">\(f'(0) = -6\)</span><br>
+Com taxa de aprendizado <span class="math inline">\(\eta = 0.1\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+x^{(1)} = 0 - 0.1(-6) = 0.6
+\]</span></p>
+<p>O valor da função diminui:</p>
+<p><span class="math display">\[
+f(0)=9 \qquad f(0.6)=5.76
+\]</span></p>
+</section>
+<section id="ª-iteração-1" class="slide level2">
+<h2>2ª iteração</h2>
+<ul>
+<li><span class="math inline">\(x^{(1)} = 0.6\)</span></li>
+<li><span class="math inline">\(f'(0.6) = -4.8\)</span></li>
+</ul>
+<p>Atualizando novamente:</p>
+<p><span class="math display">\[
+x^{(2)} = 0.6 - 0.1(-4.8) = 1.08
+\]</span></p>
+<p>O valor da função continua diminuindo:</p>
+<p><span class="math display">\[
+f(1.08)=3.6864
+\]</span></p>
+<p>Repetindo esse processo, os valores de (x) aproximam-se de <strong>3</strong>, que corresponde ao ponto de mínimo da função.</p>
+</section>
 <section id="sobre-a-etapa-de-treinamento-e-funções-de-ativação." class="slide level2">
 <h2>Sobre a etapa de treinamento e funções de ativação.</h2>
 <p>A utilização da função de custo MSE em tarefas de classificação com ativação sigmoid pode causar problemas com gradientes muito pequenos. <!--[cite: 4] --> O gradiente completo é: <!--[cite: 4] --></p>
 <p><span class="math display">\[\frac{\partial L}{\partial w_j} = (y - \hat{y}) \hat{y} (1 - \hat{y}) x_j\]</span> <!--[cite: 4] --></p>
 <p>Se <span class="math inline">\(\hat{y}\)</span> estiver próximo de 0 (por exemplo, <span class="math inline">\(10^{-5}\)</span>), o termo <span class="math inline">\(\hat{y} (1 - \hat{y})\)</span> se torna muito pequeno, levando a gradientes pequenos e a uma aprendizagem mais lenta. <!--[cite: 4] --></p>
+</section>
+<section id="estrutura-de-um-modelo" class="slide level2">
+<h2>Estrutura de um Modelo</h2>
+<p>Uma rede neural é definida principalmente por quatro componentes:</p>
+<ul>
+<li>Camadas (<em>Layers</em>)</li>
+<li>Funções de ativação (<em>Activation Functions</em>)</li>
+<li>Função de perda (<em>Loss Function</em>)</li>
+<li>Otimizador (<em>Optimizer</em>)</li>
+</ul>
+<p>Até aqui, estudamos:</p>
+<ul>
+<li>A camada <strong>Perceptron</strong></li>
+<li>Algumas funções de ativação</li>
+<li>As principais funções de perda</li>
+</ul>
+<p>Nos próximos slides, conheceremos novas camadas, outras funções de ativação e um dos otimizadores mais utilizados atualmente: <strong>Adam</strong>.</p>
 </section></section>
 <section>
 <section id="funções-de-ativação-principais" class="title-slide slide level1 center">
@@ -634,6 +780,158 @@ y(x) = \sum_{i=0}^{n} w_i \cdot x_i
 </ul></li>
 <li><strong>Evitar:</strong> Sigmoid/Tanh em camadas ocultas profundas devido a problemas de gradiente <!--[cite: 4] --></li>
 </ul>
+</section>
+<section id="camadas" class="slide level2">
+<h2>Camadas</h2>
+<p>Uma rede neural é composta por diferentes tipos de camadas, cada uma com uma função específica. Nesta disciplina veremos:</p>
+<ul>
+<li><strong>Dense (Linear):</strong> camada totalmente conectada, formada por vários perceptrons.</li>
+<li><strong>Dropout:</strong> reduz o <em>overfitting</em> durante o treinamento.</li>
+<li><strong>Batch Normalization:</strong> estabiliza o treinamento e acelera a convergência.</li>
+</ul>
+</section>
+<section id="dropout" class="slide level2">
+<h2>Dropout</h2>
+<p>Durante o treinamento, a camada <strong>Dropout</strong> desativa aleatoriamente uma fração dos neurônios da rede.</p>
+<p>Isso reduz a dependência entre neurônios e ajuda a evitar <strong>overfitting</strong>.</p>
+<p><strong>Importante:</strong> durante a inferência (<em>teste</em>), o Dropout é desativado e todos os neurônios são utilizados.</p>
+<div style="width:100%; text-align:center; margin-top:20px;">
+<figure style="position:absolute; top:80; left:0; width:80%; margin:0;">
+<img src="images/Dropout.png" style="width:60%; height:auto;">
+</figure>
+</div>
+</section>
+<section id="batch-normalization" class="slide level2">
+<h2>Batch Normalization</h2>
+<p>A <strong>Batch Normalization</strong> normaliza as ativações utilizando estatísticas do <em>mini-batch</em>.<br>
+Seu objetivo é:</p>
+<ul>
+<li>estabilizar o treinamento;</li>
+<li>acelerar a convergência;</li>
+<li>permitir taxas de aprendizado maiores.</li>
+</ul>
+<div style="position: relative; width: 85%; height: 400px; margin: auto; text-align:center;">
+<figure style="position:absolute; top:80; left:0; width:100%; margin:0;">
+<img src="images/BatchNorm.png" style="width:65%; height:auto;">
+<figcaption style="font-size:1em; margin-top:0.5em;">
+Batch Normalization
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="por-que-normalizar" class="slide level2">
+<h2>Por que normalizar?</h2>
+<p>Quando as ativações possuem escalas muito diferentes, os gradientes também podem ter magnitudes muito distintas.<br>
+Como consequência:</p>
+<ul>
+<li>o treinamento pode ficar instável;</li>
+<li>a convergência pode ser mais lenta;</li>
+<li>o processo de otimização torna-se menos eficiente.</li>
+</ul>
+<div style="position: relative; width: 80%; height: 400px; margin: auto; text-align:center;">
+<figure style="position:absolute; top:80; left:0; width:100%; margin:0;">
+<img src="images/SGDBatch.png" style="width:67%; height:auto;">
+</figure>
+</div>
+</section>
+<section id="tipos-de-normalização" class="slide level2">
+<h2>Tipos de Normalização</h2>
+<p>As principais estratégias de normalização são:</p>
+<ul>
+<li><strong>Batch Normalization:</strong> utiliza estatísticas do <em>mini-batch</em>.</li>
+<li><strong>Layer Normalization:</strong> normaliza cada amostra considerando toda a camada.</li>
+<li><strong>Instance Normalization:</strong> normaliza cada amostra individualmente.</li>
+<li><strong>Group Normalization:</strong> divide os canais em grupos antes de normalizar.</li>
+</ul>
+</section>
+<section id="comparação-entre-métodos" class="slide level2">
+<h2>Comparação entre Métodos</h2>
+<div style="position: relative; width: 85%; height: 400px; margin: auto; text-align:center;">
+<figure style="position:absolute; top:80; left:0; width:100%; margin:0;">
+<img src="images/Tipos_Norm.png" style="width:100%; height:auto;">
+</figure>
+</div>
+</section>
+<section id="otimizadores" class="slide level2">
+<h2>Otimizadores</h2>
+<p>O <strong>SGD (Stochastic Gradient Descent)</strong> é um dos algoritmos mais simples para otimização de redes neurais.</p>
+<p>Atualmente, porém, são mais utilizados otimizadores adaptativos, como o <strong>Adam</strong> e sua variante <strong>AdamW</strong>.</p>
+<p>As principais limitações do SGD são:</p>
+<ul>
+<li>utiliza uma taxa de aprendizado fixa;</li>
+<li>pode apresentar convergência lenta;</li>
+<li>é sensível à escolha da taxa de aprendizado.</li>
+</ul>
+</section>
+<section id="adam" class="slide level2">
+<h2>Adam</h2>
+<p>O <strong>Adam (Adaptive Moment Estimation)</strong> combina duas ideias:</p>
+<ul>
+<li><strong>Momentum:</strong> acumula a direção dos gradientes para acelerar a convergência;</li>
+<li><strong>Adaptive Learning Rate:</strong> ajusta automaticamente a taxa de aprendizado de cada parâmetro.</li>
+</ul>
+<p>Os principais hiperparâmetros são:</p>
+<ul>
+<li><span class="math inline">\(\beta_1\)</span>: controla o momento de primeira ordem (média dos gradientes);</li>
+<li><span class="math inline">\(\beta_2\)</span>: controla o momento de segunda ordem (média dos gradientes ao quadrado).</li>
+</ul>
+</section>
+<section id="adam-1" class="slide level2">
+<h2>Adam</h2>
+<p>O algoritmo mantém duas médias móveis exponenciais:</p>
+<p><span class="math display">\[
+m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t
+\]</span></p>
+<p><span class="math display">\[
+v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2
+\]</span></p>
+<p>onde:</p>
+<ul>
+<li><span class="math inline">\(g_t\)</span>: gradiente na iteração <span class="math inline">\(t\)</span>;</li>
+<li><span class="math inline">\(m_t\)</span>: estimativa do primeiro momento;</li>
+<li><span class="math inline">\(v_t\)</span>: estimativa do segundo momento.</li>
+</ul>
+</section>
+<section id="adam-2" class="slide level2">
+<h2>Adam</h2>
+<p>Como essas estimativas começam em zero, o Adam aplica uma correção de viés:</p>
+<p><span class="math display">\[
+\hat{m}_t=\frac{m_t}{1-\beta_1^t},
+\qquad
+\hat{v}_t=\frac{v_t}{1-\beta_2^t}
+\]</span></p>
+<p>A atualização dos parâmetros é dada por</p>
+<p><span class="math display">\[
+\theta_t=
+\theta_{t-1}
+-
+\frac{\eta}{\sqrt{\hat{v}_t}+\epsilon}\hat{m}_t
+\]</span></p>
+</section>
+<section id="adamw" class="slide level2">
+<h2>AdamW</h2>
+<p>O <strong>AdamW</strong> é uma variante do Adam que aplica <strong>Weight Decay</strong>, uma forma de regularização dos parâmetros.<br>
+A atualização passa a ser:</p>
+<p><span class="math display">\[
+\theta_t=
+\theta_{t-1}
+-
+\frac{\eta}{\sqrt{\hat{v}_t}+\epsilon}\hat{m}_t
+-
+\eta\lambda\theta_{t-1}
+\]</span></p>
+<p>onde <span class="math inline">\(\lambda\)</span> controla a intensidade da regularização.</p>
+<p><strong>Vantagens do AdamW:</strong></p>
+<ul>
+<li>reduz o <em>overfitting</em>;</li>
+<li>melhora a generalização do modelo;</li>
+<li>é o otimizador padrão em muitos modelos modernos.</li>
+</ul>
+</section>
+<section id="comparando-otimizadores" class="slide level2">
+<h2>Comparando Otimizadores</h2>
+
+<img src="images/otimizadores.gif" style="width:100%;" class="r-stretch"><p><small> Trajetórias de diferentes algoritmos de otimização em uma função de perda. </small></p>
 </section></section>
 <section>
 <section id="arquiteturas-largas-vs-profundas" class="title-slide slide level1 center">

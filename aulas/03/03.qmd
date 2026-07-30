@@ -162,6 +162,22 @@ $$f(x) = \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}$$ <!--[cite: 4] -->
 
 ![](images/activations.png){fig-align="center" width="100%"} <!--[cite: 4] -->
 
+## História das Redes Neurais
+
+<div style="position: relative; width: 100%; height: 500px; margin: auto; text-align:center;">
+
+<figure class="fragment" data-fragment-index="1" 
+        style="position:absolute; top:0; left:0; width:100%; margin:0;">
+    <img src="images/timeline.jpg" 
+         style="width:100%; height:auto;" />
+  </a>
+  <figcaption style="font-size:1em; margin-top:0.5em;">
+    Linha do Tempo das Redes Neurais 
+  </figcaption>
+</figure>
+
+</div>
+
 ## O Perceptron: Fundamentos e História
 
 ::: {.incremental}
@@ -315,6 +331,82 @@ Fully-connected feedforward neural networks with one or more hidden layers; <!--
 
 Redes neurais feedforward totalmente conectadas com uma ou mais camadas ocultas; <!--[cite: 4] -->
 
+## Como entender redes neurais?
+
+Uma forma de interpretar redes neurais é enxergá-las como a **composição de funções**, permitindo modelar relações **não lineares** complexas entre entradas e saídas.
+
+$$
+f(x) = f_L \circ f_{L-1} \circ \dots \circ f_1(x)
+$$
+
+Até aqui, consideramos que cada camada é representada pela função:
+
+$$
+f_i(x) = \phi(w^T x + b)
+$$
+
+Essa mesma estrutura pode ser repetida sucessivamente. Cada repetição corresponde a uma **camada**, e a composição de várias camadas forma uma **rede neural**.
+
+## Pipeline Geral de Treinamento
+
+O treinamento de uma rede neural pode ser descrito por um ciclo composto por quatro etapas:
+
+- *Forward pass*
+- Cálculo da *loss*
+- *Backpropagation*
+- Atualização dos parâmetros
+
+Esse ciclo é repetido até que a rede aprenda a resolver a tarefa desejada.
+
+## Forward Pass
+
+O *forward pass* consiste em calcular a saída da rede para uma entrada, isto é,
+
+$$
+\hat{y} = f(x; \theta)
+$$
+
+## Função de Perda (*Loss Function*)
+
+A função de perda quantifica o erro entre a previsão do modelo e o valor esperado.
+
+$$
+\mathcal{L}(y, \hat{y})
+$$
+
+Sua escolha depende do problema. Nesta disciplina, veremos as funções de perda mais utilizadas:
+
+- *Mean Squared Error (MSE)*
+- *Binary Cross-Entropy (BCE)*
+- *Cross-Entropy (CE)*
+
+> Leitura complementar: [https://arxiv.org/pdf/2307.02694](https://arxiv.org/pdf/2307.02694)
+
+## Mean Squared Error (MSE)
+
+Utilizada principalmente em **problemas de regressão**, nos quais a saída é um valor contínuo.
+
+$$
+\text{MSE} = \frac{1}{N}\sum (y-\hat{y})^2
+$$
+
+## Binary Cross-Entropy (BCE)
+
+Utilizada em **classificação binária**, comparando a probabilidade prevista com a classe verdadeira.
+
+$$
+\mathcal{L} = -\left[y\log(\hat{y}) + (1-y)\log(1-\hat{y})\right]
+$$
+
+## Cross-Entropy (CE)
+
+Generalização da *Binary Cross-Entropy* para **classificação multiclasse**.
+
+$$
+\mathcal{L} = -\sum_i y_i \log(\hat{y}_i)
+$$
+
+
 ## Perceptron Multi Camadas
 
 Treinamento! Regra da Cadeia <!--[cite: 4] -->
@@ -338,6 +430,67 @@ Treinamento! Regra da Cadeia <!--[cite: 4] -->
   </figure>
 </div>
 
+
+## Atualização dos Pesos
+
+A atualização dos parâmetros é realizada pelo algoritmo conhecido como *Gradient Descent*:
+
+$$
+\theta_{t+1} = \theta_t - \eta \nabla_\theta \mathcal{L}
+$$
+
+Na prática, bibliotecas como o **PyTorch** calculam os gradientes automaticamente (*autograd*). Mesmo assim, entender esse mecanismo é fundamental para compreender o treinamento de redes neurais.
+
+## Exemplo
+
+Considere a função
+
+$$
+f(x) = (x-3)^2
+$$
+
+Desejamos encontrar seu ponto de mínimo a partir de $x^{(0)} = 0$.  
+O gradiente da função é
+
+$$
+f'(x) = 2(x-3)
+$$
+
+## 1ª iteração
+
+- $x^{(0)} = 0$
+- $f'(0) = -6$  
+Com taxa de aprendizado $\eta = 0.1$:
+
+$$
+x^{(1)} = 0 - 0.1(-6) = 0.6
+$$
+
+O valor da função diminui:
+
+$$
+f(0)=9 \qquad f(0.6)=5.76
+$$
+
+## 2ª iteração
+
+- $x^{(1)} = 0.6$
+- $f'(0.6) = -4.8$
+
+Atualizando novamente:
+
+$$
+x^{(2)} = 0.6 - 0.1(-4.8) = 1.08
+$$
+
+O valor da função continua diminuindo:
+
+$$
+f(1.08)=3.6864
+$$
+
+Repetindo esse processo, os valores de \(x\) aproximam-se de **3**, que corresponde ao ponto de mínimo da função.
+
 ## Sobre a etapa de treinamento e funções de ativação.
 
 A utilização da função de custo MSE em tarefas de classificação com ativação sigmoid pode causar problemas com gradientes muito pequenos. <!--[cite: 4] -->
@@ -346,6 +499,24 @@ O gradiente completo é: <!--[cite: 4] -->
 $$\frac{\partial L}{\partial w_j} = (y - \hat{y}) \hat{y} (1 - \hat{y}) x_j$$ <!--[cite: 4] -->
 
 Se $\hat{y}$ estiver próximo de 0 (por exemplo, $10^{-5}$), o termo $\hat{y} (1 - \hat{y})$ se torna muito pequeno, levando a gradientes pequenos e a uma aprendizagem mais lenta. <!--[cite: 4] -->
+
+
+## Estrutura de um Modelo
+
+Uma rede neural é definida principalmente por quatro componentes:
+
+- Camadas (*Layers*)
+- Funções de ativação (*Activation Functions*)
+- Função de perda (*Loss Function*)
+- Otimizador (*Optimizer*)
+
+Até aqui, estudamos:
+
+- A camada **Perceptron**
+- Algumas funções de ativação
+- As principais funções de perda
+
+Nos próximos slides, conheceremos novas camadas, outras funções de ativação e um dos otimizadores mais utilizados atualmente: **Adam**.
 
 # Funções de Ativação Principais
 
@@ -465,6 +636,185 @@ $$\text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}$$ <!--[cite: 4] -->
   - **Multiclasse:** Softmax <!--[cite: 4] -->
   - **Regressão:** Ativação linear <!--[cite: 4] -->
 - **Evitar:** Sigmoid/Tanh em camadas ocultas profundas devido a problemas de gradiente <!--[cite: 4] -->
+
+
+## Camadas
+
+Uma rede neural é composta por diferentes tipos de camadas, cada uma com uma função específica. Nesta disciplina veremos:
+
+- **Dense (Linear):** camada totalmente conectada, formada por vários perceptrons.
+- **Dropout:** reduz o *overfitting* durante o treinamento.
+- **Batch Normalization:** estabiliza o treinamento e acelera a convergência.
+
+## Dropout
+
+Durante o treinamento, a camada **Dropout** desativa aleatoriamente uma fração dos neurônios da rede.
+
+Isso reduz a dependência entre neurônios e ajuda a evitar **overfitting**.
+
+**Importante:** durante a inferência (*teste*), o Dropout é desativado e todos os neurônios são utilizados.
+
+<div style="width:100%; text-align:center; margin-top:20px;">
+<figure style="position:absolute; top:80; left:0; width:80%; margin:0;">
+    <img src="images/Dropout.png" style="width:60%; height:auto;" />
+</figure>
+</div>
+
+
+## Batch Normalization
+
+A **Batch Normalization** normaliza as ativações utilizando estatísticas do *mini-batch*.  
+Seu objetivo é:
+
+- estabilizar o treinamento;
+- acelerar a convergência;
+- permitir taxas de aprendizado maiores.
+
+<div style="position: relative; width: 85%; height: 400px; margin: auto; text-align:center;">
+<figure style="position:absolute; top:80; left:0; width:100%; margin:0;">
+    <img src="images/BatchNorm.png" style="width:65%; height:auto;" />
+    <figcaption style="font-size:1em; margin-top:0.5em;">
+        Batch Normalization
+    </figcaption>
+</figure>
+</div>
+
+
+
+## Por que normalizar?
+
+Quando as ativações possuem escalas muito diferentes, os gradientes também podem ter magnitudes muito distintas.  
+Como consequência:
+
+- o treinamento pode ficar instável;
+- a convergência pode ser mais lenta;
+- o processo de otimização torna-se menos eficiente.
+
+<div style="position: relative; width: 80%; height: 400px; margin: auto; text-align:center;">
+<figure style="position:absolute; top:80; left:0; width:100%; margin:0;">
+    <img src="images/SGDBatch.png" style="width:67%; height:auto;" />
+</figure>
+</div>
+
+
+
+## Tipos de Normalização
+
+As principais estratégias de normalização são:
+
+- **Batch Normalization:** utiliza estatísticas do *mini-batch*.
+- **Layer Normalization:** normaliza cada amostra considerando toda a camada.
+- **Instance Normalization:** normaliza cada amostra individualmente.
+- **Group Normalization:** divide os canais em grupos antes de normalizar.
+
+
+
+## Comparação entre Métodos
+
+<div style="position: relative; width: 85%; height: 400px; margin: auto; text-align:center;">
+<figure style="position:absolute; top:80; left:0; width:100%; margin:0;">
+    <img src="images/Tipos_Norm.png" style="width:100%; height:auto;" />
+</figure>
+</div>
+
+
+## Otimizadores
+
+O **SGD (Stochastic Gradient Descent)** é um dos algoritmos mais simples para otimização de redes neurais.
+
+Atualmente, porém, são mais utilizados otimizadores adaptativos, como o **Adam** e sua variante **AdamW**.
+
+As principais limitações do SGD são:
+
+- utiliza uma taxa de aprendizado fixa;
+- pode apresentar convergência lenta;
+- é sensível à escolha da taxa de aprendizado.
+
+## Adam
+
+O **Adam (Adaptive Moment Estimation)** combina duas ideias:
+
+- **Momentum:** acumula a direção dos gradientes para acelerar a convergência;
+- **Adaptive Learning Rate:** ajusta automaticamente a taxa de aprendizado de cada parâmetro.
+
+Os principais hiperparâmetros são:
+
+- $\beta_1$: controla o momento de primeira ordem (média dos gradientes);
+- $\beta_2$: controla o momento de segunda ordem (média dos gradientes ao quadrado).
+
+
+
+## Adam
+
+O algoritmo mantém duas médias móveis exponenciais:
+
+$$
+m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t
+$$
+
+$$
+v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2
+$$
+
+onde:
+
+- $g_t$: gradiente na iteração $t$;
+- $m_t$: estimativa do primeiro momento;
+- $v_t$: estimativa do segundo momento.
+
+
+
+## Adam
+
+Como essas estimativas começam em zero, o Adam aplica uma correção de viés:
+
+$$
+\hat{m}_t=\frac{m_t}{1-\beta_1^t},
+\qquad
+\hat{v}_t=\frac{v_t}{1-\beta_2^t}
+$$
+
+A atualização dos parâmetros é dada por
+
+$$
+\theta_t=
+\theta_{t-1}
+-
+\frac{\eta}{\sqrt{\hat{v}_t}+\epsilon}\hat{m}_t
+$$
+
+
+
+## AdamW
+
+O **AdamW** é uma variante do Adam que aplica **Weight Decay**, uma forma de regularização dos parâmetros.  
+A atualização passa a ser:
+
+$$
+\theta_t=
+\theta_{t-1}
+-
+\frac{\eta}{\sqrt{\hat{v}_t}+\epsilon}\hat{m}_t
+-
+\eta\lambda\theta_{t-1}
+$$
+
+onde $\lambda$ controla a intensidade da regularização.
+
+**Vantagens do AdamW:**
+
+- reduz o *overfitting*;
+- melhora a generalização do modelo;
+- é o otimizador padrão em muitos modelos modernos.
+
+
+## Comparando Otimizadores
+
+<img src="images/otimizadores.gif" style="width:100%;">
+
+<small>
+Trajetórias de diferentes algoritmos de otimização em uma função de perda.
+</small>
 
 # Arquiteturas Largas vs Profundas
 
