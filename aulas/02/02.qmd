@@ -438,7 +438,7 @@ Os algoritmos de classificação aprendem a classificar melhor com o tempo à me
 - **Ruído Aleatório Intrinseco:** Flutuações térmicas, erros de transcrição humana ou limitações físicas no *hardware* do sensor. <!--[cite: 3] -->
 :::
 
-## Principais Indutores: K-Nearest Neighbors (KNN)
+## Principais Indutores: K-Nearest Neighbors (KNN) {.smaller}
 
 Um algoritmo preguiçoso (*lazy learning*) baseado puramente em métricas espaciais (distância). <!--[cite: 3] -->
 
@@ -705,9 +705,19 @@ Encontra um hiperplano que separa as classes com a maior margem possível, utili
 
 ## Representação Gráfica do SVM
 
-Separação de classes maximizando a margem (largura entre os vetores de suporte). <!--[cite: 3] -->
+Separação de classes maximizando a margem (largura entre os vetores de suporte).
 
-![](images/svm_example.png){fig-align="center" width="50%"} <!--[cite: 3] -->
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/svm_example.png){width=100%}
+:::
+
+::: {.column width="60%"}
+![](images/kernelsvm.png){width=100%}
+:::
+
+::::
 
 # Aprendizagem Não Supervisionada
 
@@ -1137,7 +1147,17 @@ A **AUC (Área Sob a Curva)** é uma métrica derivada da curva ROC. Ela quantif
 
 ## Curva ROC e AUC na Prática
 
-![](images/roc.png){fig-align="center" width="55%"} <!--[cite: 3] -->
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/roc.png){width=100%}
+:::
+
+::: {.column width="60%"}
+![](images/roc_curvas_threshold.png){width=100%}
+:::
+
+::::
 
 # Exemplos
 
