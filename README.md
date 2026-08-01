@@ -23,7 +23,7 @@ Proporcionar aos alunos a análise e solução de problemas reais da indústria 
 - implementação computacional;
 - avaliação e interpretação dos resultados.
 
-Mais do que aprender a utilizar ferramentas computacionais, espera-se que o aluno desenvolva a capacidade de transformar problemas reais em problemas passíveis de solução computacional.
+Espera-se que o aluno desenvolva a capacidade de transformar problemas reais em problemas passíveis de solução computacional.
 
 ---
 
@@ -59,7 +59,7 @@ Na Engenharia de Manutenção, essa competência é significativamente mais impo
 
 Modelos mudam, bibliotecas evoluem e novas técnicas surgem continuamente. A habilidade que permanece relevante é a capacidade de compreender um problema, estruturar os dados disponíveis, formular hipóteses, selecionar abordagens adequadas e interpretar criticamente os resultados obtidos.
 
-Por esse motivo, durante as aulas serão utilizados, sempre que apropriado, *datasets clássicos* da literatura de Ciência de Dados, como por exemplo:
+Por esse motivo, durante as aulas serão utilizados, sempre que apropriado, *datasets clássicos* da literatura de Ciência de Dados, por exemplo:
 
 - House Prices;
 - Credit Data;
@@ -89,7 +89,7 @@ Se todos os exemplos fossem exclusivamente da área de manutenção desde o iní
 
 O projeto final representa a etapa em que os conhecimentos desenvolvidos durante a disciplina serão aplicados em um problema escolhido pelo grupo.
 
-Mais do que reproduzir exemplos apresentados em aula, espera-se que o aluno seja capaz de selecionar técnicas, justificar decisões e interpretar criticamente os resultados obtidos.
+Espera-se que o aluno seja capaz de selecionar técnicas, justificar decisões e interpretar criticamente os resultados obtidos.
 
 Sob a perspectiva educacional, essa etapa caracteriza a *transferência de aprendizagem*: a capacidade de aplicar conhecimentos adquiridos em um contexto diferente daquele em que foram originalmente aprendidos.
 
