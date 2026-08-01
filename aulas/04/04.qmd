@@ -25,38 +25,7 @@ author:
     affiliations: Universidade de São Paulo, Piracicaba (USP-ESALQ)
 date: last-modified
 toc: true
-toc-title: "Table of Contents"
+toc-title: "Conteúdo da Aula"
 toc-depth: 1
 ---
 
-# Introdução
-
-## Introdução ao Curso
-
-Panorama das atividades:
-
-- **Aula 01:** XXX
-
-Implementação em Python com PyTorch.
-
-## XXX Exemplo Video
-
-<video width="1280" controls>
-  <source src="images/MatrixMultiplicationDetailed.mp4" type="video/mp4">
-</video>
-
-## XXX Exemplo Imagem
-
-<div style="position: relative; width: 100%; height: 500px; margin: auto; text-align:center;">
-
-<figure class="fragment" data-fragment-index="1" 
-        style="position:absolute; top:0; left:0; width:100%; margin:0;">
-    <img src="images/timeline.jpg" 
-         style="width:100%; height:auto;" />
-  </a>
-  <figcaption style="font-size:1em; margin-top:0.5em;">
-    Legenda
-  </figcaption>
-</figure>
-
-</div>
